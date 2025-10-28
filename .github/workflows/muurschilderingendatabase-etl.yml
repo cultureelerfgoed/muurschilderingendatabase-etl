@@ -1,7 +1,7 @@
 name: 'Muurschilderingendatabase ETL'
 
 env:
-  BASE_URI: 'https://muurschilderingendatabase.nl'  
+  BASE_URI: 'https://muurschilderingendatabase.nl/'  
   PROJECT_NAME: 'Muurschilderingendatabase ETL'
   TARGET_FILEPATH: 'data/api-export.ttl'
 
