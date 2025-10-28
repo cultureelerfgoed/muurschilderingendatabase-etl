@@ -7,9 +7,9 @@ env:
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 5 * * *'
- 
+    inputs:
+      tags:
+        description: "ETL Muurschilderingendatabase"
 jobs:
   update-file:
     runs-on: ubuntu-latest
