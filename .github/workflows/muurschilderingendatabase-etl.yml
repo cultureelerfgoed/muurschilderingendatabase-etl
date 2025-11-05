@@ -52,6 +52,7 @@ jobs:
         fi
       env:
         GITHUB_JOB_ID: ${{ steps.job-id.outputs.job-id }}
+        TARGET_FILEPATH: ${{ env.TARGET_FILEPATH }}
 
     - name: Push changes to TriplyDB API.
       run: |
