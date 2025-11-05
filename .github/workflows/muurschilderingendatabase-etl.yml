@@ -40,13 +40,15 @@ jobs:
         PROJECT_NAME: ${{ env.PROJECT_NAME }}
         TARGET_FILEPATH: ${{ env.TARGET_FILEPATH }}
 
-    - name: Check for changes
+    - name: Check for changes and commit.
       run: |
         if [[ -n $(git status -s) ]]; then
           git config user.name github-actions[bot]
-          git config user.email jobs.<job_id>+github-actions[bot]@users.noreply.github.com
+          git config user.email ${{ env.GITHUB_JOB_ID }}+github-actions[bot]@users.noreply.github.com
           git pull
           git add ${{ github.workspace }}/${{ env.TARGET_FILEPATH }}
           git commit -m "Muurschilderingendatabase export/transform update."
           git push        
         fi
+      env:
+          GITHUB_JOB_ID: ${{ steps.job-id.outputs.job-id }}
