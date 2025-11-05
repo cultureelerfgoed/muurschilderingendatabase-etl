@@ -4,8 +4,7 @@ import os
 #import requests
 from rdflib import Graph
 #from rdflib.namespace import CEO
-from rdflib.namespace import SDO, DCTERMS
-
+from rdflib.namespace import SDO, DCTERMS, OWL 
 
 ### Configuration sdaf
 # Path to save file
@@ -30,6 +29,8 @@ mapping = {
     DCTERMS.bibliographicCitation: SDO.citation,
     DCTERMS.created: SDO.dateCreated,
     DCTERMS.description: SDO.description,
+    DCTERMS.isReferencedBy: SDO.subjectOf,
+    OWL.sameAs: SDO.sameAs    
 }
 
 ### End of Mapping 
