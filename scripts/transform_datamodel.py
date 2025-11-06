@@ -3,22 +3,23 @@
 import os
 import logging
 from rdflib import Graph
-#from rdflib.namespace import CEO
-from rdflib.namespace import SDO, DCTERMS, OWL 
+from rdflib.namespace import SDO, DCTERMS, OWL
+from rdflib.plugins.parsers.notation3 import BadSyntax
 
-### Configuration sdaf
+### Configuration
 # Path to save file
 TARGET_FILEPATH = os.getenv('TARGET_FILEPATH', 'data/api-export.ttl')
 # URI to Omeka S endpoint
 BASE_URI = os.getenv('BASE_URI', 'https://muurschilderingendatabase.nl/')
 # Defines the format of the output file
-OUTPUT_FILE_FORMAT = "ttl"
-# Defines the graph identifier 
-GRAPH_ID = "muurschildering-nieuw"
+OUTPUT_FILE_FORMAT = os.getenv('OUTPUT_FILE_FORMAT', 'ttl')
+# Defines the graph identifier
+GRAPH_ID = os.getenv('GRAPH_ID', 'default')
+# Set encoding
+ENCODING = os.getenv('ENCODING', 'utf-8')
 ### End of Configuration
 
-### Mapping the term to be replaced on the left with the one on the right. 
-
+### Mapping the term to be replaced on the left by the term on the right. 
 mapping = {
     DCTERMS.title: SDO.name,
     DCTERMS.publisher: SDO.publisher,
@@ -30,31 +31,38 @@ mapping = {
     DCTERMS.created: SDO.dateCreated,
     DCTERMS.description: SDO.description,
     DCTERMS.isReferencedBy: SDO.subjectOf,
-    OWL.sameAs: SDO.sameAs    
+    OWL.sameAs: SDO.sameAs
 }
 
 ### End of Mapping 
 
 logger = logging.getLogger(__name__)
-logging.basicConfig(filename='muurschilderingendatabase-etl.log', level=logging.INFO)
-logger.info("Retrieving items from %s", {TARGET_FILEPATH}, exc_info=True)
+logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s',                    
+                    level=logging.INFO,
+                    datefmt='%Y-%m-%d %H:%M:%S')
+logger.info("Retrieving items from %s", TARGET_FILEPATH)
 
-graph = Graph(identifier=GRAPH_ID)
-graph.parse(TARGET_FILEPATH)
-old_g_length = len(graph)
+try: 
+    # Load graph from file
+    graph = Graph(identifier=GRAPH_ID)
+    graph.parse(source=TARGET_FILEPATH, format=OUTPUT_FILE_FORMAT)
+    old_g_length = len(graph)
 
-### Do stuff to graph ###
-for subj, pred, obj in graph:
+    # Apply mapping to graph
+    for subj, pred, obj in graph:
 
-    if pred in mapping.keys():
-        graph.remove((subj, pred, obj))
-        graph.add((subj, mapping[pred], obj))        
+        if pred in mapping.keys():
+            graph.remove((subj, pred, obj))
+            graph.add((subj, mapping[pred], obj))        
 
-new_g_length = len(graph)
+    new_g_length = len(graph)
 
-# Test that the new graph contains as many triples as the old graph
-assert len(graph) == old_g_length
+    # Test that the new graph contains as many triples as the old graph
+    assert len(graph) == old_g_length
 
-### Write graph ###
-logger.info("Writing  %s", f"{OUTPUT_FILE_FORMAT} file to {TARGET_FILEPATH}", exc_info=True)
-graph.serialize(format=OUTPUT_FILE_FORMAT, destination=f"{TARGET_FILEPATH}")
+    # Serialize graph
+    logger.info("Writing %s", f"{OUTPUT_FILE_FORMAT} file to {TARGET_FILEPATH}")
+    graph.serialize(format=OUTPUT_FILE_FORMAT, destination=TARGET_FILEPATH, encoding=ENCODING, auto_compact=True)
+    logger.info("Filesize: %s", f"{os.path.getsize(TARGET_FILEPATH)} bytes")
+except BadSyntax as bs:
+    logger.error("Error loading graph: %s", str(bs))
