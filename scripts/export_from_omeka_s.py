@@ -36,7 +36,7 @@ try:
     with open(TARGET_FILEPATH, "w", encoding=ENCODING) as file:
         for page in range(1,100):
             PAGE_URL = f"{BASE_URI}api/items?format=turtle&page={page}&per_page=100"
-            data = requests.get(PAGE_URL, timeout=90)
+            data = requests.get(PAGE_URL, timeout=200)
             
             if(data.apparent_encoding != "ascii"):
                 file.write(data.text)
