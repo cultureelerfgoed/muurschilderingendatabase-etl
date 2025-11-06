@@ -1,7 +1,7 @@
 """Script that downloads linked data from Omeka S API and fixes namespace issues."""
 
 import os
-#import requests
+import logging
 from rdflib import Graph
 #from rdflib.namespace import CEO
 from rdflib.namespace import SDO, DCTERMS, OWL 
@@ -35,6 +35,10 @@ mapping = {
 
 ### End of Mapping 
 
+logger = logging.getLogger(__name__)
+logging.basicConfig(filename='muurschilderingendatabase-etl.log', level=logging.INFO)
+logger.info(f"Retrieving items from {TARGET_FILEPATH}")
+
 graph = Graph(identifier=GRAPH_ID)
 graph.parse(TARGET_FILEPATH)
 old_g_length = len(graph)
@@ -52,4 +56,5 @@ new_g_length = len(graph)
 assert len(graph) == old_g_length
 
 ### Write graph ###
+logger.info(f"Writing {OUTPUT_FILE_FORMAT} file to {TARGET_FILEPATH}")
 graph.serialize(format=OUTPUT_FILE_FORMAT, destination=f"{TARGET_FILEPATH}")
