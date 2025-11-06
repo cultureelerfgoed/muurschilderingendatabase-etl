@@ -49,12 +49,18 @@ try:
 
         # Filter out broken triples.
         for subj, pred, obj in graph:
-            if ("@context" in subj or "@context" in obj) or (graph[obj: RDF.type] and "customvocab" in graph[obj: RDF.type]):
+            if "@context" in subj or "@context" in obj:
                 logger.warning("Removing an unserializable triple:")
                 logger.warning("- Subject: %s", subj)
                 logger.warning("- Predicate: %s", pred)
                 logger.warning("- Object: %s", obj)
-                graph.remove((subj, pred, obj))            
+                graph.remove((subj, pred, obj))
+            if graph[obj: RDF.type] and "customvocab" in graph[obj: RDF.type]:
+                logger.warning("Removing references to an unserializable triple:")
+                logger.warning("- Subject: %s", subj)
+                logger.warning("- Predicate: %s", pred)
+                logger.warning("- Object: %s", obj)
+                graph.remove((subj, pred, obj))
 
         # Retrieve namespaces from api-context endpoint and bind them
         namespace_response = requests.get(BASE_URI+"api-context", timeout=200)
