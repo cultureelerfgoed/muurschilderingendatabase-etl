@@ -37,7 +37,7 @@ mapping = {
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(filename='muurschilderingendatabase-etl.log', level=logging.INFO)
-logger.info(f"Retrieving items from {TARGET_FILEPATH}")
+logger.info("Retrieving items from %s", {TARGET_FILEPATH}, exc_info=True)
 
 graph = Graph(identifier=GRAPH_ID)
 graph.parse(TARGET_FILEPATH)
@@ -56,5 +56,5 @@ new_g_length = len(graph)
 assert len(graph) == old_g_length
 
 ### Write graph ###
-logger.info(f"Writing {OUTPUT_FILE_FORMAT} file to {TARGET_FILEPATH}")
+logger.info("Writing  %s", f"{OUTPUT_FILE_FORMAT} file to {TARGET_FILEPATH}", exc_info=True)
 graph.serialize(format=OUTPUT_FILE_FORMAT, destination=f"{TARGET_FILEPATH}")

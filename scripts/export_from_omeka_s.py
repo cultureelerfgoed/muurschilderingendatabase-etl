@@ -3,7 +3,6 @@
 import os
 import logging
 from ssl import SSLCertVerificationError, SSLError
-
 import requests
 from rdflib import Graph, URIRef
 from rdflib.namespace import RDF
@@ -18,17 +17,23 @@ TARGET_FILEPATH = os.getenv('TARGET_FILEPATH', 'data/api-export.ttl')
 BASE_URI = os.getenv('BASE_URI', 'https://muurschilderingendatabase.nl/')
 # Defines the format of the output file
 OUTPUT_FILE_FORMAT = "ttl"
-# Defines the graph identifier 
+# Defines the graph identifier
 GRAPH_ID = "muurschildering-origineel"
 ### End of Configuration
 
 logger = logging.getLogger(__name__)
-logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', filename='muurschilderingendatabase-etl.log', level=logging.INFO, datefmt='%Y-%m-%d %H:%M:%S')
-graph = Graph(identifier=GRAPH_ID)
+logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s',
+                    filename='muurschilderingendatabase-etl.log',
+                    level=logging.INFO,
+                    datefmt='%Y-%m-%d %H:%M:%S')
 
-# retrieve items fron api endpoint
-logger.info(f"Retrieving items from API endpoint {BASE_URI}, writing to {TARGET_FILEPATH}")
 try:
+    graph = Graph(identifier=GRAPH_ID)
+
+    # retrieve items fron api endpoint
+    logger.info("Retrieving items from API endpoint %s", BASE_URI, exc_info=True)
+    logger.info("Writing file to  %s", TARGET_FILEPATH, exc_info=True)
+
     with open(f"{TARGET_FILEPATH}.{OUTPUT_FILE_FORMAT}", "w", encoding="utf-8") as file:
         # Temporary subset to make testing faster
         for page in range(1,75):
@@ -40,8 +45,8 @@ try:
 
         # Filter out broken triples.
         for subj, pred, obj in graph:
-            if "@context" in subj or "@context" in obj:
-                logger.info(f"Removing an unserializable triple: s: {subj} p: {pred} o: {obj}")            
+            if "@context" in subj or "@context" in obj:                
+                logger.info("Removing an unserializable triple  %s", f"s: {subj} p: {pred} o: {obj}", exc_info=True)
                 graph.remove((subj, pred, obj))
             
             if graph[obj: RDF.type] and "customvocab" in graph[obj: RDF.type]:
@@ -53,13 +58,13 @@ try:
 
         for key in namespace_data:
             ns = URIRef(namespace_data[key].replace('\\', ''))
-            logger.info(f"binding namespace {ns} as {key}")                    
-            graph.namespace_manager.bind(key, ns, override=True, replace=True)    
+            logger.info("Binding namespace  %s", f"{ns} as {key}", exc_info=True)
+            graph.namespace_manager.bind(key, ns, override=True, replace=True)
 
-        logger.info(f"Writing {OUTPUT_FILE_FORMAT} file to {TARGET_FILEPATH}")
+        logger.info("Writing  %s", f"{OUTPUT_FILE_FORMAT} file to {TARGET_FILEPATH}", exc_info=True)
         graph.serialize(format=OUTPUT_FILE_FORMAT, destination=f"{TARGET_FILEPATH}")
 
 except (SSLCertVerificationError, SSLError):
-    logger.error(f"SSLCertVerificationError: {SSLCertVerificationError}")
+    logger.error("Caught SSLCertVerificationError %s", f"{SSLCertVerificationError.strerror} due to {SSLCertVerificationError.reason}", exc_error=True)    
 finally:
-    logger.info(f"Exiting..")
+    logger.info("Exiting..")
