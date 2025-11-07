@@ -17,7 +17,7 @@ OUTPUT_FILE_FORMAT = os.getenv('OUTPUT_FILE_FORMAT', 'ttl')
 # Defines the graph identifier
 GRAPH_ID = os.getenv('GRAPH_ID', 'default')
 # Set encoding
-ENCODING = os.getenv('ENCODING', 'utf-8')
+ENCODING = os.getenv("ENCODING", "utf-8")
 ### End of Configuration
 
 logger = logging.getLogger(__name__)
@@ -37,44 +37,45 @@ try:
         for page in range(1,100):
             PAGE_URL = f"{BASE_URI}api/items?format=turtle&page={page}&per_page=100"
             data = requests.get(PAGE_URL, timeout=200)
-            
-            if(data.apparent_encoding != "ascii"):
+            content_length = len(data.content)
+
+            if(content_length > 2):
                 file.write(data.text)
             else:
-                logger.info("Data from API ended on page: %s", page)
+                logger.info("Data ended on page %s", str(page))
                 break
 
-        # Parse the written file as a graph
-        graph.parse(source=TARGET_FILEPATH, format=OUTPUT_FILE_FORMAT)
+    # Parse the written file as a graph
+    graph.parse(source=TARGET_FILEPATH)
 
-        # Filter out broken triples.
-        for subj, pred, obj in graph:
-            if "@context" in subj or "@context" in obj:
-                logger.warning("Removing an unserializable triple:")
-                logger.warning("- Subject: %s", subj)
-                logger.warning("- Predicate: %s", pred)
-                logger.warning("- Object: %s", obj)
-                graph.remove((subj, pred, obj))
-            if graph[obj: RDF.type] and "customvocab" in graph[obj: RDF.type]:
-                logger.warning("Removing references to an unserializable triple:")
-                logger.warning("- Subject: %s", subj)
-                logger.warning("- Predicate: %s", pred)
-                logger.warning("- Object: %s", obj)
-                graph.remove((subj, pred, obj))
+    # Filter out broken triples.
+    for subj, pred, obj in graph:
+        if "@context" in subj or "@context" in obj:
+            logger.warning("Removing an unserializable triple:")
+            logger.warning("- Subject: %s", subj)
+            logger.warning("- Predicate: %s", pred)
+            logger.warning("- Object: %s", obj)
+            graph.remove((subj, pred, obj))
+        if graph[obj: RDF.type] and "customvocab" in graph[obj: RDF.type]:
+            logger.warning("Removing references to an unserializable triple:")
+            logger.warning("- Subject: %s", subj)
+            logger.warning("- Predicate: %s", pred)
+            logger.warning("- Object: %s", obj)
+            graph.remove((subj, pred, obj))
 
-        # Retrieve namespaces from api-context endpoint and bind them
-        namespace_response = requests.get(BASE_URI+"api-context", timeout=200)
-        namespace_data = namespace_response.json()["@context"]
+    # Retrieve namespaces from api-context endpoint and bind them
+    namespace_response = requests.get(BASE_URI+"api-context", timeout=200)
+    namespace_data = namespace_response.json()["@context"]
 
-        for key in namespace_data:
-            ns = URIRef(namespace_data[key].replace('\\', ''))
-            logger.info("Binding namespace  %s", f"{ns} as {key}")
-            graph.namespace_manager.bind(key, ns, override=True, replace=True)
+    for key in namespace_data:
+        ns = URIRef(namespace_data[key].replace('\\', ''))
+        logger.info("Binding namespace  %s", f"{ns} as {key}")
+        graph.namespace_manager.bind(key, ns, override=True, replace=True)
 
-        # Serialize graph
-        logger.info("Writing  %s", f"{OUTPUT_FILE_FORMAT} file to {TARGET_FILEPATH}")
-        graph.serialize(format=OUTPUT_FILE_FORMAT, destination=TARGET_FILEPATH, encoding=ENCODING, auto_compact=True)
-        logger.info("Filesize:  %s", f"{os.path.getsize(TARGET_FILEPATH)} bytes")
+    # Serialize graph
+    logger.info("Writing  %s", f"{OUTPUT_FILE_FORMAT} file to {TARGET_FILEPATH}")
+    graph.serialize(format=OUTPUT_FILE_FORMAT, destination=TARGET_FILEPATH)
+    logger.info("Filesize:  %s", f"{os.path.getsize(TARGET_FILEPATH)} bytes")
 except (SSLCertVerificationError, SSLError) as ssle:
     logger.error("Caught SSLError/SSLCertVerificationError %s", str(ssle))
 finally:
