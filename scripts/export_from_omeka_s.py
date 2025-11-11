@@ -62,9 +62,9 @@ try:
             logger.warning("- Predicate: %s", pred)
             logger.warning("- Object: %s", obj)
             graph.remove((subj, pred, obj))
-        if ' ' in subj or ' ' in pred or ' ' in obj:
+        if ' ' in subj or ' ' in obj:
             graph.remove((subj, pred, obj))
-            graph.add(subj.strip(), pred.strip(), obj.strip())
+            graph.add(subj.strip(), pred, obj.strip())
 
     # Retrieve namespaces from api-context endpoint and bind them
     namespace_response = requests.get(BASE_URI+"api-context", timeout=200)
