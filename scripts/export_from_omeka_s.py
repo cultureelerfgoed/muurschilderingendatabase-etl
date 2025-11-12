@@ -62,9 +62,13 @@ try:
             logger.warning("- Predicate: %s", pred)
             logger.warning("- Object: %s", obj)
             graph.remove((subj, pred, obj))
-        if ' ' in subj or ' ' in obj:
+        if isinstance(obj, URIRef) and ' ' in obj[len(obj) - 1]:
+            logger.warning("Stripping spaces from URI:")
+            logger.warning("- Subject: %s", subj)
+            logger.warning("- Predicate: %s", pred)
+            logger.warning("- Object: %s", obj)
             graph.remove((subj, pred, obj))
-            graph.add(subj.strip(), pred, obj.strip())
+            graph.add((subj, pred, URIRef(obj.strip())))
 
     # Retrieve namespaces from api-context endpoint and bind them
     namespace_response = requests.get(BASE_URI+"api-context", timeout=200)
