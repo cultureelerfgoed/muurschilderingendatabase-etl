@@ -54,4 +54,5 @@ jobs:
 
     - name: Push changes to TriplyDB API.
       run: |
-        curl -H 'Authorization: Bearer ${{ secrets.LDV_API_TOKEN }}' -X POST 'https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/Muurschilderingen/jobs'  -F file='@./data/api-export.ttl'
+        curl -H 'Authorization: Bearer ${{ secrets.LDV_API_TOKEN }}' -H 'graphNames:default' -X POST 'https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/Muurschilderingen/jobs'  -F file='@./data/api-export.ttl'
+        
