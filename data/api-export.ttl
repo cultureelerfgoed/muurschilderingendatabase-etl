@@ -3239,12 +3239,12 @@ Onder de schildering staat 'Scs Franciscus' geschreven. Een groot gedeelte van d
     o:created "2025-06-17T16:13:56+00:00"^^xsd:dateTime ;
     o:id 10246 ;
     o:is_public true ;
-    o:modified "2025-11-07T12:04:35+00:00"^^xsd:dateTime ;
+    o:modified "2025-11-10T13:23:39+00:00"^^xsd:dateTime ;
     o:owner <https://muurschilderingendatabase.nl/api/users/5> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
     o:site <https://muurschilderingendatabase.nl/api/sites/1> ;
-    o:title "Muurschildering metrobuis"^^xsd:string ;
+    o:title "Muurschildering metrobuis door Woody van Amen"^^xsd:string ;
     dcterms:source "ongepubliceerde Minor opdracht 2025 UvA Conservering en Restauratie"^^xsd:string ;
     sem:hasEarliestBeginTimeStamp "1977"^^xsd:string ;
     sem:hasLatestEndTimeStamp "1977"^^xsd:string ;
@@ -3257,9 +3257,11 @@ Onder de schildering staat 'Scs Franciscus' geschreven. Een groot gedeelte van d
     schema:isPartOf "Tunnel"^^xsd:string ;
     schema:location <https://muurschilderingendatabase.nl/api/items/10245> ;
     schema:material <https://data.cultureelerfgoed.nl/term/id/cht/a64a233b-91ab-4431-afca-dac58c5b63a7> ;
-    schema:name "Muurschildering metrobuis"^^xsd:string ;
+    schema:name "Muurschildering metrobuis door Woody van Amen"^^xsd:string ;
     schema:pattern "decoratieve band"^^xsd:string ;
-    schema:subjectOf "Frans van Burkom en Yteke Spoelstra, Cultuurhistorische waardestellingen. Kunstwerken op de Oostlijn van de Amsterdamse metro. Deel 4. 2012 (54 pagina’s)"^^xsd:string ;
+    schema:subjectOf <https://www.collectienederland.nl/page/aggregation/nl-wandkunst-wederopbouw/1632>,
+        <https://www.polderlicht.com/uncategorized/maximaal-minimaal-ondergronds/>,
+        "Frans van Burkom en Yteke Spoelstra, Cultuurhistorische waardestellingen. Kunstwerken op de Oostlijn van de Amsterdamse metro. Deel 4. 2012 (54 pagina’s)"^^xsd:string ;
     schema:temporal "Aangebracht in hetzelfde jaar als de bouw van de metro."^^xsd:string .
 
 <https://muurschilderingendatabase.nl/api/items/10247> a o:Item,
@@ -13628,6 +13630,161 @@ Het werk is herplaatst hier in 1995 en komt oorspronkelijk uit de wachtruimte va
     schema:name "Zonder titel"^^xsd:string ;
     schema:subjectOf <https://www.kunstinopenbareruimte-utrecht.nl/kunstwerken/zonder-titel#bodyContent> ;
     schema:width "285"^^xsd:string .
+
+<https://muurschilderingendatabase.nl/api/items/11633> a o:Item,
+        mural:Muurschildering ;
+    o:created "2025-11-10T10:24:06+00:00"^^xsd:dateTime ;
+    o:id 11633 ;
+    o:is_public true ;
+    o:modified "2025-11-10T10:25:05+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
+    o:title "Golvend landschap"^^xsd:string ;
+    dcterms:source "ongepubliceerde Minor opdracht 2025 UvA Conservering en Restauratie"^^xsd:string ;
+    sem:hasEarliestBeginTimeStamp "1960"^^xsd:gYear ;
+    sem:hasLatestEndTimeStamp "1960"^^xsd:gYear ;
+    crm:P59i_is_located_on_or_within "exterieur"@nl ;
+    ceo:locatieomschrijving "De schildering gaat de hoek om, is geschilderd op twee muren."^^xsd:string ;
+    mural:orientatie "noord"@NL,
+        "west"@NL ;
+    schema:actionProcess "De hele muurschildering is twee keer gerestaureerd. Eerst door de kunstenaar zelf in de jaren 80, toen hij (bijna) de hele muur overschilderde. De tweede keer werd het gerestaureerd door zijn kinderen Karin en Bart Elfrink, die de hele muur opnieuw overschilderden (behalve de handtekening). De grondige restauratie was nodig omdat het origineel erg vervaagd was. "^^xsd:string ;
+    schema:creator <https://muurschilderingendatabase.nl/api/items/11632> ;
+    schema:description "Abstract figuratieve muurschildering, met huizen en verschillende natuurlijke elementen zoals meren en bomen. "^^xsd:string ;
+    schema:genre "ornamentiek"@NL ;
+    schema:height "300"^^xsd:string ;
+    schema:identifier "BAG0268100000024469MU1"^^xsd:string ;
+    schema:location <https://muurschilderingendatabase.nl/api/items/11631> ;
+    schema:material "baksteen"^^xsd:string ;
+    schema:name "Golvend landschap "^^xsd:string ;
+    schema:pattern <https://vocab.getty.edu/aat/300164595> ;
+    schema:subjectOf <https://www.brugnijmegen.nl/nieuws/algemeen/171961/karin-en-bart-elfrink-restaureren-kleurrijke-werk-van-hun-vad>,
+        <https://www.collectienederland.nl/page/aggregation/nl-wandkunst-wederopbouw/5725> ;
+    schema:temporal "Gesigneerd"^^xsd:string ;
+    schema:width "350"^^xsd:string .
+
+<https://muurschilderingendatabase.nl/api/items/11635> a o:Item,
+        mural:Muurschildering ;
+    o:created "2025-11-10T11:22:13+00:00"^^xsd:dateTime ;
+    o:id 11635 ;
+    o:is_public true ;
+    o:media <https://muurschilderingendatabase.nl/api/media/11636> ;
+    o:modified "2025-11-10T14:19:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
+    o:primary_media <https://muurschilderingendatabase.nl/api/media/11636> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
+    o:title "Hemelvaart van Maria"^^xsd:string ;
+    dcterms:source "ongepubliceerde Minor opdracht 2025 UvA Conservering en Restauratie"^^xsd:string ;
+    sem:hasEarliestBeginTimeStamp "1940"^^xsd:gYear ;
+    sem:hasLatestEndTimeStamp "1949"^^xsd:gYear ;
+    crm:P59i_is_located_on_or_within "interieur"@nl ;
+    ceo:locatieomschrijving "Galerij boven entree westschip"^^xsd:string ;
+    mural:orientatie "noord"@NL ;
+    schema:about <https://www.wikidata.org/wiki/Q162691> ;
+    schema:actionProcess "De plafondschildering bevindt zich in een galerij die uitkijkt op de kapel van het klooster Mariadal. De kapel is grotendeels ontworpen in 1934 en de schilderingen zijn een paar jaar later, waarschijnlijk in de jaren 1940, toegevoegd. Tegenover de schildering van de Hemelvaart van Maria, ook op het plafond, is een schildering van de kroning van Maria in de hemel te zien. De schilderingen in de kapel hebben stilistische overeenkomsten en zijn rond dezelfde tijd door dezelfde schilder aangebracht. De muren van de kapel bestaan verder voornamelijk uit bakstenen."^^xsd:string ;
+    schema:creator <https://muurschilderingendatabase.nl/api/items/10618> ;
+    schema:description "De galerij boven de entree van het westschip zijn voorzien van muur- en gewelfschilderingen, waaronder de hemelvaart van Maria."^^xsd:string ;
+    schema:genre "verhalend"@NL ;
+    schema:height "250"^^xsd:string ;
+    schema:identifier "RM517244MU1"^^xsd:string ;
+    schema:location <https://muurschilderingendatabase.nl/api/items/11634> ;
+    schema:name "Hemelvaart van Maria"^^xsd:string ;
+    schema:subjectOf <https://tongerlohuys.nl/wp-content/uploads/Jaarboek-71-2011-Artikel-6.pdf>,
+        <https://www.erfgoedroosendaal.nl/htmlpag/glaskunst/roosendaalmariadalklooster_2018-01-15.pdf> ;
+    schema:temporal "jaren 1940"^^xsd:string ;
+    schema:width "400"^^xsd:string .
+
+<https://muurschilderingendatabase.nl/api/items/11637> a o:Item,
+        mural:Muurschildering ;
+    o:created "2025-11-10T11:33:18+00:00"^^xsd:dateTime ;
+    o:id 11637 ;
+    o:is_public true ;
+    o:media <https://muurschilderingendatabase.nl/api/media/11638> ;
+    o:modified "2025-11-10T11:33:50+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
+    o:primary_media <https://muurschilderingendatabase.nl/api/media/11638> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
+    o:title "Kroning van Maria"^^xsd:string ;
+    dcterms:source "ongepubliceerde Minor opdracht 2025 UvA Conservering en Restauratie"^^xsd:string ;
+    sem:hasEarliestBeginTimeStamp "1940"^^xsd:gYear ;
+    sem:hasLatestEndTimeStamp "1949"^^xsd:gYear ;
+    crm:P59i_is_located_on_or_within "interieur"@nl ;
+    ceo:locatieomschrijving "Galerij boven entree westschip"^^xsd:string ;
+    mural:orientatie "zuid"@NL ;
+    schema:about <https://www.wikidata.org/wiki/Q1093370> ;
+    schema:actionProcess "Tegenover deze schildering is de Hemelvaart van Maria te zien. "^^xsd:string ;
+    schema:creator <https://muurschilderingendatabase.nl/api/items/10618> ;
+    schema:description "De galerij boven de entree van het westschip zijn voorzien van muur- en gewelfschilderingen, waaronder de kroning van Maria."^^xsd:string ;
+    schema:genre "verhalend"@NL ;
+    schema:height "250"^^xsd:string ;
+    schema:identifier "RM517244MU1"^^xsd:string ;
+    schema:location <https://muurschilderingendatabase.nl/api/items/11634> ;
+    schema:name "Kroning van Maria"^^xsd:string ;
+    schema:subjectOf <https://tongerlohuys.nl/wp-content/uploads/Jaarboek-71-2011-Artikel-6.pdf>,
+        <https://www.erfgoedroosendaal.nl/htmlpag/glaskunst/roosendaalmariadalklooster_2018-01-15.pdf> ;
+    schema:temporal "jaren 1940"^^xsd:string ;
+    schema:width "400"^^xsd:string .
+
+<https://muurschilderingendatabase.nl/api/items/11640> a o:Item,
+        mural:Muurschildering ;
+    o:created "2025-11-10T13:43:10+00:00"^^xsd:dateTime ;
+    o:id 11640 ;
+    o:is_public true ;
+    o:modified "2025-11-10T14:18:47+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
+    o:title "Muurschildering metrobuis door Caveto"^^xsd:string ;
+    dcterms:source "ongepubliceerde Minor opdracht 2025 UvA Conservering en Restauratie"^^xsd:string ;
+    sem:hasEarliestBeginTimeStamp "1975"^^xsd:gYear ;
+    sem:hasLatestEndTimeStamp "1981"^^xsd:gYear ;
+    crm:P59i_is_located_on_or_within "interieur"@nl ;
+    ceo:locatieomschrijving "in metrobuis"^^xsd:string ;
+    mural:orientatie "zuid"@NL ;
+    schema:creator <https://muurschilderingendatabase.nl/api/items/11644> ;
+    schema:description "De muurschildering is onderdeel van een groter doorlopend kunstwerk dat bestaat uit vijf delen met een totale lengte van  2,5 kilometer; elk deel werd in de jaren 70, kort na de opening van de metrolijnen en toen de sporen beter toegankelijk waren, door een andere kunstenaar geschilderd. Dit specifieke deel van het kunstwerk, geschilderd door Caveto op de betonnen muur van de metrotunnel, bestaat uit lijnen en vormen (abstract/geometrisch). Het is ontworpen om te worden bekeken vanuit een rijdende metro - ‘kinetisch-optische’ kunst - en stelt de kijker in staat om de tijd en afstand die in een bepaald deel van het spoor is afgelegd te begrijpen. Dit werk van Caveto is specifiek voor metrolijn 51."^^xsd:string ;
+    schema:genre "ornamentiek"@NL ;
+    schema:height "100"^^xsd:string ;
+    schema:identifier "BAG0363300000005935MU1"^^xsd:string ;
+    schema:location <https://muurschilderingendatabase.nl/api/items/11639> ;
+    schema:material <https://data.cultureelerfgoed.nl/term/id/cht/a64a233b-91ab-4431-afca-dac58c5b63a7.html> ;
+    schema:name "Muurschildering metrobuis door Caveto"^^xsd:string ;
+    schema:pattern <https://vocab.getty.edu/aat/300009764> ;
+    schema:subjectOf <https://www.collectienederland.nl/page/aggregation/nl-wandkunst-wederopbouw/1472>,
+        <https://www.polderlicht.com/uncategorized/maximaal-minimaal-ondergronds/>,
+        "Frans van Burkom en Yteke Spoelstra, Cultuurhistorische waardestellingen. Kunstwerken op de Oostlijn van de Amsterdamse metro. Deel 4. 2012 (54 pagina’s)"^^xsd:string ;
+    schema:temporal "Eind jaren ’70 - begin jaren ‘80"^^xsd:string ;
+    schema:width "665"^^xsd:string .
+
+<https://muurschilderingendatabase.nl/api/items/11643> a o:Item,
+        mural:Muurschildering ;
+    o:created "2025-11-10T14:15:49+00:00"^^xsd:dateTime ;
+    o:id 11643 ;
+    o:is_public true ;
+    o:modified "2025-11-10T14:15:49+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
+    o:title "Waterloo"^^xsd:string ;
+    dcterms:source "ongepubliceerde Minor opdracht 2025 UvA Conservering en Restauratie"^^xsd:string ;
+    sem:hasEarliestBeginTimeStamp "1980"^^xsd:gYear ;
+    sem:hasLatestEndTimeStamp "1980"^^xsd:gYear ;
+    ceo:locatieomschrijving "Ondergronds, op de perronmuren van metrostation Waterlooplein, langs de sporen"^^xsd:string ;
+    mural:orientatie "noord"@NL,
+        "zuid"@NL ;
+    schema:creator <https://muurschilderingendatabase.nl/api/items/11642> ;
+    schema:description "Typografisch werk getiteld ‘Waterloo’, bestaande uit blauwe en rode letters die de naam van het werk vormen. De letters zijn gemaakt van geometrische vormen (cirkels, rechthoeken, driehoeken, trapeziums) met gerafelde randen."^^xsd:string ;
+    schema:genre "tekens"@NL ;
+    schema:height "250"^^xsd:string ;
+    schema:identifier "BAG0363300000001760"^^xsd:string ;
+    schema:location <https://muurschilderingendatabase.nl/api/items/11641> ;
+    schema:material <https://data.cultureelerfgoed.nl/term/id/cht/bbe4a82c-d0af-42c9-86c2-cca2e9560bac> ;
+    schema:name "Waterloo"^^xsd:string ;
+    schema:subjectOf <https://metrokunst.kunstwacht.nl/kunstwerken/bekijk/21121-waterloo>,
+        <https://www.collectienederland.nl/page/aggregation/nl-wandkunst-wederopbouw/1537> ;
+    schema:width "3300"^^xsd:string .
 
 <https://muurschilderingendatabase.nl/api/items/5070> a o:Item,
         schema:Review ;
@@ -28379,7 +28536,7 @@ Midden boven een wijdingskruis (1672)"""@nl ;
     schema:actionProcess <https://muurschilderingendatabase.nl/api/items/10147> ;
     schema:location <https://muurschilderingendatabase.nl/api/items/10239> .
 
-<https://muurschilderingendatabase.nl/api/resources/10246> o:title "Muurschildering metrobuis"^^xsd:string ;
+<https://muurschilderingendatabase.nl/api/resources/10246> o:title "Muurschildering metrobuis door Woody van Amen"^^xsd:string ;
     schema:location <https://muurschilderingendatabase.nl/api/items/10245> .
 
 <https://muurschilderingendatabase.nl/api/resources/10247> o:title "Huwelijk"^^xsd:string ;
@@ -31665,6 +31822,26 @@ Midden boven een wijdingskruis (1672)"""@nl ;
     schema:creator <https://muurschilderingendatabase.nl/api/items/11627> ;
     schema:location <https://muurschilderingendatabase.nl/api/items/11625> .
 
+<https://muurschilderingendatabase.nl/api/resources/11633> o:title "Golvend landschap"^^xsd:string ;
+    schema:creator <https://muurschilderingendatabase.nl/api/items/11632> ;
+    schema:location <https://muurschilderingendatabase.nl/api/items/11631> .
+
+<https://muurschilderingendatabase.nl/api/resources/11635> o:title "Hemelvaart van Maria"^^xsd:string ;
+    schema:creator <https://muurschilderingendatabase.nl/api/items/10618> ;
+    schema:location <https://muurschilderingendatabase.nl/api/items/11634> .
+
+<https://muurschilderingendatabase.nl/api/resources/11637> o:title "Kroning van Maria"^^xsd:string ;
+    schema:creator <https://muurschilderingendatabase.nl/api/items/10618> ;
+    schema:location <https://muurschilderingendatabase.nl/api/items/11634> .
+
+<https://muurschilderingendatabase.nl/api/resources/11640> o:title "Muurschildering metrobuis door Caveto"^^xsd:string ;
+    schema:creator <https://muurschilderingendatabase.nl/api/items/11644> ;
+    schema:location <https://muurschilderingendatabase.nl/api/items/11639> .
+
+<https://muurschilderingendatabase.nl/api/resources/11643> o:title "Waterloo"^^xsd:string ;
+    schema:creator <https://muurschilderingendatabase.nl/api/items/11642> ;
+    schema:location <https://muurschilderingendatabase.nl/api/items/11641> .
+
 <https://muurschilderingendatabase.nl/api/resources/6548> o:title "Nicolaïkerk"^^xsd:string ;
     schema:identifier <https://muurschilderingendatabase.nl/api/items/6548> ;
     schema:subjectOf <https://muurschilderingendatabase.nl/api/items/10143> .
@@ -34765,6 +34942,10 @@ Midden boven een wijdingskruis (1672)"""^^xsd:string ;
 
 <https://bag.basisregistraties.overheid.nl/bag/id/pand/0363100012186191> o:label "BAG"^^xsd:string .
 
+<https://bagviewer.kadaster.nl/lvbag/bag-viewer/?searchQuery=amsterdam+centraal+metro&objectId=0363300000005935&theme=BRT+Achtergrond&geometry.x=121825.5&geometry.y=487924.5&zoomlevel=14.70567636650724> o:label "BAG"^^xsd:string .
+
+<https://bagviewer.kadaster.nl/lvbag/bag-viewer/?searchQuery=waterlooplein+metro&objectId=0363100012171841&theme=BRT+Achtergrond&geometry.x=121944.6495&geometry.y=486713.833&zoomlevel=15&bijbehorendeAdressen=Pand> o:label "BAG"^^xsd:string .
+
 <https://catalogus.cultureelerfgoed.nl/Details/archive/110000948> o:label "RCE Catalogus: Kleuronderzoek Rijksmonumentale kerken in Groningen en Friesland"^^xsd:string .
 
 <https://catalogus.cultureelerfgoed.nl/Details/fullCatalogue/112559> o:label "RCE catalogus"^^xsd:string .
@@ -34892,7 +35073,7 @@ W. Fritschy"""^^xsd:string .
 
 <https://data.cultureelerfgoed.nl/term/id/cht/159e50bd-376c-41e3-9f30-025bce088ae6> o:label "keperbanden"^^xsd:string .
 
-<https://data.cultureelerfgoed.nl/term/id/cht/bbe4a82c-d0af-42c9-86c2-cca2e9560bac> o:label "baksteen"^^xsd:string .
+<https://data.cultureelerfgoed.nl/term/id/cht/a64a233b-91ab-4431-afca-dac58c5b63a7.html> o:label "beton"^^xsd:string .
 
 <https://data.cultureelerfgoed.nl/term/id/cht/c5e6fdde-4d77-4d72-82f9-df5593b9451a> o:label "Stucco lustro"^^xsd:string .
 
@@ -34945,6 +35126,8 @@ W. Fritschy"""^^xsd:string .
 <https://kennis.cultureelerfgoed.nl/index.php/Monumenten/530737> o:label "Kennisbank RCE"^^xsd:string .
 
 <https://maps.amsterdam.nl/monumenten/> o:label "Gemeente Amsterdam Monumenten"^^xsd:string .
+
+<https://metrokunst.kunstwacht.nl/kunstwerken/bekijk/21121-waterloo> o:label "Metrokunst Amsterdam"^^xsd:string .
 
 <https://monumentenregister.cultureelerfgoed.nl/monumenten/11681> o:label "Monumentenregister"^^xsd:string .
 
@@ -35093,6 +35276,8 @@ W. Fritschy"""^^xsd:string .
 <https://monumentenregister.cultureelerfgoed.nl/monumenten/513658> o:label "Rijksmonumentenregister"^^xsd:string .
 
 <https://monumentenregister.cultureelerfgoed.nl/monumenten/516486> o:label "Rijksmonumentenregister"^^xsd:string .
+
+<https://monumentenregister.cultureelerfgoed.nl/monumenten/517245> o:label "Rijksmonumentenregister"^^xsd:string .
 
 <https://monumentenregister.cultureelerfgoed.nl/monumenten/526739> o:label "Rijksmonumentenregister"^^xsd:string .
 
@@ -36834,6 +37019,46 @@ door kruisribgewelven."""^^xsd:string ;
     o:id 285 ;
     o:item <https://muurschilderingendatabase.nl/api/items/11625> ;
     o:label "Stadsschouwburg, 24, Lucasbolwerk, Nobelstraat E.o., Binnenstad Woongebied, Binnenstad, Utrecht, Nederland, 3512 EJ, Nederland"^^xsd:string .
+
+<https://muurschilderingendatabase.nl/api/mapping_features/286> a o-module-mapping:Feature ;
+    o-module-mapping:geography-coordinates 4.45712e+00,
+        5.153765e+01 ;
+    o-module-mapping:geography-type "Point"^^xsd:string ;
+    o:id 286 ;
+    o:item <https://muurschilderingendatabase.nl/api/items/11634> ;
+    o:label "Vincentiusstraat, Stadsoevers, Roosendaal, Noord-Brabant, Nederland, 4701 LR, Nederland"^^xsd:string .
+
+<https://muurschilderingendatabase.nl/api/mapping_features/287> a o-module-mapping:Feature ;
+    o-module-mapping:geography-coordinates 4.459955e+00,
+        5.153778e+01 ;
+    o-module-mapping:geography-type "Point"^^xsd:string ;
+    o:id 287 ;
+    o:item <https://muurschilderingendatabase.nl/api/items/11634> ;
+    o:label "7, Vincentiusstraat, Stadsoevers, Roosendaal, Noord-Brabant, Nederland, 4701 LM, Nederland"^^xsd:string .
+
+<https://muurschilderingendatabase.nl/api/mapping_features/288> a o-module-mapping:Feature ;
+    o-module-mapping:geography-coordinates 5.869295e+00,
+        5.183068e+01 ;
+    o-module-mapping:geography-type "Point"^^xsd:string ;
+    o:id 288 ;
+    o:item <https://muurschilderingendatabase.nl/api/items/11631> ;
+    o:label "Basisschool Klein Heyendaal, 1, Professor Huijbersstraat, Galgenveld, Nijmegen-Oost, Nijmegen, Gelderland, Nederland, 6524 NP, Nederland"^^xsd:string .
+
+<https://muurschilderingendatabase.nl/api/mapping_features/289> a o-module-mapping:Feature ;
+    o-module-mapping:geography-coordinates 4.900958e+00,
+        5.237743e+01 ;
+    o-module-mapping:geography-type "Point"^^xsd:string ;
+    o:id 289 ;
+    o:item <https://muurschilderingendatabase.nl/api/items/11639> ;
+    o:label "Centraal Station, Prins Hendrikkade, Centrum, Amsterdam, Noord-Holland, Nederland, 1021 AD, Nederland"^^xsd:string .
+
+<https://muurschilderingendatabase.nl/api/mapping_features/290> a o-module-mapping:Feature ;
+    o-module-mapping:geography-coordinates 4.901859e+00,
+        5.23673e+01 ;
+    o-module-mapping:geography-type "Point"^^xsd:string ;
+    o:id 290 ;
+    o:item <https://muurschilderingendatabase.nl/api/items/11641> ;
+    o:label "Metrostation Waterlooplein, Nieuwmarkt/Lastage, Centrum, Amsterdam, Noord-Holland, Nederland, 1011 MS, Nederland"^^xsd:string .
 
 <https://muurschilderingendatabase.nl/api/mapping_features/53> a o-module-mapping:Feature ;
     o-module-mapping:geography-coordinates 6.617986e+00,
@@ -38585,8 +38810,6 @@ door kruisribgewelven."""^^xsd:string ;
 
 <https://muurschilderingendatabase.nl/api/media/9818> o:id 9818 .
 
-<https://muurschilderingendatabase.nl/api/resource_classes/32> o:id 32 .
-
 <https://nl.wikipedia.org/wiki/Albert_Muis> o:label "Albert Muis op Wikipedia"^^xsd:string .
 
 <https://nl.wikipedia.org/wiki/Aula_De_Nieuwe_Ooster> o:label "Wikipedia"^^xsd:string .
@@ -38689,17 +38912,33 @@ door kruisribgewelven."""^^xsd:string ;
 
 <https://rkd.nl/artists/1506> o:label "Woody van Amen"^^xsd:string .
 
+<https://rkd.nl/artists/23507> o:label "RKD Artist"^^xsd:string .
+
+<https://rkd.nl/artists/69550> o:label "RKD artist"^^xsd:string .
+
 <https://rkd.nl/artists/82112> o:label "Jan Murk de Vries"^^xsd:string .
 
 <https://rkd.nl/images/103491> o:label "RKD"^^xsd:string .
 
 <https://vocab.getty.edu/aat/300010205> o:label "rolwerk"^^xsd:string .
 
+<https://vocab.getty.edu/aat/300025119> o:label "grafisch ontwerper"^^xsd:string .
+
+<https://vocab.getty.edu/aat/300164595> o:label "kleurvlakken"^^xsd:string .
+
 <https://vocab.getty.edu/aat/300375563> o:label "bloem"^^xsd:string .
 
 <https://www.collectienederland.nl/page/aggregation/nl-wandkunst-wederopbouw/1372> o:label "Nederlandse Wandkunst uit de Wederopbouwperiode"^^xsd:string .
 
+<https://www.collectienederland.nl/page/aggregation/nl-wandkunst-wederopbouw/1472> o:label "Collectie Nederland"^^xsd:string .
+
+<https://www.collectienederland.nl/page/aggregation/nl-wandkunst-wederopbouw/1537> o:label "Collectie Nederland"^^xsd:string .
+
+<https://www.collectienederland.nl/page/aggregation/nl-wandkunst-wederopbouw/1632> o:label "Collectie Nederland"^^xsd:string .
+
 <https://www.collectienederland.nl/page/aggregation/nl-wandkunst-wederopbouw/4689> o:label "Nederlandse Wandkunst uit de Wederopbouwperiode"^^xsd:string .
+
+<https://www.collectienederland.nl/page/aggregation/nl-wandkunst-wederopbouw/5725> o:label "Collectie Nederland"^^xsd:string .
 
 <https://www.collectienederland.nl/page/aggregation/nl-wandkunst-wederopbouw/622> o:label "Collectie Nederland"^^xsd:string .
 
@@ -38745,6 +38984,8 @@ door kruisribgewelven."""^^xsd:string ;
 
 <https://www.wikidata.org/wiki/Q10797504> o:label "strijd tussen goed en kwaad"^^xsd:string .
 
+<https://www.wikidata.org/wiki/Q1093370> o:label "Kroning van Maria"^^xsd:string .
+
 <https://www.wikidata.org/wiki/Q12518> o:label "Wikidata"^^xsd:string .
 
 <https://www.wikidata.org/wiki/Q1290338> o:label "Uittocht uit Egypte"^^xsd:string .
@@ -38756,6 +38997,8 @@ door kruisribgewelven."""^^xsd:string ;
 <https://www.wikidata.org/wiki/Q152457> o:label "Sint-Rochius"^^xsd:string .
 
 <https://www.wikidata.org/wiki/Q159834> o:label "Sint-Hubertus"^^xsd:string .
+
+<https://www.wikidata.org/wiki/Q162691> o:label "Hemelvaart Maria"^^xsd:string .
 
 <https://www.wikidata.org/wiki/Q17439910> o:label "Wikidata"^^xsd:string .
 
@@ -38968,6 +39211,9 @@ door kruisribgewelven."""^^xsd:string ;
 <https://data.cultureelerfgoed.nl/term/id/cht/2f06513a-a4dd-4001-9a7b-efea781fab2c> o:label "Cultural Heritage Thesaurus"^^xsd:string .
 
 <https://data.cultureelerfgoed.nl/term/id/cht/a64a233b-91ab-4431-afca-dac58c5b63a7> o:label "beton"^^xsd:string .
+
+<https://data.cultureelerfgoed.nl/term/id/cht/bbe4a82c-d0af-42c9-86c2-cca2e9560bac> o:label "baksteen"^^xsd:string,
+        "bakstenen"^^xsd:string .
 
 <https://data.cultureelerfgoed.nl/term/id/cht/dab39a94-f15f-4150-b0f0-1ee93c53181b> o:label "strappo"^^xsd:string .
 
@@ -40168,19 +40414,19 @@ van een figuur met heiligenschijn en een kopje, een Annunciatie?, XIII (bron: Ko
     o:created "2025-06-17T15:55:17+00:00"^^xsd:dateTime ;
     o:id 10245 ;
     o:is_public true ;
-    o:modified "2025-06-27T10:06:28+00:00"^^xsd:dateTime ;
+    o:modified "2025-11-10T13:44:43+00:00"^^xsd:dateTime ;
     o:owner <https://muurschilderingendatabase.nl/api/users/5> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/32> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/14> ;
     o:site <https://muurschilderingendatabase.nl/api/sites/1>,
         <https://muurschilderingendatabase.nl/api/sites/3> ;
-    o:title "Metrobuis 54 Wibautstraat en Weesperplein"^^xsd:string ;
+    o:title "Metrobuis Wibautstraat naar Weesperplein"^^xsd:string ;
     ceo:heeftHuidigeFunctie "Metrobuis"^^xsd:string ;
     ceo:woonplaatsnaam "Amsterdam"^^xsd:string ;
     mural:bouwgeschiedenis "De tunnel dateert uit 1977"^^xsd:string ;
     mural:invoerder "Bernice Crijns"^^xsd:string ;
     schema:identifier "BAG0363100012186191"^^xsd:string ;
-    schema:name "Metrobuis 54 Wibautstraat en Weesperplein"^^xsd:string ;
+    schema:name "Metrobuis Wibautstraat naar Weesperplein"^^xsd:string ;
     schema:sameAs <https://bag.basisregistraties.overheid.nl/bag/id/pand/0363100012186191> .
 
 <https://muurschilderingendatabase.nl/api/items/10255> a o:Item,
@@ -41938,6 +42184,58 @@ Rijksacademie Beeldende Kunst Amsterdam, Académie des Beaux Arts Brussel"""^^xs
     pnv:baseSurname "Escher"^^xsd:string ;
     pnv:givenName "Maurits Cornelis"^^xsd:string ;
     pnv:initials "M.C."^^xsd:string .
+
+<https://muurschilderingendatabase.nl/api/items/11632> a o:Item,
+        schema:Person ;
+    o:created "2025-11-10T10:08:10+00:00"^^xsd:dateTime ;
+    o:id 11632 ;
+    o:is_public true ;
+    o:modified "2025-11-10T10:09:23+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Theo Elfrink"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1923"^^xsd:gYear ;
+    schema:deathDate "2014"^^xsd:gYear ;
+    schema:name "Theo Elfrink"^^xsd:string ;
+    schema:sameAs <https://rkd.nl/artists/25953> ;
+    pnv:baseSurname "Elfrink"^^xsd:string ;
+    pnv:givenName "Theo"^^xsd:string .
+
+<https://muurschilderingendatabase.nl/api/items/11642> a o:Item,
+        schema:Person ;
+    o:created "2025-11-10T14:07:29+00:00"^^xsd:dateTime ;
+    o:id 11642 ;
+    o:is_public true ;
+    o:modified "2025-11-10T14:07:29+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Willem Sandberg"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025119> ;
+    schema:birthDate "1897"^^xsd:gYear ;
+    schema:deathDate "1984"^^xsd:gYear ;
+    schema:name "Willem Sandberg"^^xsd:string ;
+    schema:sameAs <https://rkd.nl/artists/69550> ;
+    pnv:baseSurname "Sandberg"^^xsd:string ;
+    pnv:givenName "Willem"^^xsd:string .
+
+<https://muurschilderingendatabase.nl/api/items/11644> a o:Item,
+        schema:Person ;
+    o:created "2025-11-10T14:18:17+00:00"^^xsd:dateTime ;
+    o:id 11644 ;
+    o:is_public true ;
+    o:modified "2025-11-10T14:18:17+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Caveto"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1923"^^xsd:gYear ;
+    schema:name "Caveto"^^xsd:string ;
+    schema:sameAs <https://rkd.nl/artists/23507> ;
+    pnv:baseSurname "Caveto"^^xsd:string .
 
 <https://muurschilderingendatabase.nl/api/items/8190> a o:Item,
         mural:Muurschildering ;
@@ -51292,6 +51590,10 @@ Rijksacademie Beeldende Kunst Amsterdam, Académie des Beaux Arts Brussel"""^^xs
 
 <https://muurschilderingendatabase.nl/api/media/11630> o:id 11630 .
 
+<https://muurschilderingendatabase.nl/api/media/11636> o:id 11636 .
+
+<https://muurschilderingendatabase.nl/api/media/11638> o:id 11638 .
+
 <https://muurschilderingendatabase.nl/api/media/9156> o:id 9156 .
 
 <https://muurschilderingendatabase.nl/api/media/9157> o:id 9157 .
@@ -51791,6 +52093,8 @@ Rijksacademie Beeldende Kunst Amsterdam, Académie des Beaux Arts Brussel"""^^xs
 <https://muurschilderingendatabase.nl/api/media/9819> o:id 9819 .
 
 <https://muurschilderingendatabase.nl/api/resource_classes/1800> o:id 1800 .
+
+<https://muurschilderingendatabase.nl/api/resource_classes/32> o:id 32 .
 
 <https://muurschilderingendatabase.nl/api/resource_templates/15> o:id 15 .
 
@@ -53393,6 +53697,62 @@ Witteveen."""^^xsd:string ;
     schema:identifier "RM530827"^^xsd:string ;
     schema:name "Stadsschouwburg Utrecht"^^xsd:string ;
     schema:sameAs <https://monumentenregister.cultureelerfgoed.nl/monumenten/530827> .
+
+<https://muurschilderingendatabase.nl/api/items/11631> a o:Item,
+        ceo:Rijksmonument ;
+    o-module-mapping:feature <https://muurschilderingendatabase.nl/api/mapping_features/288> ;
+    o:created "2025-11-10T10:04:27+00:00"^^xsd:dateTime ;
+    o:id 11631 ;
+    o:is_public true ;
+    o:modified "2025-11-10T11:36:31+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/2011> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/14> ;
+    o:title "Basisschool Klein Heyendaal"^^xsd:string ;
+    ceo:heeftHuidigeFunctie "school"^^xsd:string ;
+    ceo:woonplaatsnaam "Nijmegen"^^xsd:string ;
+    mural:bouwgeschiedenis "Bouwjaar  school 1959"^^xsd:string ;
+    schema:description "Abstracte figuratieve muurschildering. "^^xsd:string ;
+    schema:identifier "BAG0268100000024469"^^xsd:string ;
+    schema:name "Basisschool Klein Heyendaal"^^xsd:string .
+
+<https://muurschilderingendatabase.nl/api/items/11639> a o:Item,
+        ceo:Rijksmonument ;
+    o-module-mapping:feature <https://muurschilderingendatabase.nl/api/mapping_features/289> ;
+    o:created "2025-11-10T13:21:29+00:00"^^xsd:dateTime ;
+    o:id 11639 ;
+    o:is_public true ;
+    o:modified "2025-11-10T13:45:51+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/2011> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/14> ;
+    o:title "Metrobuis Centraal Station naar Nieuwmarkt"^^xsd:string ;
+    ceo:heeftHuidigeFunctie "Metrobuis"^^xsd:string ;
+    ceo:woonplaatsnaam "Amsterdam"^^xsd:string ;
+    mural:bouwgeschiedenis "De tunnel dateert uit 1977"^^xsd:string ;
+    schema:description "Onderdeel van een lang abstract werk van 2,5 km van meerdere kunstenaars dat zich vanaf het perron uitstrekt door de metrobuis. Het is een kinetisch optisch kunstwerk, waarvan het visuele effect alleen te ervaren is vanuit een bewegende metro. Het kunstwerk heeft als thema beweging. "^^xsd:string ;
+    schema:identifier "BAG0363300000005935"^^xsd:string ;
+    schema:name "Metrobuis Centraal Station naar Nieuwmarkt"^^xsd:string ;
+    schema:sameAs <https://bagviewer.kadaster.nl/lvbag/bag-viewer/?searchQuery=amsterdam+centraal+metro&objectId=0363300000005935&theme=BRT+Achtergrond&geometry.x=121825.5&geometry.y=487924.5&zoomlevel=14.70567636650724> .
+
+<https://muurschilderingendatabase.nl/api/items/11641> a o:Item,
+        dctype:PhysicalObject ;
+    o-module-mapping:feature <https://muurschilderingendatabase.nl/api/mapping_features/290> ;
+    o:created "2025-11-10T14:01:45+00:00"^^xsd:dateTime ;
+    o:id 11641 ;
+    o:is_public true ;
+    o:modified "2025-11-10T14:03:16+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/32> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/14> ;
+    o:title "Metrostation Waterlooplein"^^xsd:string ;
+    ceo:heeftHuidigeFunctie "Metrostation"^^xsd:string ;
+    ceo:woonplaatsnaam "Amsterdam"^^xsd:string ;
+    mural:bouwgeschiedenis "Dit metrostation is eind jaren ’70 gebouwd."^^xsd:string ;
+    schema:description "Typografisch werk, “waterloo”  geschilderd op de muren van het metrostation Waterlooplein"^^xsd:string ;
+    schema:identifier "BAG0363100012171841"^^xsd:string ;
+    schema:name "Metrostation Waterlooplein"^^xsd:string ;
+    schema:sameAs <https://bagviewer.kadaster.nl/lvbag/bag-viewer/?searchQuery=waterlooplein+metro&objectId=0363100012171841&theme=BRT+Achtergrond&geometry.x=121944.6495&geometry.y=486713.833&zoomlevel=15&bijbehorendeAdressen=Pand> .
 
 <https://muurschilderingendatabase.nl/api/items/6550> a o:Item,
         ceo:Rijksmonument ;
@@ -55519,6 +55879,29 @@ van een uit 1857 stammende voorganger. Het interieur wordt gedekt door netgewelv
     schema:name "De uren (allegorie achturige werkdag)"^^xsd:string ;
     schema:temporal "1911 - 1912"^^xsd:string .
 
+<https://muurschilderingendatabase.nl/api/items/11634> a o:Item,
+        ceo:Rijksmonument ;
+    o-module-mapping:feature <https://muurschilderingendatabase.nl/api/mapping_features/286>,
+        <https://muurschilderingendatabase.nl/api/mapping_features/287> ;
+    o:created "2025-11-10T10:59:51+00:00"^^xsd:dateTime ;
+    o:id 11634 ;
+    o:is_public true ;
+    o:modified "2025-11-10T11:35:28+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/2011> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/14> ;
+    o:title "De kapel van het klooster Mariadal"^^xsd:string ;
+    dcterms:source <https://tongerlohuys.nl/wp-content/uploads/Jaarboek-71-2011-Artikel-6.pdf> ;
+    ceo:heeftHuidigeFunctie "geen"^^xsd:string ;
+    ceo:rijksmonumentnummer "517245"^^xsd:string ;
+    ceo:woonplaatsnaam "Roosendaal"^^xsd:string ;
+    mural:bouwgeschiedenis "Het kloosterMariadal, gebouwd voor de orde van de Franciscanessen Penitenten Recollectinnen naar ontwerp van Jos. Cuypers en Bernard Sturm in 1934, baksteenexpressionisme."^^xsd:string ;
+    mural:typeVerwarming "cv"^^xsd:string ;
+    schema:description "Muurschilderingen en gewelfschilderingen met als thema het leven van Maria en schilderingen die te maken hebben met de eucharistie."^^xsd:string ;
+    schema:identifier "RM517245"^^xsd:string ;
+    schema:name "De kapel van het klooster Mariadal"^^xsd:string ;
+    schema:sameAs <https://monumentenregister.cultureelerfgoed.nl/monumenten/517245> .
+
 <https://muurschilderingendatabase.nl/api/items/9827> a o:Item,
         dcterms:BibliographicResource ;
     o:created "2025-02-18T11:43:21+00:00"^^xsd:dateTime ;
@@ -55912,31 +56295,6 @@ waarschijnlijk met Christus als rechter en daaronder heiligen. (bron: Monumenten
     pnv:baseSurname "Geraedts"^^xsd:string ;
     pnv:givenName "Wijnand"^^xsd:string ;
     pnv:initials "W.A."^^xsd:string .
-
-<https://muurschilderingendatabase.nl/api/items/10618> a o:Item,
-        schema:Person ;
-    o:created "2025-07-10T08:58:18+00:00"^^xsd:dateTime ;
-    o:id 10618 ;
-    o:is_public true ;
-    o:modified "2025-07-14T11:18:04+00:00"^^xsd:dateTime ;
-    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
-    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
-    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
-    o:site <https://muurschilderingendatabase.nl/api/sites/1> ;
-    o:title "Jacques van der Meij"^^xsd:string ;
-    dcterms:source <https://muurschilderingendatabase.nl/api/items/10428> ;
-    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
-    schema:birthDate "1888-01-02"^^xsd:date ;
-    schema:deathDate "1969-01-02"^^xsd:date ;
-    schema:description "Nederlands kunstenaar. Opgeleid door Antoon Derkinderen (in welk verband?) en aan de Rijksacademie in Amsterdam (waar Derkinderen doceerde)."^^xsd:string ;
-    schema:identifier "JacquesJ.H.M. (Jacobus Hendricus Mattheus)Mey o.s.b., van der"^^xsd:string ;
-    schema:name "Jacques van der Meij"^^xsd:string ;
-    schema:sameAs <http://www.wikidata.org/entity/Q14632349>,
-        <https://rkd.nl/artists/54908> ;
-    pnv:baseSurname "Mey o.s.b."^^xsd:string ;
-    pnv:givenName "Jacques"^^xsd:string ;
-    pnv:initials "J.H.M."^^xsd:string ;
-    pnv:surnamePrefix "van der"^^xsd:string .
 
 <https://muurschilderingendatabase.nl/api/items/10770> a o:Item,
         mural:Muurschildering ;
@@ -56613,6 +56971,31 @@ Geïllustreerde beschrijving"""^^xsd:string ;
     schema:identifier "^^Dunselman, Gebr."^^xsd:string ;
     schema:name "Dunselman, Gebr."^^xsd:string .
 
+<https://muurschilderingendatabase.nl/api/items/10618> a o:Item,
+        schema:Person ;
+    o:created "2025-07-10T08:58:18+00:00"^^xsd:dateTime ;
+    o:id 10618 ;
+    o:is_public true ;
+    o:modified "2025-07-14T11:18:04+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1> ;
+    o:title "Jacques van der Meij"^^xsd:string ;
+    dcterms:source <https://muurschilderingendatabase.nl/api/items/10428> ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1888-01-02"^^xsd:date ;
+    schema:deathDate "1969-01-02"^^xsd:date ;
+    schema:description "Nederlands kunstenaar. Opgeleid door Antoon Derkinderen (in welk verband?) en aan de Rijksacademie in Amsterdam (waar Derkinderen doceerde)."^^xsd:string ;
+    schema:identifier "JacquesJ.H.M. (Jacobus Hendricus Mattheus)Mey o.s.b., van der"^^xsd:string ;
+    schema:name "Jacques van der Meij"^^xsd:string ;
+    schema:sameAs <http://www.wikidata.org/entity/Q14632349>,
+        <https://rkd.nl/artists/54908> ;
+    pnv:baseSurname "Mey o.s.b."^^xsd:string ;
+    pnv:givenName "Jacques"^^xsd:string ;
+    pnv:initials "J.H.M."^^xsd:string ;
+    pnv:surnamePrefix "van der"^^xsd:string .
+
 <https://muurschilderingendatabase.nl/api/items/10631> a o:Item,
         schema:Person ;
     o:created "2025-07-10T08:58:18+00:00"^^xsd:dateTime ;
@@ -56961,8 +57344,6 @@ Talloze restanten van plantenmotieven zijn nog te zien  op verschillende plaatse
         <https://www.reliwiki.nl/index.php?title=Stedum,_Hoofdstraat_1_-_Bartholomeuskerk> ;
     schema:subjectOf <https://muurschilderingendatabase.nl/api/items/10143> .
 
-<https://vocab.getty.edu/aat/300009764> o:label "geometrisch motief"^^xsd:string .
-
 <https://muurschilderingendatabase.nl/api/items/10573> a o:Item,
         schema:Person ;
     o:created "2025-07-10T08:58:17+00:00"^^xsd:dateTime ;
@@ -57079,6 +57460,8 @@ Talloze restanten van plantenmotieven zijn nog te zien  op verschillende plaatse
     schema:publisher "Stichting oude Groninger kerken"^^xsd:string ;
     schema:sameAs <https://catalogus.cultureelerfgoed.nl/Details/fullCatalogue/200026800>,
         <https://groningerkerken.auralibrary.nl/AJdetailsx.aspx?DOCUMENTNR=001744> .
+
+<https://vocab.getty.edu/aat/300009764> o:label "geometrisch motief"^^xsd:string .
 
 <https://data.cultureelerfgoed.nl/term/id/cht/dccdcff5-cfa4-48bb-b563-e2ffa757f842> o:label "verzanden (pleister)"^^xsd:string .
 
@@ -58819,11 +59202,9 @@ Geïllustreerde beschrijving"""^^xsd:string ;
         <https://muurschilderingendatabase.nl/api/items/9834>,
         <https://muurschilderingendatabase.nl/api/items/9838> .
 
-<https://muurschilderingendatabase.nl/api/resource_classes/1688> o:id 1688 .
-
 <https://vocab.getty.edu/aat/300025103> o:label "kunstenaar"^^xsd:string .
 
-<https://muurschilderingendatabase.nl/api/resource_templates/21> o:id 21 .
+<https://muurschilderingendatabase.nl/api/resource_classes/1688> o:id 1688 .
 
 <https://muurschilderingendatabase.nl/api/items/6593> a o:Item,
         ceo:Rijksmonument ;
@@ -58854,6 +59235,8 @@ Geïllustreerde beschrijving"""^^xsd:string ;
         "onthechting"^^xsd:string,
         "onthechting (pleister)"^^xsd:string,
         "vocht"^^xsd:string .
+
+<https://muurschilderingendatabase.nl/api/resource_templates/21> o:id 21 .
 
 <https://muurschilderingendatabase.nl/api/items/6567> a o:Item,
         ceo:Rijksmonument ;
@@ -58916,8 +59299,6 @@ Niet geïdentificeerde wapenschilden zijn niet afzonderlijk als muurschildering 
         "scheuren (onbetekenend)"^^xsd:string,
         "scheurvorming"^^xsd:string .
 
-<https://muurschilderingendatabase.nl/api/users/4> o:id 4 .
-
 <https://data.cultureelerfgoed.nl/term/id/cht/443e133a-7c93-4c8f-af20-19ff4b3b6be0> o:label "temperaverf"^^xsd:string .
 
 <https://muurschilderingendatabase.nl/api/items/6570> a o:Item,
@@ -58946,6 +59327,8 @@ Niet geïdentificeerde wapenschilden zijn niet afzonderlijk als muurschildering 
         <https://monumentenregister.cultureelerfgoed.nl/monumenten/20192> .
 
 <https://data.cultureelerfgoed.nl/term/id/cht/7c556686-e7d7-4681-81f2-b2a2b73af01a> o:label "kloostermop"^^xsd:string .
+
+<https://muurschilderingendatabase.nl/api/users/4> o:id 4 .
 
 <https://data.cultureelerfgoed.nl/term/id/cht/c7c593d5-2b94-4413-be91-0d98984458af> o:label "secco"^^xsd:string .
 
