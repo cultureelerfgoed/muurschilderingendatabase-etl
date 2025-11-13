@@ -2,7 +2,7 @@
 
 import os
 import logging
-import requets
+import requests
 from rdflib import Graph, URIRef
 from rdflib.namespace import SDO, DCTERMS, OWL
 from rdflib.plugins.parsers.notation3 import BadSyntax
