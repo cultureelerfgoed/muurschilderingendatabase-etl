@@ -2,7 +2,7 @@
 
 import os
 import logging
-from rdflib import Graph
+from rdflib import Graph, URIRef
 from rdflib.namespace import SDO, DCTERMS, OWL
 from rdflib.plugins.parsers.notation3 import BadSyntax
 
@@ -47,6 +47,21 @@ try:
     graph = Graph(identifier=GRAPH_ID)
     graph.parse(source=TARGET_FILEPATH, format=OUTPUT_FILE_FORMAT)
     old_g_length = len(graph)
+
+    # Apply enrichments to graph
+    for subj, pred, obj in graph:
+
+        # Enrich rijksmonumenten via URI
+        with open("data/enrichments.ttl", "w", encoding=ENCODING) as enrichmentsfile:
+            if 'Rijksmonument' in obj and graph[subj : DCTERMS.identifier] is not None:
+                for item in graph[subj : DCTERMS.identifier]:
+                    if not isinstance(item, URIRef) and "RM" in item[0:2]:
+                        RM_URI=f"https://api.linkeddata.cultureelerfgoed.nl/queries/rce/rest-api-rijksmonumenten/run?rijksmonumentnummer={item[2:]}"
+                        data = requests.get(RM_URI, timeout=200)
+                        logger.info("Adding enrichment for Rijksmonumentnummer: %s", str(item[2:]))                
+                        enrichmentsfile.write(data.text)                        
+        
+        graph.parse(source="data/enrichments.ttl")
 
     # Apply mapping to graph
     for subj, pred, obj in graph:
