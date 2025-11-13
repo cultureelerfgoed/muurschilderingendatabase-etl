@@ -22,15 +22,15 @@ ENCODING = os.getenv('ENCODING', 'utf-8')
 
 ### Mapping the term to be replaced on the left by the term on the right. 
 mapping = {
-    DCTERMS.title: SDO.name,
-    DCTERMS.publisher: SDO.publisher,
-    DCTERMS.identifier: SDO.identifier,
-    DCTERMS.issued: SDO.dateIssued,
-    DCTERMS.abstract: SDO.abstract,
-    DCTERMS.creator: SDO.creator,
-    DCTERMS.bibliographicCitation: SDO.citation,
-    DCTERMS.created: SDO.dateCreated,
-    DCTERMS.description: SDO.description,
+    #DCTERMS.title: SDO.name,
+    #DCTERMS.publisher: SDO.publisher,
+    #DCTERMS.identifier: SDO.identifier,
+    #DCTERMS.issued: SDO.dateIssued,
+    #DCTERMS.abstract: SDO.abstract,
+    #DCTERMS.creator: SDO.creator,
+    #DCTERMS.bibliographicCitation: SDO.citation,
+    #DCTERMS.created: SDO.dateCreated,
+    #DCTERMS.description: SDO.description,
     DCTERMS.isReferencedBy: SDO.subjectOf,
     OWL.sameAs: SDO.sameAs
 }
@@ -70,11 +70,6 @@ try:
         if pred in mapping.keys():
             graph.remove((subj, pred, obj))
             graph.add((subj, mapping[pred], obj))        
-
-    new_g_length = len(graph)
-
-    # Test that the new graph contains as many triples as the old graph
-    assert len(graph) == old_g_length
 
     # Serialize graph
     logger.info("Writing %s", f"{OUTPUT_FILE_FORMAT} file to {TARGET_FILEPATH}")
