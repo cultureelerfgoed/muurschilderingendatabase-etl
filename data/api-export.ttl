@@ -14615,6 +14615,8 @@ De vier muren in de trouwzaal vertelt een liefdesverhaal en over de samenkomst v
     o:primary_media <https://muurschilderingendatabase.nl/api/media/11580> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1>,
+        <https://muurschilderingendatabase.nl/api/sites/5> ;
     o:title "Feniks met zon of ster"^^xsd:string ;
     dcterms:creator <https://muurschilderingendatabase.nl/api/items/11620> ;
     dcterms:description """Feniks met ster omringd door fel blauw. 
@@ -14651,6 +14653,8 @@ De feniks is bedoeld als een symbolische weergave van Christus. Op een zwarte ac
     o:primary_media <https://muurschilderingendatabase.nl/api/media/11584> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1>,
+        <https://muurschilderingendatabase.nl/api/sites/5> ;
     o:title "Keith Haring op de Centrale Markthallen te Amsterdam"^^xsd:string ;
     dcterms:creator <https://muurschilderingendatabase.nl/api/items/11621> ;
     dcterms:description "Een humanoïde figuur rijdend op de staart van een tweevoetig dier. Verder bewegingslijnen en lijnen bij de bek van het dier. Alles is geschilderd in een witte omlijning. Het is Harings op een na grootste bewaard gebleven muurschildering in de openbare ruimte in Europa."^^xsd:string ;
@@ -14685,6 +14689,8 @@ De feniks is bedoeld als een symbolische weergave van Christus. Op een zwarte ac
     o:primary_media <https://muurschilderingendatabase.nl/api/media/11590> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1>,
+        <https://muurschilderingendatabase.nl/api/sites/5> ;
     o:title "Pleureuses"^^xsd:string ;
     dcterms:creator <https://muurschilderingendatabase.nl/api/items/11622> ;
     dcterms:description """In de hal zijn drie schilderingen van rouwende personen aangebracht.
@@ -14722,6 +14728,8 @@ middenstuk: geabstraheerde interiers met deuren, gewaad figuur bedenkt gezicht m
     o:primary_media <https://muurschilderingendatabase.nl/api/media/11592> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1>,
+        <https://muurschilderingendatabase.nl/api/sites/5> ;
     o:title "Arcadia"^^xsd:string ;
     dcterms:creator <https://muurschilderingendatabase.nl/api/items/11622> ;
     dcterms:description "Monumentale wandschildering van palmen en bomen en een pauw. Samenhang met de architectuur is opvallend.  De samenhang met de architectuur van Leupen is opvallend: de waaiervorm van de aula wordt door de schildering geaccentueerd en de wandschildering krijgt door de lichtinval van de hoge ruitvormige ramen extra nadruk. Op de site van de nieuwe Ooster zijn filmbeelden te zien van Albert Muis tijdens de vervaardiging van de schildering."^^xsd:string ;
@@ -14751,6 +14759,8 @@ middenstuk: geabstraheerde interiers met deuren, gewaad figuur bedenkt gezicht m
     o:primary_media <https://muurschilderingendatabase.nl/api/media/11598> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1>,
+        <https://muurschilderingendatabase.nl/api/sites/5> ;
     o:title "Kunsten en wetenschappen"^^xsd:string ;
     dcterms:creator <https://muurschilderingendatabase.nl/api/items/11623> ;
     dcterms:description "Muurschildering voorstellende de beeldende kunst en architectuur, de exacte wetenschappen, de filosofie en theologie en de uitvoerende kunsten. "^^xsd:string ;
@@ -14779,6 +14789,8 @@ middenstuk: geabstraheerde interiers met deuren, gewaad figuur bedenkt gezicht m
     o:primary_media <https://muurschilderingendatabase.nl/api/media/11603> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1>,
+        <https://muurschilderingendatabase.nl/api/sites/5> ;
     o:title "Vogels en natuur"^^xsd:string ;
     dcterms:creator <https://muurschilderingendatabase.nl/api/items/11624> ;
     dcterms:description " Een gestileerde, geometrische weergave van vogels en natuur, geschilderd met een palet van beige, crème, lichtblauw, groen en paars. De vogels lijken op reigers of zilverreigers en zijn afgebeeld in een kubistische of art deco-geïnspireerde stijl met hoekige vormen. De achtergrond is een natuurlijke omgeving met bomen die geabstraheerd zijn tot geometrische vormen. Het gebouw van de GGD dateert uit 1924 en in hetzelfde jaar werd de muurschildering uitgevoerd door Dobbenburgh."^^xsd:string ;
@@ -14816,6 +14828,8 @@ middenstuk: geabstraheerde interiers met deuren, gewaad figuur bedenkt gezicht m
     o:primary_media <https://muurschilderingendatabase.nl/api/media/11615> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1>,
+        <https://muurschilderingendatabase.nl/api/sites/5> ;
     o:title "Vragende kinderen"^^xsd:string ;
     dcterms:creator <https://muurschilderingendatabase.nl/api/items/11359> ;
     dcterms:description """Karel Appel krijgt aan het begin van 1949 de opdracht een muurschildering te maken in de kantine van het Prinsenhof, waar destijds het Stadhuis van Amsterdam gevestigd is. De compositie bestaat uit matte vlakken en lijnen die hongerige kinderen moeten voorstellen in een versimpelde stijl. 
@@ -14851,6 +14865,8 @@ Nog hetzelfde jaar wordt het werk afgedekt met een voorzetwand. Pas als het stad
     o:primary_media <https://muurschilderingendatabase.nl/api/media/11630> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1>,
+        <https://muurschilderingendatabase.nl/api/sites/5> ;
     o:title "Zonder titel"^^xsd:string ;
     dcterms:creator <https://muurschilderingendatabase.nl/api/items/11627> ;
     dcterms:description """Een school witte en zwarte vissen zwemmen in tegengestelde richting in het voor Escher typische optische spel. De vissen verdwijnen aan de zijkanten in golvende zwarte lijnen. Het lijkt een soort houtdruk.
@@ -14883,6 +14899,8 @@ Het werk is herplaatst hier in 1995 en komt oorspronkelijk uit de wachtruimte va
     o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1>,
+        <https://muurschilderingendatabase.nl/api/sites/5> ;
     o:title "Golvend landschap"^^xsd:string ;
     dcterms:creator <https://muurschilderingendatabase.nl/api/items/11632> ;
     dcterms:description "Abstract figuratieve muurschildering, met huizen en verschillende natuurlijke elementen zoals meren en bomen. "^^xsd:string ;
@@ -14918,6 +14936,8 @@ Het werk is herplaatst hier in 1995 en komt oorspronkelijk uit de wachtruimte va
     o:primary_media <https://muurschilderingendatabase.nl/api/media/11636> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1>,
+        <https://muurschilderingendatabase.nl/api/sites/5> ;
     o:title "Hemelvaart van Maria"^^xsd:string ;
     dcterms:creator <https://muurschilderingendatabase.nl/api/items/10618> ;
     dcterms:description "De galerij boven de entree van het westschip zijn voorzien van muur- en gewelfschilderingen, waaronder de hemelvaart van Maria."^^xsd:string ;
@@ -14951,6 +14971,8 @@ Het werk is herplaatst hier in 1995 en komt oorspronkelijk uit de wachtruimte va
     o:primary_media <https://muurschilderingendatabase.nl/api/media/11638> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1>,
+        <https://muurschilderingendatabase.nl/api/sites/5> ;
     o:title "Kroning van Maria"^^xsd:string ;
     dcterms:creator <https://muurschilderingendatabase.nl/api/items/10618> ;
     dcterms:description "De galerij boven de entree van het westschip zijn voorzien van muur- en gewelfschilderingen, waaronder de kroning van Maria."^^xsd:string ;
@@ -14982,6 +15004,8 @@ Het werk is herplaatst hier in 1995 en komt oorspronkelijk uit de wachtruimte va
     o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1>,
+        <https://muurschilderingendatabase.nl/api/sites/5> ;
     o:title "Muurschildering metrobuis door Caveto"^^xsd:string ;
     dcterms:creator <https://muurschilderingendatabase.nl/api/items/11644> ;
     dcterms:description "De muurschildering is onderdeel van een groter doorlopend kunstwerk dat bestaat uit vijf delen met een totale lengte van  2,5 kilometer; elk deel werd in de jaren 70, kort na de opening van de metrolijnen en toen de sporen beter toegankelijk waren, door een andere kunstenaar geschilderd. Dit specifieke deel van het kunstwerk, geschilderd door Caveto op de betonnen muur van de metrotunnel, bestaat uit lijnen en vormen (abstract/geometrisch). Het is ontworpen om te worden bekeken vanuit een rijdende metro - ‘kinetisch-optische’ kunst - en stelt de kijker in staat om de tijd en afstand die in een bepaald deel van het spoor is afgelegd te begrijpen. Dit werk van Caveto is specifiek voor metrolijn 51."^^xsd:string ;
@@ -15014,6 +15038,8 @@ Het werk is herplaatst hier in 1995 en komt oorspronkelijk uit de wachtruimte va
     o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1>,
+        <https://muurschilderingendatabase.nl/api/sites/5> ;
     o:title "Waterloo"^^xsd:string ;
     dcterms:creator <https://muurschilderingendatabase.nl/api/items/11642> ;
     dcterms:description "Typografisch werk getiteld ‘Waterloo’, bestaande uit blauwe en rode letters die de naam van het werk vormen. De letters zijn gemaakt van geometrische vormen (cirkels, rechthoeken, driehoeken, trapeziums) met gerafelde randen."^^xsd:string ;
@@ -15038,10 +15064,14 @@ Het werk is herplaatst hier in 1995 en komt oorspronkelijk uit de wachtruimte va
     o:created "2025-11-12T16:46:31+00:00"^^xsd:dateTime ;
     o:id 11649 ;
     o:is_public true ;
-    o:modified "2025-11-13T10:46:23+00:00"^^xsd:dateTime ;
+    o:media <https://muurschilderingendatabase.nl/api/media/11678>,
+        <https://muurschilderingendatabase.nl/api/media/11679> ;
+    o:modified "2025-11-14T16:28:57+00:00"^^xsd:dateTime ;
     o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
+    o:primary_media <https://muurschilderingendatabase.nl/api/media/11678> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1> ;
     o:title "Bunker"^^xsd:string ;
     dcterms:description "Op een bakstenen drager  in de koepelgalerij is een Atlantikwallbunker geschilderd in een landschap."^^xsd:string ;
     dcterms:identifier "BAG0453100000032519MU1"^^xsd:string ;
@@ -15065,10 +15095,14 @@ Het werk is herplaatst hier in 1995 en komt oorspronkelijk uit de wachtruimte va
     o:created "2025-11-12T16:54:14+00:00"^^xsd:dateTime ;
     o:id 11650 ;
     o:is_public true ;
-    o:modified "2025-11-13T10:47:15+00:00"^^xsd:dateTime ;
+    o:media <https://muurschilderingendatabase.nl/api/media/11688>,
+        <https://muurschilderingendatabase.nl/api/media/11689> ;
+    o:modified "2025-11-15T14:00:57+00:00"^^xsd:dateTime ;
     o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
+    o:primary_media <https://muurschilderingendatabase.nl/api/media/11688> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1> ;
     o:title "Rivierlandschap met twee boten en een huisje"^^xsd:string ;
     dcterms:description "Op een niet oorspronkelijke gemetselde muur in de koepelzaal is een rivierlandschap geschilderd, met op de oever twee boten en op de achtergrond een huis met bomen."^^xsd:string ;
     dcterms:identifier "BAG0453100000032519MU2"^^xsd:string ;
@@ -15092,10 +15126,13 @@ Het werk is herplaatst hier in 1995 en komt oorspronkelijk uit de wachtruimte va
     o:created "2025-11-12T17:02:15+00:00"^^xsd:dateTime ;
     o:id 11651 ;
     o:is_public true ;
-    o:modified "2025-11-13T10:47:53+00:00"^^xsd:dateTime ;
+    o:media <https://muurschilderingendatabase.nl/api/media/11690> ;
+    o:modified "2025-11-15T14:04:04+00:00"^^xsd:dateTime ;
     o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
+    o:primary_media <https://muurschilderingendatabase.nl/api/media/11690> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1> ;
     o:title "Stad aan het water"^^xsd:string ;
     dcterms:description "Op een bakstenen drager in de koepelzaal is een stad geschilderd gelegen aan het water. De stad is mogelijk Carcassonne. Op de voorgrond is een historisch gekleed figuur met een handkanon geschilderd."^^xsd:string ;
     dcterms:identifier "BAG0453100000032519MU3"^^xsd:string ;
@@ -15119,10 +15156,13 @@ Het werk is herplaatst hier in 1995 en komt oorspronkelijk uit de wachtruimte va
     o:created "2025-11-12T17:20:55+00:00"^^xsd:dateTime ;
     o:id 11652 ;
     o:is_public true ;
-    o:modified "2025-11-13T10:48:48+00:00"^^xsd:dateTime ;
+    o:media <https://muurschilderingendatabase.nl/api/media/11687> ;
+    o:modified "2025-11-15T13:56:47+00:00"^^xsd:dateTime ;
     o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
+    o:primary_media <https://muurschilderingendatabase.nl/api/media/11687> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1> ;
     o:title "Levensboom met wapens"^^xsd:string ;
     dcterms:description "Op een later toegevoegde muur tussen twee dragers is een levensboom geschilderd met wapenschilden. De boom is een eik, te zien aan de bladeren. In het midden van de schildering zijn twee banderollen geschilderd met de spreuk in een dialect: Wo es Isen gibt und Eiken wasst, do sind ok Lue du passt."^^xsd:string ;
     dcterms:identifier "BAG0453100000032519MU4"^^xsd:string ;
@@ -15148,10 +15188,13 @@ Het werk is herplaatst hier in 1995 en komt oorspronkelijk uit de wachtruimte va
     o:created "2025-11-12T17:31:11+00:00"^^xsd:dateTime ;
     o:id 11653 ;
     o:is_public true ;
-    o:modified "2025-11-13T10:49:41+00:00"^^xsd:dateTime ;
+    o:media <https://muurschilderingendatabase.nl/api/media/11686> ;
+    o:modified "2025-11-15T13:53:44+00:00"^^xsd:dateTime ;
     o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
+    o:primary_media <https://muurschilderingendatabase.nl/api/media/11686> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1> ;
     o:title "Galjoen, soldaat en kanon"^^xsd:string ;
     dcterms:description "Op een drager in de koepelgalerij is een zee geschilderd met een historisch zeilschip, een galjoen. Aan de linkerkant onder is in een duinlandschap een soldaat geschilderd die een kanon bedient. De kleding en de helm van de soldaat is niet goed herleidbaar, om zijn middel hangt een sabel."^^xsd:string ;
     dcterms:identifier "BAG0453100000032519MU5"^^xsd:string ;
@@ -15174,10 +15217,17 @@ Het werk is herplaatst hier in 1995 en komt oorspronkelijk uit de wachtruimte va
     o:created "2025-11-12T17:43:20+00:00"^^xsd:dateTime ;
     o:id 11654 ;
     o:is_public true ;
-    o:modified "2025-11-13T10:50:26+00:00"^^xsd:dateTime ;
+    o:media <https://muurschilderingendatabase.nl/api/media/11673>,
+        <https://muurschilderingendatabase.nl/api/media/11674>,
+        <https://muurschilderingendatabase.nl/api/media/11675>,
+        <https://muurschilderingendatabase.nl/api/media/11676>,
+        <https://muurschilderingendatabase.nl/api/media/11677> ;
+    o:modified "2025-11-14T16:21:56+00:00"^^xsd:dateTime ;
     o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
+    o:primary_media <https://muurschilderingendatabase.nl/api/media/11676> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1> ;
     o:title "Alpenlandschap met stadswapens"^^xsd:string ;
     dcterms:description "Op de zuidmuur van de koepelgalerij of filmzaal is een berglandschap geschilderd. Nog te herleiden zijn München, Wien en Oberdonau."^^xsd:string ;
     dcterms:identifier "BAG0453100000032519MU6"^^xsd:string ;
@@ -15203,10 +15253,14 @@ Het werk is herplaatst hier in 1995 en komt oorspronkelijk uit de wachtruimte va
     o:created "2025-11-12T18:03:44+00:00"^^xsd:dateTime ;
     o:id 11655 ;
     o:is_public true ;
-    o:modified "2025-11-13T10:51:31+00:00"^^xsd:dateTime ;
+    o:media <https://muurschilderingendatabase.nl/api/media/11694>,
+        <https://muurschilderingendatabase.nl/api/media/11695> ;
+    o:modified "2025-11-15T14:19:44+00:00"^^xsd:dateTime ;
     o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
+    o:primary_media <https://muurschilderingendatabase.nl/api/media/11694> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1> ;
     o:title "Twee figuren in historische kledij"^^xsd:string ;
     dcterms:description "Ten voeten uit geschilderd twee figuren in historische kleding. De linkerfiguur heeft een blauwe pofbroek aan en een geel wambuis en is frontaal afgebeeld, met een wapen met een lange steel in de hand en  een sabel aan zijn middel. De andere figuur is van de zijkant te zien en heeft een hoed met brede rand op en draagt wijde kleurrijke kleding met om het middel een zwaard."^^xsd:string ;
     dcterms:identifier "BAG0453100000032519MU7"^^xsd:string ;
@@ -15234,6 +15288,7 @@ Het werk is herplaatst hier in 1995 en komt oorspronkelijk uit de wachtruimte va
     o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1> ;
     o:title "Restanten"^^xsd:string ;
     dcterms:description "Restanten van een schildering op een muur tussen de vensters. "^^xsd:string ;
     dcterms:identifier "BAG0453100000032519MU8"^^xsd:string ;
@@ -15255,10 +15310,13 @@ Het werk is herplaatst hier in 1995 en komt oorspronkelijk uit de wachtruimte va
     o:created "2025-11-12T18:23:29+00:00"^^xsd:dateTime ;
     o:id 11657 ;
     o:is_public true ;
-    o:modified "2025-11-13T10:53:13+00:00"^^xsd:dateTime ;
+    o:media <https://muurschilderingendatabase.nl/api/media/11685> ;
+    o:modified "2025-11-15T13:51:34+00:00"^^xsd:dateTime ;
     o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
+    o:primary_media <https://muurschilderingendatabase.nl/api/media/11685> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1> ;
     o:title "Een tafereel aan het Oostfront"^^xsd:string ;
     dcterms:description "Op de muur tussen twee vensters is een oorlogsgebied geschilderd. In een landschap met beschadigde bomen staan twee huizen in brand. In de verte is een Russische tanker te zien en achter de muur van een van de huizen staat een Duitse soldaat met een zogenaamde Panzerfaust, een stuk antitank geschut. Op de voorgrond komt een hoofd met helm tevoorschijn van een Duitse soldaat die uitsteekt uit een schuttersput, een tobruk genaamd. Links op de voorgrond lijkt een bruine balk geschilderd, mogelijk om aan te geven dat daar een greppel is."^^xsd:string ;
     dcterms:identifier "BAG0453100000032519MU9"^^xsd:string ;
@@ -15282,14 +15340,16 @@ Het werk is herplaatst hier in 1995 en komt oorspronkelijk uit de wachtruimte va
     o:created "2025-11-12T18:31:09+00:00"^^xsd:dateTime ;
     o:id 11658 ;
     o:is_public true ;
-    o:media <https://muurschilderingendatabase.nl/api/media/11669> ;
-    o:modified "2025-11-13T10:54:17+00:00"^^xsd:dateTime ;
+    o:media <https://muurschilderingendatabase.nl/api/media/11669>,
+        <https://muurschilderingendatabase.nl/api/media/11680> ;
+    o:modified "2025-11-14T16:34:35+00:00"^^xsd:dateTime ;
     o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
-    o:primary_media <https://muurschilderingendatabase.nl/api/media/11669> ;
+    o:primary_media <https://muurschilderingendatabase.nl/api/media/11680> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1> ;
     o:title "Duitse spreuk"^^xsd:string ;
-    dcterms:description "Op de witte muur van de hoofdingang van het fort is met zwarte letters de tekst geschilderd: Mit Frieden im Herzen hat jeder die stärksten Waffen ter Welt. De onderrand van de ruimte is zwart geschilderd, de nissen met een hoek voor de handen naar de zijruimtes, waaronder de keuken, zijn ook zwart."^^xsd:string ;
+    dcterms:description "Op de witte muur van de hoofdingang van het fort is met zwarte letters de tekst geschilderd: Mit Frieden im Herzen hat Jeder die stärksten Waffe der Welt. De onderrand van de ruimte is zwart geschilderd, de nissen met een hoek voor de handen naar de zijruimtes, waaronder de keuken, zijn ook zwart."^^xsd:string ;
     dcterms:identifier "BAG0453100000032519MU10"^^xsd:string ;
     dcterms:title "Duitse spreuk"^^xsd:string ;
     sem:hasEarliestBeginTimeStamp "1940"^^xsd:gYear ;
@@ -15309,10 +15369,13 @@ Het werk is herplaatst hier in 1995 en komt oorspronkelijk uit de wachtruimte va
     o:created "2025-11-12T18:41:53+00:00"^^xsd:dateTime ;
     o:id 11659 ;
     o:is_public true ;
-    o:modified "2025-11-13T11:01:25+00:00"^^xsd:dateTime ;
+    o:media <https://muurschilderingendatabase.nl/api/media/11684> ;
+    o:modified "2025-11-15T13:49:49+00:00"^^xsd:dateTime ;
     o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
+    o:primary_media <https://muurschilderingendatabase.nl/api/media/11684> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1> ;
     o:title "Duitse tekst"^^xsd:string ;
     dcterms:description "Op de noordmuur van het portaal met de kamer van de commandant (De Kapel genaamd) is een Duitse tekst geschilderd: Wir sind nicht geboren um Spass zu haben, sondern um unsere Pflicht zu tun."^^xsd:string ;
     dcterms:identifier "BAG0453100000032519MU11"^^xsd:string ;
@@ -15334,10 +15397,13 @@ Het werk is herplaatst hier in 1995 en komt oorspronkelijk uit de wachtruimte va
     o:created "2025-11-12T18:49:44+00:00"^^xsd:dateTime ;
     o:id 11660 ;
     o:is_public true ;
-    o:modified "2025-11-13T11:04:05+00:00"^^xsd:dateTime ;
+    o:media <https://muurschilderingendatabase.nl/api/media/11693> ;
+    o:modified "2025-11-15T14:17:04+00:00"^^xsd:dateTime ;
     o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
+    o:primary_media <https://muurschilderingendatabase.nl/api/media/11693> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1> ;
     o:title "Tekst op houten deur"^^xsd:string ;
     dcterms:description "Geen muurschildering maar vermeldenswaardig. Aan de binnenkant van een slaapvertrek van de officieren (oude plattegrond nummer 94) (nu de keuken) is op de houten deur bovenaan een tekst  en een vogel geschilderd: Ein jeder Mensch hat einen fogel (die is getekend) und auch ich."^^xsd:string ;
     dcterms:identifier "BAG0453100000032519MU12"^^xsd:string ;
@@ -15356,10 +15422,14 @@ Het werk is herplaatst hier in 1995 en komt oorspronkelijk uit de wachtruimte va
     o:created "2025-11-12T19:03:00+00:00"^^xsd:dateTime ;
     o:id 11661 ;
     o:is_public true ;
-    o:modified "2025-11-13T11:08:16+00:00"^^xsd:dateTime ;
+    o:media <https://muurschilderingendatabase.nl/api/media/11691>,
+        <https://muurschilderingendatabase.nl/api/media/11692> ;
+    o:modified "2025-11-15T14:14:50+00:00"^^xsd:dateTime ;
     o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
+    o:primary_media <https://muurschilderingendatabase.nl/api/media/11691> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1> ;
     o:title "Tekst om kanonnen af te stellen"^^xsd:string ;
     dcterms:description "Aan de westkant op de muur van de Pantserbatterij zijn instructies geschilderd om de kanonnen af te stellen."^^xsd:string ;
     dcterms:identifier "BAG0453100000032519MU13"^^xsd:string ;
@@ -15381,12 +15451,16 @@ Het werk is herplaatst hier in 1995 en komt oorspronkelijk uit de wachtruimte va
     o:created "2025-11-12T19:19:04+00:00"^^xsd:dateTime ;
     o:id 11662 ;
     o:is_public true ;
-    o:media <https://muurschilderingendatabase.nl/api/media/11667> ;
-    o:modified "2025-11-13T11:13:28+00:00"^^xsd:dateTime ;
+    o:media <https://muurschilderingendatabase.nl/api/media/11667>,
+        <https://muurschilderingendatabase.nl/api/media/11681>,
+        <https://muurschilderingendatabase.nl/api/media/11682>,
+        <https://muurschilderingendatabase.nl/api/media/11683> ;
+    o:modified "2025-11-14T16:40:36+00:00"^^xsd:dateTime ;
     o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
-    o:primary_media <https://muurschilderingendatabase.nl/api/media/11667> ;
+    o:primary_media <https://muurschilderingendatabase.nl/api/media/11683> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1> ;
     o:title "Decoratieve sjabloonbanden in rood en blauw"^^xsd:string ;
     dcterms:description "In kamernummer 112 (bemanningsverblijf) zijn op alle wanden en deel gewelven met sjablonen decoratieve banden aangebracht.  De blauwe band is aangebracht aan de bovenkant van de muur en de rode decoraties is op het gewelf aan de onderrand geschilderd. De rode decoratie is een krans van bladeren, verbonden door twee gestippelde lijnen naar een soort festoen."^^xsd:string ;
     dcterms:identifier "BAG0453100000032519MU14"^^xsd:string ;
@@ -15409,6 +15483,7 @@ Het werk is herplaatst hier in 1995 en komt oorspronkelijk uit de wachtruimte va
     o:primary_media <https://muurschilderingendatabase.nl/api/media/11668> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1> ;
     o:title "Gele lambrisering en blauwe decoratieve band"^^xsd:string ;
     dcterms:description "Op alle wanden in kamernummer 115 (bemanningsverblijf) is een gele lambrisering aangebracht met daarboven een decoratieve geometrische band in blauw met een golvende witte lijn."^^xsd:string ;
     dcterms:identifier "BAG0453100000032519MU15"^^xsd:string ;
@@ -15431,6 +15506,7 @@ Het werk is herplaatst hier in 1995 en komt oorspronkelijk uit de wachtruimte va
     o:primary_media <https://muurschilderingendatabase.nl/api/media/11670> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1> ;
     o:title "Decoratief sjabloon met rode verf"^^xsd:string ;
     dcterms:description "In bemanningsverblijf 'G Onderofficieren' in rode verf aangebrachte schildering, waarschijnlijk aangebracht met sjabloon. Mogelijk een leeuw voorstellend."^^xsd:string ;
     dcterms:identifier "BAG0453100000032519MU16"^^xsd:string ;
@@ -15454,6 +15530,7 @@ Het werk is herplaatst hier in 1995 en komt oorspronkelijk uit de wachtruimte va
     o:primary_media <https://muurschilderingendatabase.nl/api/media/11671> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1> ;
     o:title "Klein deel van een rode schildering"^^xsd:string ;
     dcterms:description "In bemanningsverblijf 'G Onderofficieren' in rode verf aangebrachte deel van een schildering."^^xsd:string ;
     dcterms:identifier "BAG0453100000032519MU16"^^xsd:string ;
@@ -15468,10 +15545,13 @@ Het werk is herplaatst hier in 1995 en komt oorspronkelijk uit de wachtruimte va
     o:created "2025-11-13T10:06:27+00:00"^^xsd:dateTime ;
     o:id 11666 ;
     o:is_public true ;
-    o:modified "2025-11-13T11:17:58+00:00"^^xsd:dateTime ;
+    o:media <https://muurschilderingendatabase.nl/api/media/11672> ;
+    o:modified "2025-11-14T16:10:39+00:00"^^xsd:dateTime ;
     o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
+    o:primary_media <https://muurschilderingendatabase.nl/api/media/11672> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1> ;
     o:title "Pauw"^^xsd:string ;
     dcterms:description "Een gestileerde pauw in blauw, met sjabloon aangebracht."^^xsd:string ;
     dcterms:identifier "BAG0453100000032519MU17"^^xsd:string ;
@@ -41853,6 +41933,30 @@ door kruisribgewelven."""^^xsd:string ;
 
 <https://muurschilderingendatabase.nl/api/media/11619> o:id 11619 .
 
+<https://muurschilderingendatabase.nl/api/media/11667> o:id 11667 .
+
+<https://muurschilderingendatabase.nl/api/media/11669> o:id 11669 .
+
+<https://muurschilderingendatabase.nl/api/media/11673> o:id 11673 .
+
+<https://muurschilderingendatabase.nl/api/media/11674> o:id 11674 .
+
+<https://muurschilderingendatabase.nl/api/media/11675> o:id 11675 .
+
+<https://muurschilderingendatabase.nl/api/media/11677> o:id 11677 .
+
+<https://muurschilderingendatabase.nl/api/media/11679> o:id 11679 .
+
+<https://muurschilderingendatabase.nl/api/media/11681> o:id 11681 .
+
+<https://muurschilderingendatabase.nl/api/media/11682> o:id 11682 .
+
+<https://muurschilderingendatabase.nl/api/media/11689> o:id 11689 .
+
+<https://muurschilderingendatabase.nl/api/media/11692> o:id 11692 .
+
+<https://muurschilderingendatabase.nl/api/media/11695> o:id 11695 .
+
 <https://muurschilderingendatabase.nl/api/media/9174> o:id 9174 .
 
 <https://muurschilderingendatabase.nl/api/media/9175> o:id 9175 .
@@ -44318,7 +44422,8 @@ van een figuur met heiligenschijn en een kopje, een Annunciatie?, XIII (bron: Ko
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/32> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/14> ;
     o:site <https://muurschilderingendatabase.nl/api/sites/1>,
-        <https://muurschilderingendatabase.nl/api/sites/3> ;
+        <https://muurschilderingendatabase.nl/api/sites/3>,
+        <https://muurschilderingendatabase.nl/api/sites/5> ;
     o:title "Metrobuis Wibautstraat naar Weesperplein"^^xsd:string ;
     dcterms:identifier "BAG0363100012186191"^^xsd:string ;
     dcterms:title "Metrobuis Wibautstraat naar Weesperplein"^^xsd:string ;
@@ -45994,6 +46099,8 @@ Rijksacademie Beeldende Kunst Amsterdam, Académie des Beaux Arts Brussel"""^^xs
     o:primary_media <https://muurschilderingendatabase.nl/api/media/11578> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/2011> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/14> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1>,
+        <https://muurschilderingendatabase.nl/api/sites/5> ;
     o:title "H. Josephkerk, Amsterdam"^^xsd:string ;
     dcterms:description "Feniks met ster omringd door fel blauw. "^^xsd:string ;
     dcterms:identifier "RM530737"^^xsd:string ;
@@ -46017,6 +46124,8 @@ Rijksacademie Beeldende Kunst Amsterdam, Académie des Beaux Arts Brussel"""^^xs
     o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1>,
+        <https://muurschilderingendatabase.nl/api/sites/5> ;
     o:title "Marius de Leeuw"^^xsd:string ;
     dcterms:title "Marius de Leeuw"^^xsd:string ;
     dcterms:type <https://vocab.getty.edu/aat/300025103> ;
@@ -46037,6 +46146,8 @@ Rijksacademie Beeldende Kunst Amsterdam, Académie des Beaux Arts Brussel"""^^xs
     o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1>,
+        <https://muurschilderingendatabase.nl/api/sites/5> ;
     o:title "Keith Haring"^^xsd:string ;
     dcterms:title "Keith Haring"^^xsd:string ;
     dcterms:type <https://vocab.getty.edu/aat/300025103> ;
@@ -46056,6 +46167,8 @@ Rijksacademie Beeldende Kunst Amsterdam, Académie des Beaux Arts Brussel"""^^xs
     o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1>,
+        <https://muurschilderingendatabase.nl/api/sites/5> ;
     o:title "Otto van Rees"^^xsd:string ;
     dcterms:title "Otto van Rees"^^xsd:string ;
     dcterms:type <https://vocab.getty.edu/aat/300025103> ;
@@ -46076,6 +46189,8 @@ Rijksacademie Beeldende Kunst Amsterdam, Académie des Beaux Arts Brussel"""^^xs
     o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1>,
+        <https://muurschilderingendatabase.nl/api/sites/5> ;
     o:title "Aart van Dobbenburgh"^^xsd:string ;
     dcterms:title """Aart van Dobbenburgh
 """^^xsd:string ;
@@ -46100,6 +46215,8 @@ Rijksacademie Beeldende Kunst Amsterdam, Académie des Beaux Arts Brussel"""^^xs
     o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1>,
+        <https://muurschilderingendatabase.nl/api/sites/5> ;
     o:title "M.C. Escher"^^xsd:string ;
     dcterms:title "M.C. Escher"^^xsd:string ;
     dcterms:type <https://vocab.getty.edu/aat/300025103> ;
@@ -46120,6 +46237,8 @@ Rijksacademie Beeldende Kunst Amsterdam, Académie des Beaux Arts Brussel"""^^xs
     o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1>,
+        <https://muurschilderingendatabase.nl/api/sites/5> ;
     o:title "Theo Elfrink"^^xsd:string ;
     dcterms:title "Theo Elfrink"^^xsd:string ;
     dcterms:type <https://vocab.getty.edu/aat/300025103> ;
@@ -46139,6 +46258,8 @@ Rijksacademie Beeldende Kunst Amsterdam, Académie des Beaux Arts Brussel"""^^xs
     o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1>,
+        <https://muurschilderingendatabase.nl/api/sites/5> ;
     o:title "Willem Sandberg"^^xsd:string ;
     dcterms:title "Willem Sandberg"^^xsd:string ;
     dcterms:type <https://vocab.getty.edu/aat/300025119> ;
@@ -46158,6 +46279,8 @@ Rijksacademie Beeldende Kunst Amsterdam, Académie des Beaux Arts Brussel"""^^xs
     o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1>,
+        <https://muurschilderingendatabase.nl/api/sites/5> ;
     o:title "Caveto"^^xsd:string ;
     dcterms:title "Caveto"^^xsd:string ;
     dcterms:type <https://vocab.getty.edu/aat/300025103> ;
@@ -55522,15 +55645,39 @@ Rijksacademie Beeldende Kunst Amsterdam, Académie des Beaux Arts Brussel"""^^xs
 
 <https://muurschilderingendatabase.nl/api/media/11648> o:id 11648 .
 
-<https://muurschilderingendatabase.nl/api/media/11667> o:id 11667 .
-
 <https://muurschilderingendatabase.nl/api/media/11668> o:id 11668 .
-
-<https://muurschilderingendatabase.nl/api/media/11669> o:id 11669 .
 
 <https://muurschilderingendatabase.nl/api/media/11670> o:id 11670 .
 
 <https://muurschilderingendatabase.nl/api/media/11671> o:id 11671 .
+
+<https://muurschilderingendatabase.nl/api/media/11672> o:id 11672 .
+
+<https://muurschilderingendatabase.nl/api/media/11676> o:id 11676 .
+
+<https://muurschilderingendatabase.nl/api/media/11678> o:id 11678 .
+
+<https://muurschilderingendatabase.nl/api/media/11680> o:id 11680 .
+
+<https://muurschilderingendatabase.nl/api/media/11683> o:id 11683 .
+
+<https://muurschilderingendatabase.nl/api/media/11684> o:id 11684 .
+
+<https://muurschilderingendatabase.nl/api/media/11685> o:id 11685 .
+
+<https://muurschilderingendatabase.nl/api/media/11686> o:id 11686 .
+
+<https://muurschilderingendatabase.nl/api/media/11687> o:id 11687 .
+
+<https://muurschilderingendatabase.nl/api/media/11688> o:id 11688 .
+
+<https://muurschilderingendatabase.nl/api/media/11690> o:id 11690 .
+
+<https://muurschilderingendatabase.nl/api/media/11691> o:id 11691 .
+
+<https://muurschilderingendatabase.nl/api/media/11693> o:id 11693 .
+
+<https://muurschilderingendatabase.nl/api/media/11694> o:id 11694 .
 
 <https://muurschilderingendatabase.nl/api/media/9156> o:id 9156 .
 
@@ -57556,6 +57703,8 @@ Witteveen."""^^xsd:string ;
     o:primary_media <https://muurschilderingendatabase.nl/api/media/11599> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/2011> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/14> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1>,
+        <https://muurschilderingendatabase.nl/api/sites/5> ;
     o:title "Centrale Markthallen, Amsterdam"^^xsd:string ;
     dcterms:description "Een muurschildering van een mythisch dier is geschilderd in één dikke, witte lijn.  Het is geschilderd in opdracht van het Stedelijk Museum. In deze periode had het museum hier een depot."^^xsd:string ;
     dcterms:identifier "RM526739"^^xsd:string ;
@@ -57580,6 +57729,8 @@ Witteveen."""^^xsd:string ;
     o:primary_media <https://muurschilderingendatabase.nl/api/media/11596> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/2011> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/14> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1>,
+        <https://muurschilderingendatabase.nl/api/sites/5> ;
     o:title "Gebouw voor Kunsten en Wetenschappen, Utrecht"^^xsd:string ;
     dcterms:description "Muurschildering voorstellende de beeldende kunst en architectuur, de exacte wetenschappen, de filosofie en theologie en de uitvoerende kunsten. "^^xsd:string ;
     dcterms:identifier "RM46960"^^xsd:string ;
@@ -57603,6 +57754,8 @@ Witteveen."""^^xsd:string ;
     o:primary_media <https://muurschilderingendatabase.nl/api/media/11601> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/2011> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/14> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1>,
+        <https://muurschilderingendatabase.nl/api/sites/5> ;
     o:title "GG&GD gebouw, Amsterdam"^^xsd:string ;
     dcterms:description "In de hal is een gesigneerde wandschildering van Aart van Dobbenburgh aangebracht die langs drie zijden een brede band van expressionistische vormgegeven vogels in pastelkleuren laat zien. "^^xsd:string ;
     dcterms:identifier "GM205026"^^xsd:string ;
@@ -57628,6 +57781,8 @@ Witteveen."""^^xsd:string ;
     o:primary_media <https://muurschilderingendatabase.nl/api/media/11626> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/2011> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/14> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1>,
+        <https://muurschilderingendatabase.nl/api/sites/5> ;
     o:title "Stadsschouwburg Utrecht"^^xsd:string ;
     dcterms:description "Zwarte en witte vissen in geometrische vormpatronen op één van de muren van de Escherfoyer."^^xsd:string ;
     dcterms:identifier "RM530827"^^xsd:string ;
@@ -57649,6 +57804,8 @@ Witteveen."""^^xsd:string ;
     o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/2011> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/14> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1>,
+        <https://muurschilderingendatabase.nl/api/sites/5> ;
     o:title "Basisschool Klein Heyendaal, Nijmegen"^^xsd:string ;
     dcterms:description "Abstracte figuratieve muurschildering. "^^xsd:string ;
     dcterms:identifier "BAG0268100000024469"^^xsd:string ;
@@ -57668,6 +57825,8 @@ Witteveen."""^^xsd:string ;
     o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/2011> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/14> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1>,
+        <https://muurschilderingendatabase.nl/api/sites/5> ;
     o:title "Metrobuis Centraal Station naar Nieuwmarkt, Amsterdam"^^xsd:string ;
     dcterms:description "Onderdeel van een lang abstract werk van 2,5 km van meerdere kunstenaars dat zich vanaf het perron uitstrekt door de metrobuis. Het is een kinetisch optisch kunstwerk, waarvan het visuele effect alleen te ervaren is vanuit een bewegende metro. Het kunstwerk heeft als thema beweging. "^^xsd:string ;
     dcterms:identifier "BAG0363300000005935"^^xsd:string ;
@@ -57688,6 +57847,8 @@ Witteveen."""^^xsd:string ;
     o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/32> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/14> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1>,
+        <https://muurschilderingendatabase.nl/api/sites/5> ;
     o:title "Metrostation Waterlooplein, Amsterdam"^^xsd:string ;
     dcterms:description "Typografisch werk, “waterloo”  geschilderd op de muren van het metrostation Waterlooplein"^^xsd:string ;
     dcterms:identifier "BAG0363100012171841"^^xsd:string ;
@@ -58541,7 +58702,8 @@ Linksonder in de hoek in rode oker: Restauratie Verhey, Bathman, 1984, Dantumawo
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/2011> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/14> ;
     o:site <https://muurschilderingendatabase.nl/api/sites/1>,
-        <https://muurschilderingendatabase.nl/api/sites/3> ;
+        <https://muurschilderingendatabase.nl/api/sites/3>,
+        <https://muurschilderingendatabase.nl/api/sites/5> ;
     o:title "Oude Kerk Delft"^^xsd:string ;
     dcterms:description "Piet Hein is op de muur geschilderd achter het grafmonument van Piet Hein (was alleen tijdens restauratie grafmonument zichtbaar)."^^xsd:string ;
     dcterms:identifier "RM11970"^^xsd:string ;
@@ -58987,6 +59149,8 @@ Schildering ontdekt in 1986. door L. Muller. (bron: Aldus is opgeschilderd. Midd
     o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1>,
+        <https://muurschilderingendatabase.nl/api/sites/5> ;
     o:title "Albert Muis"^^xsd:string ;
     dcterms:title "Albert Muis"^^xsd:string ;
     dcterms:type <https://vocab.getty.edu/aat/300025103> ;
@@ -59440,6 +59604,8 @@ van een uit 1857 stammende voorganger. Het interieur wordt gedekt door netgewelv
     o:primary_media <https://muurschilderingendatabase.nl/api/media/11586> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/2011> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/14> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1>,
+        <https://muurschilderingendatabase.nl/api/sites/5> ;
     o:title "Aula van de Oosterbegraafplaats, Amsterdam"^^xsd:string ;
     dcterms:description "Wandschildering in de hal en de aula van de oosterbegraafplaats. Het aulagebouw, de inrichting en de wandschildering zijn sinds 2003 Rijksmonument. Kunst en architectuur vormen hier een organische eenheid."^^xsd:string ;
     dcterms:identifier "RM526981"^^xsd:string ;
@@ -59796,6 +59962,8 @@ van een uit 1857 stammende voorganger. Het interieur wordt gedekt door netgewelv
     o:primary_media <https://muurschilderingendatabase.nl/api/media/11645> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/2011> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/14> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1>,
+        <https://muurschilderingendatabase.nl/api/sites/5> ;
     o:title "De kapel van het klooster Mariadal, Roosendaal"^^xsd:string ;
     dcterms:description "Muurschilderingen en gewelfschilderingen met als thema het leven van Maria en schilderingen die te maken hebben met de eucharistie."^^xsd:string ;
     dcterms:identifier "RM517245"^^xsd:string ;
@@ -60105,6 +60273,8 @@ waarschijnlijk met Christus als rechter en daaronder heiligen. (bron: Monumenten
     o:primary_media <https://muurschilderingendatabase.nl/api/media/11610> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/2011> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/14> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1>,
+        <https://muurschilderingendatabase.nl/api/sites/5> ;
     o:title "Het Prinsenhof (Hotel The Grand), Amsterdam"^^xsd:string ;
     dcterms:description "De schilderingen op alle vier de muren maken onderdeel uit van een interieurensemble. Het plafond is ook beschilderd door Chris Lebeau en ook de ontwerpen voor de glas in lood ramen zijn van zijn hand."^^xsd:string ;
     dcterms:identifier "RM6085"^^xsd:string ;
@@ -62432,6 +62602,8 @@ Segmentvormig grauwtje (XVIII B) voorstellend spelende kinderen."
         <https://muurschilderingendatabase.nl/api/items/9837>,
         <https://muurschilderingendatabase.nl/api/items/9838> .
 
+<https://muurschilderingendatabase.nl/api/sites/5> o:id 5 .
+
 <https://muurschilderingendatabase.nl/api/items/10193> a o:Item,
         dcterms:BibliographicResource ;
     o:created "2025-06-05T13:50:50+00:00"^^xsd:dateTime ;
@@ -62557,6 +62729,7 @@ Segmentvormig grauwtje (XVIII B) voorstellend spelende kinderen."
     o:primary_media <https://muurschilderingendatabase.nl/api/media/11648> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/2011> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/14> ;
+    o:site <https://muurschilderingendatabase.nl/api/sites/1> ;
     o:title "Kustfort bij IJmuiden"^^xsd:string ;
     dcterms:description "Muurschilderingen en teksten uit de tijd van de bezetting WOII"^^xsd:string ;
     dcterms:identifier "BAG0453100000032519"^^xsd:string ;
