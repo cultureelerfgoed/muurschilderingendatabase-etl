@@ -4,7 +4,7 @@ import os
 import logging
 import requests
 from rdflib import Graph, URIRef
-from rdflib.namespace import SDO, DCTERMS, OWL
+from rdflib.namespace import DCTERMS
 from rdflib.plugins.parsers.notation3 import BadSyntax
 
 ### Configuration
@@ -21,19 +21,7 @@ ENCODING = os.getenv('ENCODING', 'utf-8')
 ### End of Configuration
 
 ### Mapping the term to be replaced on the left by the term on the right. 
-mapping = {
-    #DCTERMS.title: SDO.name,
-    #DCTERMS.publisher: SDO.publisher,
-    #DCTERMS.identifier: SDO.identifier,
-    #DCTERMS.issued: SDO.dateIssued,
-    #DCTERMS.abstract: SDO.abstract,
-    #DCTERMS.creator: SDO.creator,
-    #DCTERMS.bibliographicCitation: SDO.citation,
-    #DCTERMS.created: SDO.dateCreated,
-    #DCTERMS.description: SDO.description,
-    DCTERMS.isReferencedBy: SDO.subjectOf,
-    OWL.sameAs: SDO.sameAs
-}
+mapping = {}
 
 ### End of Mapping 
 
@@ -47,23 +35,31 @@ try:
     # Load graph from file
     graph = Graph(identifier=GRAPH_ID)
     graph.parse(source=TARGET_FILEPATH, format=OUTPUT_FILE_FORMAT)
-    old_g_length = len(graph)
+    enrichment_graph = Graph(identifier="enrichment_graph")
+    
+    with open("data/enrichments.ttl", "w", encoding=ENCODING) as enrichmentsfile:
+         
+        # Apply enrichments to graph
+        for subj, pred, obj in graph:
 
-    # Apply enrichments to graph
-    for subj, pred, obj in graph:
-
-        # Enrich rijksmonumenten via URI
-        with open("data/enrichments.ttl", "w", encoding=ENCODING) as enrichmentsfile:
+            # Enrich rijksmonumenten via URI        
             if 'Rijksmonument' in obj and graph[subj : DCTERMS.identifier] is not None:
                 for item in graph[subj : DCTERMS.identifier]:
                     if not isinstance(item, URIRef) and "RM" in item[0:2]:
                         RM_URI=f"https://api.linkeddata.cultureelerfgoed.nl/queries/rce/rest-api-rijksmonumenten/run?rijksmonumentnummer={item[2:]}"
                         data = requests.get(RM_URI, timeout=200)
-                        logger.info("Adding enrichment for Rijksmonumentnummer: %s", str(item[2:]))                
-                        enrichmentsfile.write(data.text)                        
+                        #logger.info("Adding enrichment for Rijksmonumentnummer: %s", str(item[2:]))                
+                        enrichmentsfile.write(data.text)
         
-        graph.parse(source="data/enrichments.ttl")
+        logger.info("Parsing graph..")
+        enrichment_graph.parse("data/enrichments.ttl")
+        logger.info("Loaded %s triples", str(len(enrichment_graph)))
 
+        for subj, pred, obj, in enrichment_graph:
+            if "https://linkeddata.cultureelerfgoed.nl/def/ceo#rijksmonumentnummer" in pred:
+                graph.add((subj, obj, pred))
+                logger.info("Adding enrichment: %s", (subj, pred, obj))
+            
     # Apply mapping to graph
     for subj, pred, obj in graph:
 
