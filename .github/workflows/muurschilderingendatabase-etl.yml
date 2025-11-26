@@ -4,6 +4,8 @@ env:
   BASE_URI: 'https://muurschilderingendatabase.nl/'  
   PROJECT_NAME: 'Muurschilderingendatabase ETL'
   TARGET_FILEPATH: 'data/api-export.ttl'
+  GRAPH_ID: 'muurschilderingendatabase'
+
 
 on:
   workflow_dispatch:
@@ -31,7 +33,8 @@ jobs:
         BASE_URI: ${{ env.BASE_URI }}
         PROJECT_NAME: ${{ env.PROJECT_NAME }}
         TARGET_FILEPATH: ${{ env.TARGET_FILEPATH }}
-
+        GRAPH_ID: ${{ env.GRAPH_ID }}
+        
     - name: Transform and make available in repository.
       run: |
         python scripts/transform_datamodel.py
@@ -39,6 +42,7 @@ jobs:
         BASE_URI: ${{ env.BASE_URI }}
         PROJECT_NAME: ${{ env.PROJECT_NAME }}
         TARGET_FILEPATH: ${{ env.TARGET_FILEPATH }}
+        GRAPH_ID: ${{ env.GRAPH_ID }}
 
     - name: Check for changes and commit.
       run: |
@@ -54,5 +58,5 @@ jobs:
 
     - name: Push changes to TriplyDB API.
       run: |
-        curl -H 'Authorization: Bearer ${{ secrets.LDV_API_TOKEN }}' -H 'graphNames:default' -X POST 'https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/Muurschilderingen/jobs'  -F file='@./data/api-export.ttl'
+        curl -H 'Authorization: Bearer ${{ secrets.LDV_API_TOKEN }}' -X POST 'https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/Muurschilderingen/jobs'  -F file='@./data/api-export.ttl'
         
