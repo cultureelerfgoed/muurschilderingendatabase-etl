@@ -44,21 +44,18 @@ try:
 
             # Enrich rijksmonumenten via URI        
             if 'Rijksmonument' in obj and graph[subj : DCTERMS.identifier] is not None:
-                for item in graph[subj : DCTERMS.identifier]:
+                for item in set(graph[subj : DCTERMS.identifier]):
                     if not isinstance(item, URIRef) and "RM" in item[0:2]:
                         RM_URI=f"https://api.linkeddata.cultureelerfgoed.nl/queries/rce/rest-api-rijksmonumenten/run?rijksmonumentnummer={item[2:]}"
                         data = requests.get(RM_URI, timeout=200)
-                        #logger.info("Adding enrichment for Rijksmonumentnummer: %s", str(item[2:]))                
                         enrichmentsfile.write(data.text)
         
-        logger.info("Parsing graph..")
         enrichment_graph.parse("data/enrichments.ttl")
-        logger.info("Loaded %s triples", str(len(enrichment_graph)))
 
         for subj, pred, obj, in enrichment_graph:
             if "https://linkeddata.cultureelerfgoed.nl/def/ceo#rijksmonumentnummer" in pred:
                 graph.add((subj, obj, pred))
-                logger.info("Adding enrichment: %s", (subj, pred, obj))
+                logger.info("Adding enrichment: %s", str(obj))
             
     # Apply mapping to graph
     for subj, pred, obj in graph:
