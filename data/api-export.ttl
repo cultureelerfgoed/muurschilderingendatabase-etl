@@ -13963,7 +13963,7 @@ Mogelijk verscholen schilderwerk."""^^xsd:string ;
         <https://muurschilderingendatabase.nl/api/media/11356>,
         <https://muurschilderingendatabase.nl/api/media/11357>,
         <https://muurschilderingendatabase.nl/api/media/11358> ;
-    o:modified "2025-11-12T14:51:12+00:00"^^xsd:dateTime ;
+    o:modified "2025-11-26T09:39:59+00:00"^^xsd:dateTime ;
     o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
     o:primary_media <https://muurschilderingendatabase.nl/api/media/11340> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
@@ -13981,6 +13981,7 @@ De vier muren in de trouwzaal vertelt een liefdesverhaal en over de samenkomst v
     dcterms:title "Het huwelijk"^^xsd:string ;
     sem:hasEarliestBeginTimeStamp "1925"^^xsd:gYear ;
     sem:hasLatestEndTimeStamp "1925"^^xsd:gYear ;
+    crm:P32_used_general_technique <https://vocab.getty.edu/aat/300178679> ;
     schema:about <https://www.wikidata.org/wiki/Q8445> ;
     schema:genre "personen en wezens"@NL ;
     schema:height "300"^^xsd:string ;
@@ -14895,7 +14896,7 @@ Het werk is herplaatst hier in 1995 en komt oorspronkelijk uit de wachtruimte va
     o:id 11633 ;
     o:is_public true ;
     o:item_set <https://muurschilderingendatabase.nl/api/item_sets/11646> ;
-    o:modified "2025-11-12T15:12:00+00:00"^^xsd:dateTime ;
+    o:modified "2025-11-26T09:35:25+00:00"^^xsd:dateTime ;
     o:owner <https://muurschilderingendatabase.nl/api/users/4> ;
     o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1047> ;
     o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/18> ;
@@ -15565,6 +15566,858 @@ Het werk is herplaatst hier in 1995 en komt oorspronkelijk uit de wachtruimte va
     schema:height "25"^^xsd:string ;
     schema:location <https://muurschilderingendatabase.nl/api/items/11647> ;
     schema:width "20"^^xsd:string .
+
+<https://muurschilderingendatabase.nl/api/items/11696> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11696 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Theodoor van der Schuer"^^xsd:string ;
+    dcterms:description "Nederlands kunstschilder (1634-1707)"^^xsd:string ;
+    dcterms:identifier "rkd:71288"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Theodoor van der Schuer"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1634-01-01"^^xsd:date ;
+    schema:deathDate "1707-12-01"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q194961>,
+        <https://rkd.nl/artists/71288> .
+
+<https://muurschilderingendatabase.nl/api/items/11697> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11697 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Arthur Fitger"^^xsd:string ;
+    dcterms:description "Duits dichter (1840-1909)"^^xsd:string ;
+    dcterms:identifier "rkd:217748"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Arthur Fitger"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1840-10-04"^^xsd:date ;
+    schema:deathDate "1909-06-28"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q317470>,
+        <https://rkd.nl/artists/217748> .
+
+<https://muurschilderingendatabase.nl/api/items/11698> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11698 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Willem Arondeus"^^xsd:string ;
+    dcterms:description "Nederlands kunstschilder en schrijver (1894-1943)"^^xsd:string ;
+    dcterms:identifier "rkd:112056"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Willem Arondeus"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1894-08-22"^^xsd:date ;
+    schema:deathDate "1943-07-01"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q323985>,
+        <https://rkd.nl/artists/112056> .
+
+<https://muurschilderingendatabase.nl/api/items/11699> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11699 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Erasmus Quellinus"^^xsd:string ;
+    dcterms:description "Vlaamse kunstschilder (1607–1678)"^^xsd:string ;
+    dcterms:identifier "rkd:65222"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Erasmus Quellinus"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1607-11-19"^^xsd:date ;
+    schema:deathDate "1678-11-07"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q625228>,
+        <https://rkd.nl/artists/65222> .
+
+<https://muurschilderingendatabase.nl/api/items/11700> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11700 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Gerard Hoet"^^xsd:string ;
+    dcterms:description "Nederlands kunstschilder (1648-1733)"^^xsd:string ;
+    dcterms:identifier "rkd:38840"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Gerard Hoet"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1648-08-22"^^xsd:date ;
+    schema:deathDate "1733-12-02"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q978437>,
+        <https://rkd.nl/artists/38840> .
+
+<https://muurschilderingendatabase.nl/api/items/11701> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11701 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Herman Rosse"^^xsd:string ;
+    dcterms:description "Amerikaans scenograaf (1887-1965)"^^xsd:string ;
+    dcterms:identifier "rkd:68332"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Herman Rosse"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1887-01-01"^^xsd:date ;
+    schema:deathDate "1965-04-13"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q1610333>,
+        <https://rkd.nl/artists/68332> .
+
+<https://muurschilderingendatabase.nl/api/items/11702> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11702 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Petrus Nicolaas van den Boer"^^xsd:string ;
+    dcterms:description "Nederlands kunstschilder (1846-1926)"^^xsd:string ;
+    dcterms:identifier "rkd:430467"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Petrus Nicolaas van den Boer"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1846-03-26"^^xsd:date ;
+    schema:deathDate "1926-01-01"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q2028392>,
+        <https://rkd.nl/artists/430467> .
+
+<https://muurschilderingendatabase.nl/api/items/11703> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11703 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Louis Raemaekers"^^xsd:string ;
+    dcterms:description "Nederlands cartoonist (1869-1956)"^^xsd:string ;
+    dcterms:identifier "rkd:65417"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Louis Raemaekers"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1869-04-06"^^xsd:date ;
+    schema:deathDate "1956-07-26"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q2073966>,
+        <https://rkd.nl/artists/65417> .
+
+<https://muurschilderingendatabase.nl/api/items/11704> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11704 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Dolf van Gendt"^^xsd:string ;
+    dcterms:description "Nederlands architect"^^xsd:string ;
+    dcterms:identifier "rkd:30855"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Dolf van Gendt"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1835-04-18"^^xsd:date ;
+    schema:deathDate "1900-04-28"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q2108911>,
+        <https://rkd.nl/artists/30855> .
+
+<https://muurschilderingendatabase.nl/api/items/11705> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11705 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Victor de Stuers"^^xsd:string ;
+    dcterms:description "Nederlands rijksambtenaar en Tweede Kamerlid (1843-1916)"^^xsd:string ;
+    dcterms:identifier "rkd:90578"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Victor de Stuers"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1843-10-20"^^xsd:date ;
+    schema:deathDate "1916-03-21"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q2125168>,
+        <https://rkd.nl/artists/90578> .
+
+<https://muurschilderingendatabase.nl/api/items/11706> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11706 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Leo Visser"^^xsd:string ;
+    dcterms:description "Nederlands kunstenaar (1880–1950)"^^xsd:string ;
+    dcterms:identifier "rkd:81323"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Leo Visser"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1880-09-07"^^xsd:date ;
+    schema:deathDate "1950-02-17"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q2294196>,
+        <https://rkd.nl/artists/81323> .
+
+<https://muurschilderingendatabase.nl/api/items/11707> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11707 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Peter Alma"^^xsd:string ;
+    dcterms:description "Nederlands lithograaf, wandschilder, ontwerper, houtsnijder, mozaïekwerker, etser, schilder, monumentaal kunstenaar (1886–1969)"^^xsd:string ;
+    dcterms:identifier "rkd:1268"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Peter Alma"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1886-01-18"^^xsd:date ;
+    schema:deathDate "1944-12-15"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q2318919>,
+        <https://rkd.nl/artists/1268> .
+
+<https://muurschilderingendatabase.nl/api/items/11708> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11708 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Johan Dijkstra"^^xsd:string ;
+    dcterms:description "Nederlands kunstenaar (1896-1978)"^^xsd:string ;
+    dcterms:identifier "rkd:23089"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Johan Dijkstra"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1896-12-23"^^xsd:date ;
+    schema:deathDate "1978-02-21"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q2349218>,
+        <https://rkd.nl/artists/23089> .
+
+<https://muurschilderingendatabase.nl/api/items/11709> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11709 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Gerrit Hendrik Heinen"^^xsd:string ;
+    dcterms:description "Nederlands kunstschilder (1851-1930)"^^xsd:string ;
+    dcterms:identifier "rkd:343269"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Gerrit Hendrik Heinen"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1851-01-01"^^xsd:date ;
+    schema:deathDate "1930-09-26"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q2351782>,
+        <https://rkd.nl/artists/343269> .
+
+<https://muurschilderingendatabase.nl/api/items/11710> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11710 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Pol Dom"^^xsd:string ;
+    dcterms:description "Nederlands schilder"^^xsd:string ;
+    dcterms:identifier "rkd:23584"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Pol Dom"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1885-06-04"^^xsd:date ;
+    schema:deathDate "1970-02-21"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q2369544>,
+        <https://rkd.nl/artists/23584> .
+
+<https://muurschilderingendatabase.nl/api/items/11711> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11711 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Joop Sjollema"^^xsd:string ;
+    dcterms:description "Nederlands kunstschilder (1900-1990)"^^xsd:string ;
+    dcterms:identifier "rkd:72909"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Joop Sjollema"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1900-12-10"^^xsd:date ;
+    schema:deathDate "1990-07-05"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q2397082>,
+        <https://rkd.nl/artists/72909> .
+
+<https://muurschilderingendatabase.nl/api/items/11712> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11712 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Han Jelinger"^^xsd:string ;
+    dcterms:description "Nederlands kunstenaar (1895-1961)"^^xsd:string ;
+    dcterms:identifier "rkd:42152"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Han Jelinger"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1895-09-04"^^xsd:date ;
+    schema:deathDate "1961-04-12"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q2442837>,
+        <https://rkd.nl/artists/42152> .
+
+<https://muurschilderingendatabase.nl/api/items/11713> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11713 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Reijer Stolk"^^xsd:string ;
+    dcterms:description "Nederlands kunstschilder en graficus (1896-1945)"^^xsd:string ;
+    dcterms:identifier "rkd:75434"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Reijer Stolk"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1896-03-30"^^xsd:date ;
+    schema:deathDate "1945-03-24"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q2526674>,
+        <https://rkd.nl/artists/75434> .
+
+<https://muurschilderingendatabase.nl/api/items/11714> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11714 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Chris de Moor"^^xsd:string ;
+    dcterms:description "Nederlands kunstschilder (1899-1981)"^^xsd:string ;
+    dcterms:identifier "rkd:57501"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Chris de Moor"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1899-02-05"^^xsd:date ;
+    schema:deathDate "1981-09-27"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q2660400>,
+        <https://rkd.nl/artists/57501> .
+
+<https://muurschilderingendatabase.nl/api/items/11715> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11715 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "anoniem"^^xsd:string ;
+    dcterms:description "persoon met onbekende identiteit"^^xsd:string ;
+    dcterms:identifier "rkd:1984"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "anoniem"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:sameAs <http://www.wikidata.org/entity/Q4233718>,
+        <https://rkd.nl/artists/1984> .
+
+<https://muurschilderingendatabase.nl/api/items/11716> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11716 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Pieter Jansz. van Ruyven"^^xsd:string ;
+    dcterms:description "Nederlands schilder (1651-1719)"^^xsd:string ;
+    dcterms:identifier "rkd:69084"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Pieter Jansz. van Ruyven"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1651-03-07"^^xsd:date ;
+    schema:deathDate "1719-05-17"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q7192793>,
+        <https://rkd.nl/artists/69084> .
+
+<https://muurschilderingendatabase.nl/api/items/11717> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11717 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Dirk Nijland"^^xsd:string ;
+    dcterms:description "Nederlands kunstschilder (1881-1955)"^^xsd:string ;
+    dcterms:identifier "rkd:59613"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Dirk Nijland"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1881-04-02"^^xsd:date ;
+    schema:deathDate "1955-03-27"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q13573542>,
+        <https://rkd.nl/artists/59613> .
+
+<https://muurschilderingendatabase.nl/api/items/11718> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11718 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Jurriaan Buttner"^^xsd:string ;
+    dcterms:description "Nederlands kunstschilder (?-1767)"^^xsd:string ;
+    dcterms:identifier "rkd:14521"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Jurriaan Buttner"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:deathDate "1767-06-15"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q17644438>,
+        <https://rkd.nl/artists/14521> .
+
+<https://muurschilderingendatabase.nl/api/items/11719> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11719 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Henri Bol"^^xsd:string ;
+    dcterms:description "Nederlands kunstschilder (1945-2000)"^^xsd:string ;
+    dcterms:identifier "rkd:10082"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Henri Bol"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1945-01-10"^^xsd:date ;
+    schema:deathDate "2000-07-10"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q18224991>,
+        <https://rkd.nl/artists/10082> .
+
+<https://muurschilderingendatabase.nl/api/items/11720> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11720 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Gerard Sanders"^^xsd:string ;
+    dcterms:description "Nederlands schilder, 1702-1767 (1702-1767)"^^xsd:string ;
+    dcterms:identifier "rkd:69569"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Gerard Sanders"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1702-01-01"^^xsd:date ;
+    schema:deathDate "1767-01-01"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q18516528>,
+        <https://rkd.nl/artists/69569> .
+
+<https://muurschilderingendatabase.nl/api/items/11721> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11721 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Hendrik Paulides"^^xsd:string ;
+    dcterms:description "Nederlands schilder (1892-1967)"^^xsd:string ;
+    dcterms:identifier "rkd:62147"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Hendrik Paulides"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1892-07-19"^^xsd:date ;
+    schema:deathDate "1967-12-28"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q18603294>,
+        <https://rkd.nl/artists/62147> .
+
+<https://muurschilderingendatabase.nl/api/items/11722> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11722 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Giovanni Antonio de Groot"^^xsd:string ;
+    dcterms:description "Nederlands kunstschilder (1664-1712)"^^xsd:string ;
+    dcterms:identifier "rkd:425140"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Giovanni Antonio de Groot"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1664-06-13"^^xsd:date ;
+    schema:deathDate "1712-12-17"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q18814458>,
+        <https://rkd.nl/artists/425140> .
+
+<https://muurschilderingendatabase.nl/api/items/11723> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11723 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Jacques Muller"^^xsd:string ;
+    dcterms:description "Duits kunstschilder (1608-1673)"^^xsd:string ;
+    dcterms:identifier "rkd:58354"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Jacques Muller"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1608-01-01"^^xsd:date ;
+    schema:deathDate "1673-02-03"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q19574321>,
+        <https://rkd.nl/artists/58354> .
+
+<https://muurschilderingendatabase.nl/api/items/11724> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11724 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Judy Michiels van Kessenich"^^xsd:string ;
+    dcterms:description "Nederlands beeldend kunstenares (1901-1972)"^^xsd:string ;
+    dcterms:identifier "rkd:86855"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Judy Michiels van Kessenich"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1901-04-21"^^xsd:date ;
+    schema:deathDate "1972-05-17"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q21214749>,
+        <https://rkd.nl/artists/86855> .
+
+<https://muurschilderingendatabase.nl/api/items/11725> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11725 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Gerrit de Morée"^^xsd:string ;
+    dcterms:description "Nederlands beeldend kunstenaar (1909-1981)"^^xsd:string ;
+    dcterms:identifier "rkd:57647"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Gerrit de Morée"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1909-01-28"^^xsd:date ;
+    schema:deathDate "1981-10-13"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q22968368>,
+        <https://rkd.nl/artists/57647> .
+
+<https://muurschilderingendatabase.nl/api/items/11726> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11726 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Herman Dijkstra"^^xsd:string ;
+    dcterms:description "Nederlands kunstschilder (1904-1976)"^^xsd:string ;
+    dcterms:identifier "rkd:23077"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Herman Dijkstra"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1904-07-08"^^xsd:date ;
+    schema:deathDate "1976-06-11"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q25616710>,
+        <https://rkd.nl/artists/23077> .
+
+<https://muurschilderingendatabase.nl/api/items/11727> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11727 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Theo van Delft"^^xsd:string ;
+    dcterms:description "Nederlands schilder en beeldhouwer (1883-1967)"^^xsd:string ;
+    dcterms:identifier "rkd:21728"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Theo van Delft"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1883-08-21"^^xsd:date ;
+    schema:deathDate "1967-07-11"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q26936813>,
+        <https://rkd.nl/artists/21728> .
+
+<https://muurschilderingendatabase.nl/api/items/11728> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11728 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Willem Adrianus Fabri"^^xsd:string ;
+    dcterms:description "Nederlands kunstschilder (1853-1925)"^^xsd:string ;
+    dcterms:identifier "rkd:27127"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Willem Adrianus Fabri"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1853-12-06"^^xsd:date ;
+    schema:deathDate "1925-03-03"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q27019724>,
+        <https://rkd.nl/artists/27127> .
+
+<https://muurschilderingendatabase.nl/api/items/11729> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11729 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "P. Engelen"^^xsd:string ;
+    dcterms:description "Nederlands kunstschilder (1880-1961)"^^xsd:string ;
+    dcterms:identifier "rkd:343312"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "P. Engelen"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1880-01-01"^^xsd:date ;
+    schema:deathDate "1961-01-01"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q27508142>,
+        <https://rkd.nl/artists/343312> .
+
+<https://muurschilderingendatabase.nl/api/items/11730> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11730 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Friedrich Florack"^^xsd:string ;
+    dcterms:description "kunstschilder  (1844-1929)"^^xsd:string ;
+    dcterms:identifier "rkd:335846"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Friedrich Florack"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1844-05-12"^^xsd:date ;
+    schema:deathDate "1929-02-06"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q27508527>,
+        <https://rkd.nl/artists/335846> .
+
+<https://muurschilderingendatabase.nl/api/items/11731> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11731 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Klaas de Jong"^^xsd:string ;
+    dcterms:description "tekenaar"^^xsd:string ;
+    dcterms:identifier "rkd:42648"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Klaas de Jong"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1918-10-01"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q41329454>,
+        <https://rkd.nl/artists/42648> .
+
+<https://muurschilderingendatabase.nl/api/items/11732> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11732 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "L. Bock"^^xsd:string ;
+    dcterms:description "kunstschilder"^^xsd:string ;
+    dcterms:identifier "rkd:346982"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "L. Bock"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:sameAs <http://www.wikidata.org/entity/Q41331199>,
+        <https://rkd.nl/artists/346982> .
+
+<https://muurschilderingendatabase.nl/api/items/11733> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11733 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Auguste Graux"^^xsd:string ;
+    dcterms:description "kunstschilder"^^xsd:string ;
+    dcterms:identifier "rkd:33420"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Auguste Graux"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1831-10-13"^^xsd:date ;
+    schema:deathDate "1889-11-04"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q41331729>,
+        <https://rkd.nl/artists/33420> .
+
+<https://muurschilderingendatabase.nl/api/items/11734> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11734 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Jan Hendrik Aikes"^^xsd:string ;
+    dcterms:description "Nederlands kunstschilder (1790-1846)"^^xsd:string ;
+    dcterms:identifier "rkd:739"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Jan Hendrik Aikes"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1790-08-01"^^xsd:date ;
+    schema:deathDate "1846-04-28"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q46998136>,
+        <https://rkd.nl/artists/739> .
+
+<https://muurschilderingendatabase.nl/api/items/11735> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11735 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Pieter Cent van der Wilt"^^xsd:string ;
+    dcterms:description "Nederlands kunstschilder (1908-1976)"^^xsd:string ;
+    dcterms:identifier "rkd:84873"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Pieter Cent van der Wilt"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1908-08-11"^^xsd:date ;
+    schema:deathDate "1976-11-09"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q46998837>,
+        <https://rkd.nl/artists/84873> .
+
+<https://muurschilderingendatabase.nl/api/items/11736> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11736 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Clement Benedictus Antheunis"^^xsd:string ;
+    dcterms:description "Nederlands kunstschilder"^^xsd:string ;
+    dcterms:identifier "rkd:349641"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Clement Benedictus Antheunis"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1876-01-01"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q46999082>,
+        <https://rkd.nl/artists/349641> .
+
+<https://muurschilderingendatabase.nl/api/items/11737> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11737 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Jan Wingen"^^xsd:string ;
+    dcterms:description "tekenaar"^^xsd:string ;
+    dcterms:identifier "rkd:91963"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Jan Wingen"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1874-05-28"^^xsd:date ;
+    schema:deathDate "1956-03-07"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q55804861>,
+        <https://rkd.nl/artists/91963> .
+
+<https://muurschilderingendatabase.nl/api/items/11738> a o:Item,
+        schema:Person ;
+    o:created "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:id 11738 ;
+    o:is_public true ;
+    o:modified "2025-11-26T12:07:48+00:00"^^xsd:dateTime ;
+    o:owner <https://muurschilderingendatabase.nl/api/users/3> ;
+    o:resource_class <https://muurschilderingendatabase.nl/api/resource_classes/1688> ;
+    o:resource_template <https://muurschilderingendatabase.nl/api/resource_templates/21> ;
+    o:title "Benno de Vries"^^xsd:string ;
+    dcterms:identifier "rkd:296195"^^xsd:string ;
+    dcterms:source "Inventarisatie Decoratieve Interieurschilderingen in Nederland (1600-1940)"^^xsd:string ;
+    dcterms:title "Benno de Vries"^^xsd:string ;
+    dcterms:type <https://vocab.getty.edu/aat/300025103> ;
+    schema:birthDate "1939-04-07"^^xsd:date ;
+    schema:deathDate "2013-09-16"^^xsd:date ;
+    schema:sameAs <http://www.wikidata.org/entity/Q124705402>,
+        <https://rkd.nl/artists/296195> .
 
 <https://muurschilderingendatabase.nl/api/items/5070> a o:Item,
         schema:Review ;
@@ -42905,6 +43758,8 @@ door kruisribgewelven."""^^xsd:string ;
 
 <https://vocab.getty.edu/aat/300164595> o:label "kleurvlakken"^^xsd:string .
 
+<https://vocab.getty.edu/aat/300178679> o:label "keim"^^xsd:string .
+
 <https://vocab.getty.edu/aat/300375563> o:label "bloem"^^xsd:string .
 
 <https://www.amsterdam-monumentenstad.nl/database/grachtenboek_objecten.php?id=6347> o:label "Amsterdam Monumentenstad"^^xsd:string .
@@ -63318,10 +64173,6 @@ Geïllustreerde beschrijving"""^^xsd:string ;
         <https://muurschilderingendatabase.nl/api/items/9834>,
         <https://muurschilderingendatabase.nl/api/items/9838> .
 
-<https://vocab.getty.edu/aat/300025103> o:label "kunstenaar"^^xsd:string .
-
-<https://muurschilderingendatabase.nl/api/resource_classes/1688> o:id 1688 .
-
 <https://muurschilderingendatabase.nl/api/items/6593> a o:Item,
         ceo:Rijksmonument ;
     o-module-mapping:feature <https://muurschilderingendatabase.nl/api/mapping_features/86> ;
@@ -63351,8 +64202,6 @@ Geïllustreerde beschrijving"""^^xsd:string ;
         "onthechting"^^xsd:string,
         "onthechting (pleister)"^^xsd:string,
         "vocht"^^xsd:string .
-
-<https://muurschilderingendatabase.nl/api/resource_templates/21> o:id 21 .
 
 <https://muurschilderingendatabase.nl/api/items/6567> a o:Item,
         ceo:Rijksmonument ;
@@ -63386,6 +64235,12 @@ Niet geïdentificeerde wapenschilden zijn niet afzonderlijk als muurschildering 
     schema:subjectOf <https://muurschilderingendatabase.nl/api/items/10143> .
 
 <https://data.cultureelerfgoed.nl/term/id/cht/a3acd2d3-61f5-4426-81cb-d295c3b3c9ea> o:label "klimatologische schommelingen"^^xsd:string .
+
+<https://vocab.getty.edu/aat/300025103> o:label "kunstenaar"^^xsd:string .
+
+<https://muurschilderingendatabase.nl/api/resource_classes/1688> o:id 1688 .
+
+<https://muurschilderingendatabase.nl/api/resource_templates/21> o:id 21 .
 
 <https://data.cultureelerfgoed.nl/term/id/cht/c58475d5-0795-4623-b4be-ea1524f4b4fb> o:label "vlekken (10%)"^^xsd:string,
         "vlekken (20%)"^^xsd:string,
