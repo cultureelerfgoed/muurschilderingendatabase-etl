@@ -1,6 +1,6 @@
 # Muurschilderingendatabase ETL
 
-Als deel van een onderzoeksproject over muurschilderingen worden muurschilderingen en bijbehorende eigenschappen vastgelegd als linked data op een Omeka-S instantie (Muurschilderingendatabase)[https://muurschilderingendatabase.nl]. Om deze data te publiceren op de (Linked Data Voorziening)[https://linkeddata.cultureelerfgoed.nl/] van de RCE, is deze ETL als Github Action ingericht. Github Actiopn haalt de nieuwste onderzoeksdata op via de API van de Muurschilderingendatabase, transformeert en verrijkt de data met Python en RDFLib. Vervolgens wordt de data via de Triply API gepubliceerd. 
+Als deel van een onderzoeksproject over muurschilderingen worden muurschilderingen en bijbehorende eigenschappen vastgelegd als linked data op een Omeka-S instantie [Muurschilderingendatabase](https://muurschilderingendatabase.nl). Om deze data te publiceren op de [Linked Data Voorziening](https://linkeddata.cultureelerfgoed.nl/) van de RCE, is deze ETL als Github Action ingericht. Github Actiopn haalt de nieuwste onderzoeksdata op via de API van de Muurschilderingendatabase, transformeert en verrijkt de data met Python en RDFLib. Vervolgens wordt de data via de Triply API gepubliceerd. 
 
 # Installatie 
 
