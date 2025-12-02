@@ -1,10 +1,11 @@
-name: 'Muurschilderingendatabase ETL TriplyDB-CLI'
+name: 'Muurschilderingendatabase ETL cURL'
 
 env:
   BASE_URI: 'https://muurschilderingendatabase.nl/'  
   PROJECT_NAME: 'Muurschilderingendatabase ETL'
   TARGET_FILEPATH: 'data/api-export.ttl'
   GRAPH_ID: 'muurschilderingendatabase'
+
 
 on:
   workflow_dispatch:
@@ -16,20 +17,14 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
-
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
         python-version: '3.x'
-
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-
-    - name: Download TriplyDB CLI
-      run: |
-        wget 'https://static.triply.cc/cli/triplydb-linux'
 
     - name: Run harvester script
       run: |
@@ -61,11 +56,7 @@ jobs:
       env:        
         TARGET_FILEPATH: ${{ env.TARGET_FILEPATH }}
 
-    - name: Push changes to TriplyDB API via CLI.
+    - name: Push changes to TriplyDB API.
       run: |
-        ./triplydb-linux import-from-file --dataset "Muurschilderingen" --token "${{ secrets.LDV_API_TOKEN }}" --account "rce" --url "https://api.linkeddata.cultureelerfgoed.nl" --default-graph-name "https://linkeddata.cultureelerfgoed.nl/rce/Muurschilderingen/graphs/muurschilderingen-latest-graph" --mode "overwrite" ${{ env.TARGET_FILEPATH }}
-      env:        
-        TARGET_FILEPATH: ${{ env.TARGET_FILEPATH }}
-
-
-
+        curl -H 'Authorization: Bearer ${{ secrets.LDV_API_TOKEN }}' -X POST 'https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/Muurschilderingen/jobs'  -F file='@./data/api-export.ttl'
+        
