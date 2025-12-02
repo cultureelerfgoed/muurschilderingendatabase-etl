@@ -1,19 +1,17 @@
-name: 'Muurschilderingendatabase ETL'
+name: 'Muurschilderingendatabase ETL TriplyDB-CLI'
 
 env:
-  BASE_URI: 'https://muurschilderingendatabase.nl/'  
+  BASE_URI: 'https://muurschilderingendatabase.nl/'
   PROJECT_NAME: 'Muurschilderingendatabase ETL'
   TARGET_FILEPATH: 'data/api-export.ttl'
-  GRAPH_ID: 'muurschilderingendatabase'
-
+  GRAPH_ID: 'muurschilderingen-latest-graph'
 
 on:
   workflow_dispatch:
-  
-jobs:
-  update-file:
-    runs-on: ubuntu-latest
 
+jobs:
+  get-latest-data-and-transform:
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
@@ -25,8 +23,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-
-    - name: Run harvester script
+    - name: Get latest data from Muurschilderingendatabase
       run: |
         python scripts/export_from_omeka_s.py
       env:
@@ -34,8 +31,7 @@ jobs:
         PROJECT_NAME: ${{ env.PROJECT_NAME }}
         TARGET_FILEPATH: ${{ env.TARGET_FILEPATH }}
         GRAPH_ID: ${{ env.GRAPH_ID }}
-        
-    - name: Transform and make available in repository.
+    - name: Transform, enrich, and serialize
       run: |
         python scripts/transform_datamodel.py
       env:
@@ -43,20 +39,24 @@ jobs:
         PROJECT_NAME: ${{ env.PROJECT_NAME }}
         TARGET_FILEPATH: ${{ env.TARGET_FILEPATH }}
         GRAPH_ID: ${{ env.GRAPH_ID }}
-
-    - name: Check for changes and commit.
+    - name: Check for changes and commit latest data to repository.
       run: |
         if [[ -n $(git status -s) ]]; then
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add ${{ github.workspace }}/${{ env.TARGET_FILEPATH }}
+          git add ${{ github.workspace }}/$TARGET_FILEPATH
           git commit -m "Muurschilderingendatabase export/transform update."
-          git push        
+          git push
         fi
-      env:        
-        TARGET_FILEPATH: ${{ env.TARGET_FILEPATH }}
-
-    - name: Push changes to TriplyDB API.
+  push-to-triplydb:
+    runs-on: ubuntu-latest
+    - name: Download TriplyDB CLI and make runnable
       run: |
-        curl -H 'Authorization: Bearer ${{ secrets.LDV_API_TOKEN }}' -X POST 'https://api.linkeddata.cultureelerfgoed.nl/datasets/rce/Muurschilderingen/jobs'  -F file='@./data/api-export.ttl'
-        
+        wget 'https://static.triply.cc/cli/triplydb-linux'
+        chmod +x triplydb-linux
+    - name: Push changes to TriplyDB API via CLI.
+      run: |
+        ./triplydb-linux import-from-file --dataset "Muurschilderingen" --token "${{ secrets.LDV_API_TOKEN }}" --account "rce" --url "https://api.linkeddata.cultureelerfgoed.nl" --default-graph-name 'https://linkeddata.cultureelerfgoed.nl/rce/Muurschilderingen/graphs/$GRAPH_ID' --mode "overwrite" $TARGET_FILEPATH
+
+
+
