@@ -1,50 +1,51 @@
----
-name: Muurschilderingendatabase ETL TriplyDB-CLI
+name: 'Muurschilderingendatabase ETL'
+
 env:
-  BASE_URI: https://muurschilderingendatabase.nl/
-  PROJECT_NAME: Muurschilderingendatabase ETL
-  TARGET_FILEPATH: data/api-export.ttl
-  GRAPH_ID: muurschilderingen-latest-graph
+  BASE_URI: 'https://muurschilderingendatabase.nl/'
+  PROJECT_NAME: 'Muurschilderingendatabase ETL'
+  TARGET_FILEPATH: 'data/api-export.ttl'
+  GRAPH_ID: 'muurschilderingen-latest-graph'
+
 on:
-  workflow_dispatch: null
+  workflow_dispatch:
+
 jobs:
   get-latest-data-transform-and-push:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: 3.x
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          wget 'https://static.triply.cc/cli/triplydb-linux'
-          chmod +x triplydb-linux
-      - name: Get latest data from Muurschilderingendatabase & transform.
-        run: |
-          python scripts/export_from_omeka_s.py
-          python scripts/transform_datamodel.py
-        env:
-          BASE_URI: ${{ env.BASE_URI }}
-          PROJECT_NAME: ${{ env.PROJECT_NAME }}
-          TARGET_FILEPATH: ${{ env.TARGET_FILEPATH }}
-          GRAPH_ID: ${{ env.GRAPH_ID }}
-      - name: Check for changes and commit latest data to repository.
-        run: >
-          if [[ -n $(git status -s) ]]; then
-            git config user.name github-actions[bot]
-            git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-            git add ${{ github.workspace }}/$TARGET_FILEPATH
-            git commit -m "Muurschilderingendatabase export/transform update."
-            git push
-          fi
-      - name: Push changes to TriplyDB API via CLI.
-        run: >
-          ./triplydb-linux import-from-file --dataset "Muurschilderingen" --token
-          "${{ secrets.LDV_API_TOKEN }}" --account "rce" --url
-          "https://api.linkeddata.cultureelerfgoed.nl" --default-graph-name
-          'https://linkeddata.cultureelerfgoed.nl/rce/Muurschilderingen/graphs/$GRAPH_ID'
-          --mode "overwrite" $TARGET_FILEPATH
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        wget 'https://static.triply.cc/cli/triplydb-linux'
+        chmod +x triplydb-linux
+    - name: Get latest data from Muurschilderingendatabase & transform.
+      run: |
+        python scripts/export_from_omeka_s.py
+        python scripts/transform_datamodel.py
+      env:
+        BASE_URI: ${{ env.BASE_URI }}
+        PROJECT_NAME: ${{ env.PROJECT_NAME }}
+        TARGET_FILEPATH: ${{ env.TARGET_FILEPATH }}
+        GRAPH_ID: ${{ env.GRAPH_ID }}
+    - name: Check for changes and commit latest data to repository.
+      run: |
+        if [[ -n $(git status -s) ]]; then
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add ${{ github.workspace }}/$TARGET_FILEPATH
+          git commit -m "Muurschilderingendatabase export/transform update."
+          git push
+        fi
+    - name: Push changes to TriplyDB API via CLI.
+      run: |
+        ./triplydb-linux import-from-file --dataset "Muurschilderingen" --token "${{ secrets.LDV_API_TOKEN }}" --account "rce" --url "https://api.linkeddata.cultureelerfgoed.nl" --default-graph-name 'https://linkeddata.cultureelerfgoed.nl/rce/Muurschilderingen/graphs/$GRAPH_ID' --mode "overwrite" $TARGET_FILEPATH
+
+
+
