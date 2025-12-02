@@ -61,7 +61,9 @@ jobs:
       env:        
         TARGET_FILEPATH: ${{ env.TARGET_FILEPATH }}
 
-    - name: Push changes to TriplyDB API via CLI.
+    - name: Make the script files executable
+      run: chmod +x triplydb-linux
+    - name: Push changes to TriplyDB API via CLI.      
       run: |
         ./triplydb-linux import-from-file --dataset "Muurschilderingen" --token "${{ secrets.LDV_API_TOKEN }}" --account "rce" --url "https://api.linkeddata.cultureelerfgoed.nl" --default-graph-name "https://linkeddata.cultureelerfgoed.nl/rce/Muurschilderingen/graphs/muurschilderingen-latest-graph" --mode "overwrite" ${{ env.TARGET_FILEPATH }}
       env:        
