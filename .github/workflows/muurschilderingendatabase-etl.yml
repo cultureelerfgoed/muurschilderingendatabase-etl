@@ -50,6 +50,7 @@ jobs:
         fi
   push-to-triplydb:
     runs-on: ubuntu-latest
+    steps:
     - name: Download TriplyDB CLI and make runnable
       run: |
         wget 'https://static.triply.cc/cli/triplydb-linux'
