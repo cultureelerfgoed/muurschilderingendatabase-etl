@@ -50,12 +50,7 @@ try:
                         data = requests.get(RM_URI, timeout=200)
                         enrichmentsfile.write(data.text)
         
-        enrichment_graph.parse("data/enrichments.ttl")
-
-        for subj, pred, obj, in enrichment_graph:
-            if "https://linkeddata.cultureelerfgoed.nl/def/ceo#rijksmonumentnummer" in pred:
-                graph.add((subj, obj, pred))
-                logger.info("Adding enrichment: %s", str(obj))
+        graph.parse("data/enrichments.ttl")
             
     # Apply mapping to graph
     for subj, pred, obj in graph:
