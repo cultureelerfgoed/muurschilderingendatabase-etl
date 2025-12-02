@@ -49,6 +49,7 @@ jobs:
           git push
         fi
   push-to-triplydb:
+    needs: get-latest-data-and-transform
     runs-on: ubuntu-latest
     steps:
     - name: Download TriplyDB CLI and make runnable
