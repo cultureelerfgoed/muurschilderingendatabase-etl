@@ -5,6 +5,7 @@ env:
   PROJECT_NAME: 'Muurschilderingendatabase ETL'
   TARGET_FILEPATH: 'data/api-export.ttl'
   GRAPH_ID: 'muurschilderingen-latest-graph'
+  ARTIFACT_PATH: 'data/artifact-data.ttl'
 
 on:
   workflow_dispatch:
@@ -29,13 +30,13 @@ jobs:
       env:
         BASE_URI: ${{ env.BASE_URI }}
         PROJECT_NAME: ${{ env.PROJECT_NAME }}
-        TARGET_FILEPATH: ${{ env.TARGET_FILEPATH }}
+        TARGET_FILEPATH: ${{ env.ARTIFACT_PATH }}
         GRAPH_ID: ${{ env.GRAPH_ID }}   
     - name: Upload data artifact
       uses: actions/upload-artifact@v4
       with:
         name: data-artifact
-        path: ${{ env.TARGET_FILEPATH }}
+        path: ${{ env.ARTIFACT_PATH }}
         overwrite: true
 
   transform-enrich:
@@ -56,20 +57,20 @@ jobs:
       uses: actions/download-artifact@v5
       with:
         name: data-artifact
-        path: ${{ env.TARGET_FILEPATH }}
+        path: ${{ env.ARTIFACT_PATH }}
     - name: Transform and enrich data
       run: |
         python scripts/transform_datamodel.py
       env:
         BASE_URI: ${{ env.BASE_URI }}
         PROJECT_NAME: ${{ env.PROJECT_NAME }}
-        TARGET_FILEPATH: ${{ env.TARGET_FILEPATH }}
+        TARGET_FILEPATH: ${{ env.ARTIFACT_PATH }}
         GRAPH_ID: ${{ env.GRAPH_ID }}   
     - name: Upload data artifact
       uses: actions/upload-artifact@v4
       with:
         name: data-artifact
-        path: ${{ env.TARGET_FILEPATH }}
+        path: ${{ env.ARTIFACT_PATH }}
         overwrite: true
 
   push-to-github:
@@ -82,13 +83,16 @@ jobs:
       uses: actions/download-artifact@v5
       with:
         name: data-artifact
-        path: ${{ env.TARGET_FILEPATH }}    
+        path: ${{ env.ARTIFACT_PATH }}
+    - name: Replace ttl file with ubuntu-latest
+      run: |
+        mv ${{ env.ARTIFACT_PATH }} ${{ env.TARGET_FILEPATH }}    
     - name: Check for changes and commit latest data to repository.
       run: |
         if [[ -n $(git status -s) ]]; then
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add ${{ github.workspace }}/$TARGET_FILEPATH
+          git add ${{ github.workspace }}/${{ env.TARGET_FILEPATH }}
           git commit -m "Muurschilderingendatabase export/transform update."
           git push
         fi
@@ -101,11 +105,11 @@ jobs:
       uses: actions/download-artifact@v5
       with:
           name: data-artifact
-          path: ${{ env.TARGET_FILEPATH }}
+          path: ${{ env.ARTIFACT_PATH }}
     - name: Install dependencies
       run: |
         wget 'https://static.triply.cc/cli/triplydb-linux'
         chmod +x triplydb-linux
     - name: Push changes to TriplyDB API via CLI
       run: |
-        ./triplydb-linux import-from-file --dataset "Muurschilderingen" --token "${{ secrets.LDV_API_TOKEN }}" --account "rce" --url "https://api.linkeddata.cultureelerfgoed.nl" --default-graph-name 'https://linkeddata.cultureelerfgoed.nl/rce/Muurschilderingen/graphs/$GRAPH_ID' --mode "overwrite" ${{ env.TARGET_FILEPATH }}
+        ./triplydb-linux import-from-file --dataset "Muurschilderingen" --token "${{ secrets.LDV_API_TOKEN }}" --account "rce" --url "https://api.linkeddata.cultureelerfgoed.nl" --default-graph-name 'https://linkeddata.cultureelerfgoed.nl/rce/Muurschilderingen/graphs/${{ env.GRAPH_ID }}' --mode "overwrite" ${{ env.ARTIFACT_PATH }}
