@@ -10,7 +10,6 @@ on:
   workflow_dispatch:
 
 jobs:
-
   get-latest-data-and-transform:
     runs-on: ubuntu-latest
     steps:
@@ -37,38 +36,38 @@ jobs:
         BASE_URI: ${{ env.BASE_URI }}
         PROJECT_NAME: ${{ env.PROJECT_NAME }}
         TARGET_FILEPATH: ${{ env.TARGET_FILEPATH }}
-        GRAPH_ID: ${{ env.GRAPH_ID }}
-    
-    push-to-repo:
-      runs-on: ubuntu-latest
-      needs: get-latest-data-and-transform
-      steps:
-      - name: Check for changes and commit latest data to repository.
-        uses: actions/download-artifact@v5
-        with:
+        GRAPH_ID: ${{ env.GRAPH_ID }}   
+
+  push-to-repo:
+    runs-on: ubuntu-latest
+    needs: get-latest-data-and-transform
+    steps:
+    - name: Check for changes and commit latest data to repository.
+      uses: actions/download-artifact@v5
+      with:
+        name: data-artifact
+        path: ${{ env.TARGET_FILEPATH }}
+      run: |
+        if [[ -n $(git status -s) ]]; then
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add ${{ github.workspace }}/$TARGET_FILEPATH
+          git commit -m "Muurschilderingendatabase export/transform update."
+          git push
+        fi
+        
+  push-to-triply:
+    runs-on: ubuntu-latest
+    needs: get-latest-data-and-transform
+    steps:
+    - name: Install dependencies
+      run: |
+        wget 'https://static.triply.cc/cli/triplydb-linux'
+        chmod +x triplydb-linux
+    - name: Push changes to TriplyDB API via CLI.
+      uses: actions/download-artifact@v5
+      with:
           name: data-artifact
           path: ${{ env.TARGET_FILEPATH }}
-        run: |
-          if [[ -n $(git status -s) ]]; then
-            git config user.name github-actions[bot]
-            git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-            git add ${{ github.workspace }}/$TARGET_FILEPATH
-            git commit -m "Muurschilderingendatabase export/transform update."
-            git push
-          fi
-
-    push-to-triply:
-      runs-on: ubuntu-latest
-      needs: get-latest-data-and-transform
-      steps:
-      - name: Install dependencies
-        run: |
-          wget 'https://static.triply.cc/cli/triplydb-linux'
-          chmod +x triplydb-linux
-      - name: Push changes to TriplyDB API via CLI.
-        uses: actions/download-artifact@v5
-        with:
-            name: data-artifact
-            path: ${{ env.TARGET_FILEPATH }}
-        run: |
-          ./triplydb-linux import-from-file --dataset "Muurschilderingen" --token "${{ secrets.LDV_API_TOKEN }}" --account "rce" --url "https://api.linkeddata.cultureelerfgoed.nl" --default-graph-name 'https://linkeddata.cultureelerfgoed.nl/rce/Muurschilderingen/graphs/$GRAPH_ID' --mode "overwrite" $TARGET_FILEPATH
+      run: |
+        ./triplydb-linux import-from-file --dataset "Muurschilderingen" --token "${{ secrets.LDV_API_TOKEN }}" --account "rce" --url "https://api.linkeddata.cultureelerfgoed.nl" --default-graph-name 'https://linkeddata.cultureelerfgoed.nl/rce/Muurschilderingen/graphs/$GRAPH_ID' --mode "overwrite" $TARGET_FILEPATH
