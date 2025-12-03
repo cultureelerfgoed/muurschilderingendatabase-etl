@@ -10,11 +10,11 @@ on:
   workflow_dispatch:
 
 jobs:
-  get-latest-data-and-transform:
+  get-latest-data:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v6
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
@@ -23,11 +23,42 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-        wget 'https://static.triply.cc/cli/triplydb-linux'
-        chmod +x triplydb-linux
-    - name: Get latest data from Muurschilderingendatabase & transform.
+    - name: Get latest data from Muurschilderingendatabase
       run: |
-        python scripts/export_from_omeka_s.py && python scripts/transform_datamodel.py
+        python scripts/export_from_omeka_s.py
+      env:
+        BASE_URI: ${{ env.BASE_URI }}
+        PROJECT_NAME: ${{ env.PROJECT_NAME }}
+        TARGET_FILEPATH: ${{ env.TARGET_FILEPATH }}
+        GRAPH_ID: ${{ env.GRAPH_ID }}   
+    - name: Data artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: data-artifact
+        path: ${{ env.TARGET_FILEPATH }}
+
+  transform-enrich:
+    runs-on: ubuntu-latest
+    needs: get-latest-data
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v6
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Data artifact
+        uses: actions/download-artifact@v5
+        with:
+          name: data-artifact
+          path: ${{ env.TARGET_FILEPATH }}
+    - name: Transform and enrich data
+      run: |
+        python scripts/transform_datamodel.py
       env:
         BASE_URI: ${{ env.BASE_URI }}
         PROJECT_NAME: ${{ env.PROJECT_NAME }}
@@ -41,13 +72,15 @@ jobs:
 
   push-to-github:
     runs-on: ubuntu-latest
-    needs: get-latest-data-and-transform
+    needs: [get-latest-data, transform-enrich]
     steps:
+    - name: Checkout repository
+      uses: actions/checkout@v6
     - name: Data artifact
       uses: actions/download-artifact@v5
       with:
         name: data-artifact
-        path: ${{ env.TARGET_FILEPATH }}
+        path: ${{ env.TARGET_FILEPATH }}    
     - name: Check for changes and commit latest data to repository.
       run: |
         if [[ -n $(git status -s) ]]; then
@@ -60,7 +93,7 @@ jobs:
 
   push-to-triply:
     runs-on: ubuntu-latest
-    needs: get-latest-data-and-transform
+    needs: [get-latest-data, transform-enrich]
     steps:
     - name: Data artifact
       uses: actions/download-artifact@v5
@@ -71,6 +104,6 @@ jobs:
       run: |
         wget 'https://static.triply.cc/cli/triplydb-linux'
         chmod +x triplydb-linux
-    - name: Push changes to TriplyDB API via CLI.
+    - name: Push changes to TriplyDB API via CLI
       run: |
-        ./triplydb-linux import-from-file --dataset "Muurschilderingen" --token "${{ secrets.LDV_API_TOKEN }}" --account "rce" --url "https://api.linkeddata.cultureelerfgoed.nl" --default-graph-name 'https://linkeddata.cultureelerfgoed.nl/rce/Muurschilderingen/graphs/$GRAPH_ID' --mode "overwrite" $TARGET_FILEPATH
+        ./triplydb-linux import-from-file --dataset "Muurschilderingen" --token "${{ secrets.LDV_API_TOKEN }}" --account "rce" --url "https://api.linkeddata.cultureelerfgoed.nl" --default-graph-name 'https://linkeddata.cultureelerfgoed.nl/rce/Muurschilderingen/graphs/$GRAPH_ID' --mode "overwrite" ${{ env.TARGET_FILEPATH }}
