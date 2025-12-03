@@ -15,6 +15,11 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
+    - name: Data artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: data-artifact
+        path: ${{ env.TARGET_FILEPATH }}
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
@@ -26,10 +31,6 @@ jobs:
         wget 'https://static.triply.cc/cli/triplydb-linux'
         chmod +x triplydb-linux
     - name: Get latest data from Muurschilderingendatabase & transform.
-      uses: actions/upload-artifact@v4
-      with:
-        name: data-artifact
-        path: ${{ env.TARGET_FILEPATH }}
       run: |
         python scripts/export_from_omeka_s.py && python scripts/transform_datamodel.py
       env:
@@ -42,6 +43,11 @@ jobs:
     runs-on: ubuntu-latest
     needs: get-latest-data-and-transform
     steps:
+    - name: Data artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: data-artifact
+        path: ${{ env.TARGET_FILEPATH }}
     - name: Check for changes and commit latest data to repository.
       uses: actions/download-artifact@v5
       with:
@@ -55,11 +61,16 @@ jobs:
           git commit -m "Muurschilderingendatabase export/transform update."
           git push
         fi
-        
+
   push-to-triply:
     runs-on: ubuntu-latest
     needs: get-latest-data-and-transform
     steps:
+    - name: Data artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: data-artifact
+        path: ${{ env.TARGET_FILEPATH }}
     - name: Install dependencies
       run: |
         wget 'https://static.triply.cc/cli/triplydb-linux'
