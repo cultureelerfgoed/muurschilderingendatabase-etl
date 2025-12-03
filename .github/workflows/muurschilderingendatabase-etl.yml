@@ -32,7 +32,7 @@ jobs:
         TARGET_FILEPATH: ${{ env.TARGET_FILEPATH }}
         GRAPH_ID: ${{ env.GRAPH_ID }}   
     - name: Upload data artifact
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v4
       with:
         name: data-artifact
         path: ${{ env.TARGET_FILEPATH }}
