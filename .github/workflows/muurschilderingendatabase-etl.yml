@@ -15,11 +15,6 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
-    - name: Data artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: data-artifact
-        path: ${{ env.TARGET_FILEPATH }}
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
@@ -38,21 +33,22 @@ jobs:
         PROJECT_NAME: ${{ env.PROJECT_NAME }}
         TARGET_FILEPATH: ${{ env.TARGET_FILEPATH }}
         GRAPH_ID: ${{ env.GRAPH_ID }}   
-
-  push-to-repo:
-    runs-on: ubuntu-latest
-    needs: get-latest-data-and-transform
-    steps:
     - name: Data artifact
       uses: actions/upload-artifact@v4
       with:
         name: data-artifact
         path: ${{ env.TARGET_FILEPATH }}
-    - name: Check for changes and commit latest data to repository.
+
+  push-to-github:
+    runs-on: ubuntu-latest
+    needs: get-latest-data-and-transform
+    steps:
+    - name: Data artifact
       uses: actions/download-artifact@v5
       with:
         name: data-artifact
         path: ${{ env.TARGET_FILEPATH }}
+    - name: Check for changes and commit latest data to repository.
       run: |
         if [[ -n $(git status -s) ]]; then
           git config user.name github-actions[bot]
@@ -67,18 +63,14 @@ jobs:
     needs: get-latest-data-and-transform
     steps:
     - name: Data artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/download-artifact@v5
       with:
-        name: data-artifact
-        path: ${{ env.TARGET_FILEPATH }}
+          name: data-artifact
+          path: ${{ env.TARGET_FILEPATH }}
     - name: Install dependencies
       run: |
         wget 'https://static.triply.cc/cli/triplydb-linux'
         chmod +x triplydb-linux
     - name: Push changes to TriplyDB API via CLI.
-      uses: actions/download-artifact@v5
-      with:
-          name: data-artifact
-          path: ${{ env.TARGET_FILEPATH }}
       run: |
         ./triplydb-linux import-from-file --dataset "Muurschilderingen" --token "${{ secrets.LDV_API_TOKEN }}" --account "rce" --url "https://api.linkeddata.cultureelerfgoed.nl" --default-graph-name 'https://linkeddata.cultureelerfgoed.nl/rce/Muurschilderingen/graphs/$GRAPH_ID' --mode "overwrite" $TARGET_FILEPATH
