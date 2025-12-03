@@ -52,10 +52,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Data artifact
-        uses: actions/download-artifact@v5
-        with:
-          name: data-artifact
-          path: ${{ env.TARGET_FILEPATH }}
+      uses: actions/download-artifact@v5
+      with:
+        name: data-artifact
+        path: ${{ env.TARGET_FILEPATH }}
     - name: Transform and enrich data
       run: |
         python scripts/transform_datamodel.py
