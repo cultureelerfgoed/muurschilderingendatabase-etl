@@ -57,7 +57,7 @@ jobs:
       uses: actions/download-artifact@v5
       with:
         name: data-artifact
-        path: ${{ env.ARTIFACT_PATH }}
+        path: data
     - name: Transform and enrich data
       run: |
         python scripts/transform_datamodel.py
@@ -83,7 +83,7 @@ jobs:
       uses: actions/download-artifact@v5
       with:
         name: data-artifact
-        path: ${{ env.ARTIFACT_PATH }}
+        path: data
     - name: Replace ttl file with ubuntu-latest
       run: |
         mv ${{ env.ARTIFACT_PATH }} ${{ env.TARGET_FILEPATH }}    
@@ -105,7 +105,7 @@ jobs:
       uses: actions/download-artifact@v5
       with:
           name: data-artifact
-          path: ${{ env.ARTIFACT_PATH }}
+          path: data
     - name: Install dependencies
       run: |
         wget 'https://static.triply.cc/cli/triplydb-linux'
