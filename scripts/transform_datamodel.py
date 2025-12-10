@@ -36,7 +36,6 @@ def get_mapping_from_env() -> dict:
                 src_parts = key[4:].split('_')
                 src_ns_name = src_parts[0]
                 src_pred_name = src_parts[1].lower()
-
                 # Parse target predicate (e.g., "SDO.name")
                 tgt_ns_name, tgt_pred_name = value.split('.')
 
@@ -51,12 +50,41 @@ def get_mapping_from_env() -> dict:
                 src_pred = getattr(src_ns, src_pred_name)
                 tgt_pred = getattr(tgt_ns, tgt_pred_name)
 
+                logger.info("Adding entry to transform mapping %s to %s.", f"{src_ns_name}.{src_pred_name}", f"{tgt_ns}.{tgt_pred}")
                 mapping[src_pred] = tgt_pred
 
             except Exception as e:
                 logger.warning(f"Skipping invalid mapping {key}={value}: {e}")
 
-    return mapping if mapping else None
+    return mapping
+
+# --- Functions ---
+def get_filter_from_env() -> list:
+    """Load mapping from environment variables with dynamic namespace resolution."""
+    filterlist = []
+
+    for key, value in os.environ.items():
+        if key.startswith('FILTER'):
+            try:
+                # Parse target predicate (e.g., "SDO.name")
+                tgt_ns_name, tgt_pred_name = value.split('.')
+
+                # Dynamically import namespaces
+                tgt_ns = getattr(ns_module, tgt_ns_name)
+
+                if not tgt_ns:
+                    raise ValueError(f"Unknown namespace in {key}={value}")
+
+                # Get predicates
+                tgt_pred = getattr(tgt_ns, tgt_pred_name)
+
+                logger.info("Adding entry to filterlist: %s", f"{tgt_ns}.{tgt_pred}")
+                filterlist.append((tgt_ns, tgt_pred))
+
+            except Exception as e:
+                logger.warning(f"Skipping invalid filter {key}={value}: {e}")
+
+    return filterlist
 
 def load_graph(filepath: str, format: str) -> Graph:
     """Load RDF graph from file."""
@@ -80,7 +108,7 @@ def enrich_with_rijksmonument_data(graph: Graph) -> None:
                             logger.error(f"Failed to fetch {RM_URI}: {e}")
     graph.parse("data/enrichments.ttl")
 
-def apply_mappings(graph: Graph, mapping: dict) -> None:
+def apply_mapping(graph: Graph, mapping: dict) -> None:
     """Apply predicate mappings to the graph."""
     if mapping: 
         for subj, pred, obj in list(graph):  # Use list() to avoid modification during iteration
@@ -88,6 +116,14 @@ def apply_mappings(graph: Graph, mapping: dict) -> None:
                 graph.remove((subj, pred, obj))
                 graph.add((subj, mapping[pred], obj))
     logger.info(f"Applied {len(mapping)} mappings to graph")
+
+def apply_filter(graph: Graph, filterlist: dict) -> None:
+    """Apply predicate mappings to the graph."""
+    if filterlist: 
+        for subj, pred, obj in list(graph):  # Use list() to avoid modification during iteration
+            if pred in filterlist:
+                graph.remove((subj, pred, obj))
+    logger.info(f"Filtered {len(filterlist)} predicates from graph")
 
 def save_graph(graph: Graph, filepath: str, format: str) -> None:
     """Save RDF graph to file."""
@@ -104,9 +140,12 @@ def main():
     try:
         logger.info(f"Starting transformation for {TARGET_FILEPATH}")
 
-        # 1. Load mapping
+        # 1. Load mapping & filter
         mapping = get_mapping_from_env()
-        logger.info(f"Using mapping: {mapping}")
+        filterlist = get_filter_from_env()
+        
+        logger.info("Using mapping: %s", mapping)
+        logger.info("Using filter: %s", filterlist)
 
         # 2. Load graph
         graph = load_graph(TARGET_FILEPATH, OUTPUT_FILE_FORMAT)
@@ -115,9 +154,12 @@ def main():
         enrich_with_rijksmonument_data(graph)
 
         # 4. Apply mappings
-        apply_mappings(graph, mapping)
+        apply_mapping(graph, mapping)
 
-        # 5. Save graph
+        # 5. Apply filter
+        apply_filter(graph, filterlist)
+
+        # 6. Save graph
         save_graph(graph, TARGET_FILEPATH, OUTPUT_FILE_FORMAT)
 
     except BadSyntax as e:

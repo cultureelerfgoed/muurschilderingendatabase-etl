@@ -15,3 +15,14 @@ pip install -r requirements.txt
 ```
 python scripts/export_from_omeka_s.py && python scripts/transform_datamodel.py
 ```
+
+# Applying  a mapping from the command-line
+
+```
+MAP_DCTERMS_description=SDO.description python scripts/transform_datamodel.py
+```
+
+# Applying a filter from the command-line
+```
+FILTER=SDO.description python scripts/transform_datamodel.py
+```
