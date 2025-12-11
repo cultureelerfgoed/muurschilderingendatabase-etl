@@ -3,7 +3,6 @@
 import os
 import logging
 import requests
-from importlib import import_module
 from rdflib import Graph, URIRef
 import rdflib.namespace as ns_module
 from rdflib.namespace import DCTERMS
@@ -25,36 +24,43 @@ logging.basicConfig(
 )
 
 # --- Functions ---
+def import_namespace_by_name(ns_name: str):
+    """Safely get a namespace, validating it's actually a namespace."""
+    ns = getattr(ns_module, ns_name)
+
+    # Verify it looks like a namespace (has _NS suffix in rdflib)
+    if not hasattr(ns, '_NS'):
+        raise ValueError(f"{ns_name} is not a valid namespace")
+
+    return ns
+
 def get_mapping_from_env() -> dict:
     """Load mapping from environment variables with dynamic namespace resolution."""
     mapping = {}
 
     for key, value in os.environ.items():
         if key.startswith('MAP_'):
-            try:
-                # Parse source predicate (e.g., "DCTERMS.title")
-                src_parts = key[4:].split('_')
-                src_ns_name = src_parts[0]
-                src_pred_name = src_parts[1].lower()
-                # Parse target predicate (e.g., "SDO.name")
-                tgt_ns_name, tgt_pred_name = value.split('.')
 
-                # Dynamically import namespaces
-                src_ns = getattr(ns_module, src_ns_name)
-                tgt_ns = getattr(ns_module, tgt_ns_name)
+            # Parse source predicate (e.g., "DCTERMS.title")
+            src_parts = key[4:].split('_')
+            src_ns_name = src_parts[0]
+            src_pred_name = src_parts[1].lower()
+            # Parse target predicate (e.g., "SDO.name")
+            tgt_ns_name, tgt_pred_name = value.split('.')
 
-                if not src_ns or not tgt_ns:
-                    raise ValueError(f"Unknown namespace in {key}={value}")
+            # Dynamically import namespaces
+            src_ns = import_namespace_by_name(src_ns_name)
+            tgt_ns = import_namespace_by_name(tgt_ns_name)
 
-                # Get predicates
-                src_pred = getattr(src_ns, src_pred_name)
-                tgt_pred = getattr(tgt_ns, tgt_pred_name)
+            if not src_ns or not tgt_ns:
+                raise ValueError(f"Unknown namespace in {key}={value}")
 
-                logger.info("Adding entry to transform mapping %s to %s.", f"{src_ns_name}.{src_pred_name}", f"{tgt_ns}.{tgt_pred}")
-                mapping[src_pred] = tgt_pred
+            # Get predicates
+            src_pred = getattr(src_ns, src_pred_name)
+            tgt_pred = getattr(tgt_ns, tgt_pred_name)
 
-            except Exception as e:
-                logger.warning(f"Skipping invalid mapping {key}={value}: {e}")
+            logger.info("Adding entry to transform mapping %s to %s.", f"{src_ns_name}.{src_pred_name}", f"{tgt_ns}.{tgt_pred}")
+            mapping[src_pred] = tgt_pred
 
     return mapping
 
@@ -65,24 +71,21 @@ def get_filter_from_env() -> list:
 
     for key, value in os.environ.items():
         if key.startswith('FILTER'):
-            try:
-                # Parse target predicate (e.g., "SDO.name")
-                tgt_ns_name, tgt_pred_name = value.split('.')
+        
+            # Parse target predicate (e.g., "SDO.name")
+            tgt_ns_name, tgt_pred_name = value.split('.')
 
-                # Dynamically import namespaces
-                tgt_ns = getattr(ns_module, tgt_ns_name)
+            # Dynamically import namespaces
+            tgt_ns = import_namespace_by_name(tgt_ns_name)
 
-                if not tgt_ns:
-                    raise ValueError(f"Unknown namespace in {key}={value}")
+            if not tgt_ns:
+                raise ValueError(f"Unknown namespace in {key}={value}")
 
-                # Get predicates
-                tgt_pred = getattr(tgt_ns, tgt_pred_name)
+            # Get predicates
+            tgt_pred = getattr(tgt_ns, tgt_pred_name)
 
-                logger.info("Adding entry to filterlist: %s", f"{tgt_ns}.{tgt_pred}")
-                filterlist.append((tgt_ns, tgt_pred))
-
-            except Exception as e:
-                logger.warning(f"Skipping invalid filter {key}={value}: {e}")
+            logger.info("Adding entry to filterlist: %s", f"{tgt_ns}.{tgt_pred}")
+            filterlist.append((tgt_ns, tgt_pred))
 
     return filterlist
 
@@ -105,7 +108,7 @@ def enrich_with_rijksmonument_data(graph: Graph) -> None:
                             data = requests.get(RM_URI, timeout=200)
                             f.write(data.text)
                         except requests.RequestException as e:
-                            logger.error(f"Failed to fetch {RM_URI}: {e}")
+                            logger.error("Failed to fetch %s", f"{RM_URI}: {e}")
     graph.parse("data/enrichments.ttl")
 
 def apply_mapping(graph: Graph, mapping: dict) -> None:
@@ -119,11 +122,11 @@ def apply_mapping(graph: Graph, mapping: dict) -> None:
 
 def apply_filter(graph: Graph, filterlist: dict) -> None:
     """Apply predicate mappings to the graph."""
-    if filterlist: 
+    if filterlist:
         for subj, pred, obj in list(graph):  # Use list() to avoid modification during iteration
             if pred in filterlist:
                 graph.remove((subj, pred, obj))
-    logger.info(f"Filtered {len(filterlist)} predicates from graph")
+    logger.info("Filtered %i predicates from graph", len(filterlist))
 
 def save_graph(graph: Graph, filepath: str, format: str) -> None:
     """Save RDF graph to file."""
@@ -133,13 +136,11 @@ def save_graph(graph: Graph, filepath: str, format: str) -> None:
         encoding=ENCODING,
         auto_compact=True
     )
-    logger.info(f"Saved graph to {filepath} ({os.path.getsize(filepath)} bytes)")
+    logger.info("Wrote %s to %s", f"{os.path.getsize(filepath)} bytes", filepath)
 
 # --- Main Workflow ---
 def main():
     try:
-        logger.info(f"Starting transformation for {TARGET_FILEPATH}")
-
         # 1. Load mapping & filter
         mapping = get_mapping_from_env()
         filterlist = get_filter_from_env()
@@ -163,11 +164,9 @@ def main():
         save_graph(graph, TARGET_FILEPATH, OUTPUT_FILE_FORMAT)
 
     except BadSyntax as e:
-        logger.error(f"RDF syntax error: {e}")
-        raise
+        logger.error("RDF syntax error: %s", str(e))
     except Exception as e:
-        logger.error(f"Unexpected error: {e}")
-        raise
+        logger.error("Unexpected error: %s", str(e))
 
 if __name__ == "__main__":
     main()
