@@ -3,6 +3,7 @@
 import os
 import logging
 import requests
+import uritools
 from rdflib import Graph, URIRef
 import rdflib.namespace as ns_module
 from rdflib.namespace import DCTERMS
@@ -24,40 +25,16 @@ logging.basicConfig(
 )
 
 # --- Functions ---
-def get_filter_from_env() -> list[tuple[str, str]]:
+def get_filter_from_env() -> list[URIRef]:
     """Load mapping from environment variables with dynamic namespace resolution."""
     filterlist = []
 
     for key, value in os.environ.items():
         if key.startswith('FILTER'):
-            try:
-                # Parse target predicate (e.g., "SDO.name")
-                tgt_ns_name, tgt_pred_name = value.split('.')
-
-                # Dynamically import namespaces
-                tgt_ns = getattr(ns_module, tgt_ns_name)
-        
-                # Parse target predicate (e.g., "SDO.name")
-                tgt_ns_name, tgt_pred_name = value.split('.')
-
-                if not tgt_ns:
-                    raise ValueError(f"Unknown namespace in {key}={value}")
-                # Dynamically import namespaces
-                tgt_ns = import_namespace_by_name(tgt_ns_name)
-
-                    # Get predicates
-                tgt_pred = getattr(tgt_ns, tgt_pred_name)
-                if not tgt_ns:
-                    raise ValueError(f"Unknown namespace in {key}={value}")
-
-                logger.info("Adding entry to filterlist: %s", f"{tgt_ns}.{tgt_pred}")
-                filterlist.append((tgt_ns, tgt_pred))
-                # Get predicates
-                tgt_pred = getattr(tgt_ns, tgt_pred_name)
-                logger.info("Adding entry to filterlist: %s", f"{tgt_ns}.{tgt_pred}")
-                filterlist.append((tgt_ns, tgt_pred))
-            except Exception as e:
-                logger.warning('Skipping invalid filter %s', f'{key}={value}: {e}')
+            if uritools.is_valid_uri(value):
+                filterlist.append(URIRef(value))
+            else:
+                logger.warning('Skipping invalid filter entry %s', f'{key}={value}')
 
     return filterlist
     
@@ -124,7 +101,7 @@ def enrich_with_rijksmonument_data(graph: Graph) -> None:
                             logger.error("Failed to fetch %s", f"{RM_URI}: {e}")
     graph.parse("data/enrichments.ttl")
 
-def apply_mapping(graph: Graph, mapping: dict) -> None:
+def apply_mapping(graph: Graph, mapping: dict):
     """Apply predicate mappings to the graph."""
     if mapping: 
         for subj, pred, obj in list(graph):  # Use list() to avoid modification during iteration
@@ -133,13 +110,13 @@ def apply_mapping(graph: Graph, mapping: dict) -> None:
                 graph.add((subj, mapping[pred], obj))
     logger.info(f"Applied {len(mapping)} mappings to graph")
 
-def apply_filter(graph: Graph, filterlist: dict) -> None:
+def apply_filter(graph: Graph, filterlist: list[URIRef]):
     """Apply predicate mappings to the graph."""
-    if filterlist:
-        for subj, pred, obj in list(graph):  # Use list() to avoid modification during iteration
-            if pred in filterlist:
-                graph.remove((subj, pred, obj))
-    logger.info(f"Filtered {len(filterlist)} predicates from graph")
+    pre_len = len(graph)
+    for f_uri in filterlist:
+        graph.remove((None, f_uri, None))
+
+    logger.info(f"Filtered {pre_len - len(graph)} values from graph")
 
 def save_graph(graph: Graph, filepath: str, format: str) -> None:
     """Save RDF graph to file."""
