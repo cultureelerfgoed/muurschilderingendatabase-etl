@@ -6,6 +6,7 @@ from ssl import SSLCertVerificationError, SSLError
 import requests
 from rdflib import Graph, URIRef
 from rdflib.namespace import RDF
+import uritools
 
 ### Configuration
 # Path to save file
@@ -50,25 +51,24 @@ try:
 
     # Filter out broken triples.
     for subj, pred, obj in graph:
-        if "@context" in subj or "@context" in obj:
+        if "@context" in str(subj) or "@context" in str(obj) or not uritools.is_valid_uri(str(subj)):
             logger.warning("Removing an unserializable triple:")
             logger.warning("- Subject: %s", subj)
             logger.warning("- Predicate: %s", pred)
             logger.warning("- Object: %s", obj)
             graph.remove((subj, pred, obj))
-        if graph[obj: RDF.type] and "customvocab" in graph[obj: RDF.type]:
+        if graph[obj: RDF.type] and "customvocab" in str(graph[obj: RDF.type]):
             logger.warning("Removing references to an unserializable triple:")
             logger.warning("- Subject: %s", subj)
             logger.warning("- Predicate: %s", pred)
             logger.warning("- Object: %s", obj)
             graph.remove((subj, pred, obj))
-        if isinstance(obj, URIRef) and ' ' in obj[len(obj) - 1]:
-            logger.warning("Stripping spaces from URI:")
+        if isinstance(obj, URIRef) and not uritools.is_valid_uri(str(obj)):
+            logger.warning("Removing an unserializable triple:")
             logger.warning("- Subject: %s", subj)
             logger.warning("- Predicate: %s", pred)
             logger.warning("- Object: %s", obj)
             graph.remove((subj, pred, obj))
-            graph.add((subj, pred, URIRef(obj.strip())))
 
     # Retrieve namespaces from api-context endpoint and bind them
     namespace_response = requests.get(BASE_URI+"api-context", timeout=200)

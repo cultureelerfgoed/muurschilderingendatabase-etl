@@ -114,3 +114,7 @@ jobs:
             echo "::error::TriplyDB push failed"
             exit 1
           }
+    - name: Print triply error response
+      if: ${{ failure() }}
+      run: |
+        cat .triplydb-js.err

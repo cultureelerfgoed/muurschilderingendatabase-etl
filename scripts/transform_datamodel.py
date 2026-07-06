@@ -34,7 +34,7 @@ def import_namespace_by_name(ns_name: str):
 
     return ns
 
-def get_mapping_from_env() -> dict:
+def get_mapping_from_env() -> dict[str]:
     """Load mapping from environment variables with dynamic namespace resolution."""
     mapping = {}
 
@@ -64,31 +64,6 @@ def get_mapping_from_env() -> dict:
 
     return mapping
 
-# --- Functions ---
-def get_filter_from_env() -> list:
-    """Load mapping from environment variables with dynamic namespace resolution."""
-    filterlist = []
-
-    for key, value in os.environ.items():
-        if key.startswith('FILTER'):
-        
-            # Parse target predicate (e.g., "SDO.name")
-            tgt_ns_name, tgt_pred_name = value.split('.')
-
-            # Dynamically import namespaces
-            tgt_ns = import_namespace_by_name(tgt_ns_name)
-
-            if not tgt_ns:
-                raise ValueError(f"Unknown namespace in {key}={value}")
-
-            # Get predicates
-            tgt_pred = getattr(tgt_ns, tgt_pred_name)
-
-            logger.info("Adding entry to filterlist: %s", f"{tgt_ns}.{tgt_pred}")
-            filterlist.append((tgt_ns, tgt_pred))
-
-    return filterlist
-
 def load_graph(filepath: str, format: str) -> Graph:
     """Load RDF graph from file."""
     graph = Graph(identifier=GRAPH_ID)
@@ -100,8 +75,9 @@ def enrich_with_rijksmonument_data(graph: Graph) -> None:
     """Enrich graph with Rijksmonument data."""
     with open("data/enrichments.ttl", "w", encoding=ENCODING) as f:
         for subj, pred, obj in graph:
-            if 'Rijksmonument' in obj and graph[subj : DCTERMS.identifier]:
-                for item in set(graph[subj : DCTERMS.identifier]):
+            subj_id = graph[subj : DCTERMS.identifier]
+            if 'Rijksmonument' in str(obj) and subj_id != None:
+                for item in set(subj_id):
                     if not isinstance(item, URIRef) and "RM" in item[0:2]:
                         RM_URI = f"https://api.linkeddata.cultureelerfgoed.nl/queries/rce/rest-api-rijksmonumenten/run?rijksmonumentnummer={item[2:]}"
                         try:
@@ -120,14 +96,6 @@ def apply_mapping(graph: Graph, mapping: dict) -> None:
                 graph.add((subj, mapping[pred], obj))
     logger.info(f"Applied {len(mapping)} mappings to graph")
 
-def apply_filter(graph: Graph, filterlist: dict) -> None:
-    """Apply predicate mappings to the graph."""
-    if filterlist:
-        for subj, pred, obj in list(graph):  # Use list() to avoid modification during iteration
-            if pred in filterlist:
-                graph.remove((subj, pred, obj))
-    logger.info("Filtered %i predicates from graph", len(filterlist))
-
 def save_graph(graph: Graph, filepath: str, format: str) -> None:
     """Save RDF graph to file."""
     graph.serialize(
@@ -143,10 +111,8 @@ def main():
     try:
         # 1. Load mapping & filter
         mapping = get_mapping_from_env()
-        filterlist = get_filter_from_env()
         
         logger.info("Using mapping: %s", mapping)
-        logger.info("Using filter: %s", filterlist)
 
         # 2. Load graph
         graph = load_graph(TARGET_FILEPATH, OUTPUT_FILE_FORMAT)
@@ -157,10 +123,7 @@ def main():
         # 4. Apply mappings
         apply_mapping(graph, mapping)
 
-        # 5. Apply filter
-        apply_filter(graph, filterlist)
-
-        # 6. Save graph
+        # 5. Save graph
         save_graph(graph, TARGET_FILEPATH, OUTPUT_FILE_FORMAT)
 
     except BadSyntax as e:
