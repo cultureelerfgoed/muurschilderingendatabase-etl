@@ -3,9 +3,9 @@ name: 'Muurschilderingendatabase ETL'
 env:
   BASE_URI: 'https://muurschilderingendatabase.nl/'
   PROJECT_NAME: 'Muurschilderingendatabase ETL'
-  TARGET_FILEPATH: 'data/api-export.ttl'
+  TARGET_FILEPATH: 'api-export.ttl'
   GRAPH_ID: 'muurschilderingen-latest-graph'
-  ARTIFACT_PATH: 'data/artifact-data.ttl'
+  ARTIFACT_PATH: 'artifact-data.ttl'
   PYTHON_VERSION: '3.11' 
 
 on:
@@ -22,7 +22,7 @@ jobs:
         cache: 'pip'  # Caching voor snellere runs
     - run: pip install -r requirements.txt --upgrade-strategy eager
     - name: Get latest data from Muurschilderingendatabase
-      run: python scripts/export_from_omeka_s.py
+      run: python src/export_from_omeka_s.py
       env:
         BASE_URI: ${{ env.BASE_URI }}
         PROJECT_NAME: ${{ env.PROJECT_NAME }}
@@ -52,8 +52,11 @@ jobs:
         name: data-artifact
         path: data
     - name: Transform and enrich data
-      run: python scripts/transform_datamodel.py
+      run:  python src/transform_datamodel.py
       env:
+        FILTER_O_ISPUBLIC: http://omeka.org/s/vocabs/o#is_public
+        FILTER_O_RESOURCECLASS: http://omeka.org/s/vocabs/o#resource_class
+        FILTER_O_RESOURCE_TEMPLATE: http://omeka.org/s/vocabs/o#resource_template
         BASE_URI: ${{ env.BASE_URI }}
         PROJECT_NAME: ${{ env.PROJECT_NAME }}
         TARGET_FILEPATH: ${{ env.ARTIFACT_PATH }}
