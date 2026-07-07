@@ -76,7 +76,6 @@ jobs:
       uses: actions/download-artifact@v8
       with:
           name: data-artifact
-          path: data
     - name: Install dependencies
       run: |
         wget 'https://static.triply.cc/cli/triplydb-linux'
