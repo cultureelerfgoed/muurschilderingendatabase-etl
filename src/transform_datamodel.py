@@ -4,9 +4,9 @@ import os
 import logging
 import requests
 import uritools
-from rdflib import Graph, URIRef
+from rdflib import RDF, Graph, URIRef
 import rdflib.namespace as ns_module
-from rdflib.namespace import DCTERMS, RDF
+from rdflib.namespace import SDO
 from rdflib.plugins.parsers.notation3 import BadSyntax
 
 # --- Configuration ---
@@ -88,18 +88,22 @@ def load_graph(filepath: str, format: str) -> Graph:
 def enrich_with_rijksmonument_data(graph: Graph) -> None:
     """Enrich graph with Rijksmonument data."""
     with open("enrichments.ttl", "w", encoding=ENCODING) as f:
-        rm_list = list(graph.triples((None, RDF.type, None)))
-        logger.info('trying to enrich %i Rijksmonumenten', len(list(rm_list)))
-        for subj, pred, obj in rm_list: 
-            for subj_id, pred_ic, obj_id, in graph.triples((subj, DCTERMS.identifier, None)):
-                if not isinstance(str(obj_id), URIRef) and "RM" in str(obj_id)[0:2]:
-                    rm_uri = f"https://api.linkeddata.cultureelerfgoed.nl/queries/rce/rest-api-rijksmonumenten/run?rijksmonumentnummer={str(obj_id)[2:]}"
-                    try:
-                        data = requests.get(rm_uri, timeout=200)
-                        f.write(data.text)
-                    except requests.RequestException as e:
-                        logger.error("Failed to fetch %s", f"{rm_uri}: {e}")
+        for subj, pred, obj in graph.triples((None, URIRef('https://linkeddata.cultureelerfgoed.nl/def/ceo#rijksmonumentnummer'), None)):
+            if not isinstance(str(obj), URIRef):
+                if "RM" in str(obj)[0:2]:
+                    rm_uri = f"https://api.linkeddata.cultureelerfgoed.nl/queries/rce/rest-api-rijksmonumenten/run?rijksmonumentnummer={str(obj)[2:]}"
+                else:
+                    rm_uri = f"https://api.linkeddata.cultureelerfgoed.nl/queries/rce/rest-api-rijksmonumenten/run?rijksmonumentnummer={str(obj)}"
+                try:
+                    data = requests.get(rm_uri, timeout=200)
+                    f.write(data.text)
+                except requests.RequestException as e:
+                    logger.error("Failed to fetch %s", f"{rm_uri}: {e}")
     graph.parse("enrichments.ttl")
+    for subj, pred, obj in graph.triples((None, URIRef('https://linkeddata.cultureelerfgoed.nl/def/ceo#rijksmonumentnummer'), None)):
+        if (subj, RDF.type, URIRef('https://linkeddata.cultureelerfgoed.nl/def/ceo#Rijksmonument')) in graph:
+            graph.add((subj, SDO.sameAs, obj))
+
 
 def apply_mapping(graph: Graph, mapping: dict):
     """Apply predicate mappings to the graph."""
