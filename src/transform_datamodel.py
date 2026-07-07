@@ -85,7 +85,7 @@ def load_graph(filepath: str, format: str) -> Graph:
     logger.info(f"Loaded graph with {len(graph)} triples")
     return graph
 
-def enrich_with_rijksmonument_data(graph: Graph) -> None:
+def enrich_with_rijksmonument_data(graph: Graph):
     """Enrich graph with Rijksmonument data."""
     with open("enrichments.ttl", "w", encoding=ENCODING) as f:
         for subj, pred, obj in graph.triples((None, URIRef('https://linkeddata.cultureelerfgoed.nl/def/ceo#rijksmonumentnummer'), None)):
@@ -100,9 +100,13 @@ def enrich_with_rijksmonument_data(graph: Graph) -> None:
                 except requests.RequestException as e:
                     logger.error("Failed to fetch %s", f"{rm_uri}: {e}")
     graph.parse("enrichments.ttl")
+    enr_index = 0
     for subj, pred, obj in graph.triples((None, URIRef('https://linkeddata.cultureelerfgoed.nl/def/ceo#rijksmonumentnummer'), None)):
         if (subj, RDF.type, URIRef('https://linkeddata.cultureelerfgoed.nl/def/ceo#Rijksmonument')) in graph:
             graph.add((subj, SDO.sameAs, obj))
+            enr_index += 1
+
+    logger.info('Enriched %i Rijksmonumenten.', enr_index)
 
 
 def apply_mapping(graph: Graph, mapping: dict):
