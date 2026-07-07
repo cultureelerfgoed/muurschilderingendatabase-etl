@@ -3,7 +3,6 @@ name: 'Muurschilderingendatabase ETL'
 env:
   BASE_URI: 'https://muurschilderingendatabase.nl/'
   PROJECT_NAME: 'Muurschilderingendatabase ETL'
-  TARGET_FILEPATH: 'api-export.ttl'
   GRAPH_ID: 'muurschilderingen-latest-graph'
   ARTIFACT_PATH: 'artifact-data.ttl'
   PYTHON_VERSION: '3.12' 
@@ -29,7 +28,7 @@ jobs:
         TARGET_FILEPATH: ${{ env.ARTIFACT_PATH }}
         GRAPH_ID: ${{ env.GRAPH_ID }}   
     - name: Upload data artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: data-artifact
         path: ${{ env.ARTIFACT_PATH }}
@@ -80,12 +79,11 @@ jobs:
        with:
          name: data-artifact
          path: data
-    - run: mv ${{ env.ARTIFACT_PATH }} ${{ env.TARGET_FILEPATH }}    
     - name: Commit and push.
       run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add ${{ github.workspace }}/${{ env.TARGET_FILEPATH }}
+          git add ${{ github.workspace }}/${{ env.ARTIFACT_PATH }}
           git diff --quiet && git diff --staged --quiet || {
             git commit -m "Update muurschilderingen data [skip ci]"
             git push
