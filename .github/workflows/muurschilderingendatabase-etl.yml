@@ -49,7 +49,6 @@ jobs:
       uses: actions/download-artifact@v8
       with:
         name: data-artifact
-        path: data
     - name: Transform and enrich data
       run:  python src/transform_datamodel.py
       env:
