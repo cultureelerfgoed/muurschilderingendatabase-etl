@@ -46,10 +46,9 @@ jobs:
           cache: 'pip'
     - run: pip install -r requirements.txt --upgrade-strategy eager
     - name: Download data artifact
-      uses: actions/download-artifact@v4
+      uses: actions/download-artifact@v8
       with:
         name: data-artifact
-        path: data
     - name: Transform and enrich data
       run:  python src/transform_datamodel.py
       env:
