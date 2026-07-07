@@ -82,16 +82,7 @@ jobs:
         chmod +x triplydb-linux
     - name: Push changes to TriplyDB API via CLI
       run: |
-        ./triplydb-linux import-from-file \ 
-        --dataset "Muurschilderingen" \
-        --token "${{ secrets.LDV_API_TOKEN }}" \ 
-        --account "rce" \
-        --url "https://api.linkeddata.cultureelerfgoed.nl" \ 
-        --default-graph-name "https://linkeddata.cultureelerfgoed.nl/rce/Muurschilderingen/graphs/${{ env.GRAPH_ID }}" \
-        --mode "overwrite" ${{ env.ARTIFACT_PATH }} ||  { 
-            echo "::error::TriplyDB push failed"
-            exit 1
-          }
+        ./triplydb-linux import-from-file --dataset "Muurschilderingen" --token "${{ secrets.LDV_API_TOKEN }}" --account "rce" --url "https://api.linkeddata.cultureelerfgoed.nl" --default-graph-name "https://linkeddata.cultureelerfgoed.nl/rce/Muurschilderingen/graphs/${{ env.GRAPH_ID }}" --mode "overwrite" ${{ env.ARTIFACT_PATH }} 
     - name: Print triply error response
       if: ${{ failure() }}
       run: |
