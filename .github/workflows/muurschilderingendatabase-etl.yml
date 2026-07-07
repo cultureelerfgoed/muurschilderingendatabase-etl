@@ -6,7 +6,7 @@ env:
   TARGET_FILEPATH: 'api-export.ttl'
   GRAPH_ID: 'muurschilderingen-latest-graph'
   ARTIFACT_PATH: 'artifact-data.ttl'
-  PYTHON_VERSION: '3.11' 
+  PYTHON_VERSION: '3.12' 
 
 on:
   workflow_dispatch:
