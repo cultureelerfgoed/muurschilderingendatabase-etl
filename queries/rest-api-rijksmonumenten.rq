@@ -1,0 +1,86 @@
+prefix owms: <http://standaarden.overheid.nl/owms/terms/>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
+prefix ceo: <https://linkeddata.cultureelerfgoed.nl/def/ceo#>
+prefix graph: <https://linkeddata.cultureelerfgoed.nl/graph/>
+
+construct {
+  $this ?p1 ?o1 .
+  $this ceo:rijksmonumentnummer ?url .
+  ?o1 ?p2 ?o2 .
+  ?o2 ?p3 ?o3 .
+}
+where {
+  graph graph:instanties-rce {
+    {
+      # SELECT bindt ?functieUri uit de data
+      select distinct $this ?functieUri {
+        $this a ceo:Rijksmonument ;
+              ceo:cultuurhistorischObjectnummer ?cultuurhistorischObjectnummer ;
+              ceo:heeftMonumentAard/skos:prefLabel ?monumentaard ;
+              ceo:heeftOorspronkelijkeFunctie/ceo:heeftFunctieNaam ?functieUri ;
+              ceo:rijksmonumentnummer ?rijksmonumentnummer ;
+              ceo:heeftBasisregistratieRelatie ?basisRelatie;
+              ceo:heeftJuridischeStatus/skos:prefLabel ?status .
+
+        # De BAG-relatie is optioneel: rijksmonumenten zonder adres (geen
+        # BAG-relatie) worden ook teruggegeven. Wordt er op postcode, straat,
+        # volledigAdres of woonplaatsnaam gezocht, dan moet het adres wel
+        # bestaan en overeenkomen, net als voorheen.
+        optional {
+          ?basisRelatie ceo:heeftBAGRelatie ?bagRelatie.
+
+          ?bagRelatie ceo:postcode ?postcode2;
+                      ceo:volledigAdres ?volledigAdres2;
+                      ceo:openbareRuimte ?straat2.
+
+          optional { ?bagRelatie ceo:woonplaatsnaam ?woonplaatsnaam2 . }
+        }
+
+        bind(?postcode as ?postcode1)
+        filter(!bound(?postcode1) || ?postcode1 = ?postcode2)
+
+        bind(?volledigAdres as ?volledigAdres1)
+        filter(!bound(?volledigAdres1) || ?volledigAdres1 = ?volledigAdres2)
+
+        bind(?straat as ?straat1)
+        filter(!bound(?straat1) || ?straat1 = ?straat2)
+
+        bind(?woonplaatsnaam as ?woonplaatsnaam1)
+        filter(!bound(?woonplaatsnaam1) || ?woonplaatsnaam1 = ?woonplaatsnaam2)
+
+        bind(?gemeentecode as ?gemeentecode1)
+        optional { ?basisRelatie ceo:heeftBRKRelatie/ceo:gemeentecode ?gemeentecode2 . }
+        filter(!bound(?gemeentecode1) || ?gemeentecode1 = ?gemeentecode2)
+
+        bind(?gemeentenaam as ?gemeentenaam1)
+        optional { ?basisRelatie ceo:heeftGemeente ?gemeentenaam2 . }
+        filter(!bound(?gemeentenaam1) || ?gemeentenaam1 = ?gemeentenaam2)
+
+        bind(?provinciecode as ?provinciecode1)
+        optional { ?basisRelatie ceo:heeftBRKRelatie/ceo:provinciecode ?provinciecode2 . }
+        filter(!bound(?provinciecode1) || ?provinciecode1 = ?provinciecode2)
+
+       #  FILTER EXISTS {
+       #    graph graph:bebouwdeomgeving {
+       #      ?functieUri skos:narrower* ?zoekterm
+       #    }
+       # }
+      }
+   #   limit 50
+    }
+    $this ?p1 ?o1 .
+    filter(?p1 != ceo:rijksmonumentnummer)
+    $this ceo:rijksmonumentnummer ?rijksmonumentnummer .
+    bind(concat('https://monumentenregister.cultureelerfgoed.nl/monumenten/', str(?rijksmonumentnummer)) as ?url)
+    optional {
+      $this ?p1 ?o1 .
+      optional {
+        filter(?p1 not in (ceo:bevatObject, ceo:isHoofdobjectVanComplex, ceo:isOnderdeelVanComplex))
+        ?o1 ?p2 ?o2 .
+        optional {
+          ?o2 ?p3 ?o3 .
+        }
+      }
+    }
+  }
+}

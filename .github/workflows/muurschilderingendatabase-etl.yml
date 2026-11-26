@@ -5,17 +5,45 @@ env:
   PROJECT_NAME: 'Muurschilderingendatabase ETL'
   GRAPH_ID: 'muurschilderingen-latest-graph'
   ARTIFACT_PATH: 'artifact-data.ttl'
-  PYTHON_VERSION: '3.12' 
+  PYTHON_VERSION: '3.12'
 
 on:
   schedule:
   - cron: '0 0 * * 0'
-    timezone: 'Europe/Amsterdam' 
-  workflow_dispatch: {}   
+    timezone: 'Europe/Amsterdam'
+  workflow_dispatch: {}
+
+# Standaard alleen leesrechten; de keepalive-job vraagt zelf meer aan.
+permissions:
+  contents: read
+
+# Nooit twee runs tegelijk naar dezelfde graph laten schrijven.
+concurrency:
+  group: muurschilderingendatabase-etl
+  cancel-in-progress: false
 
 jobs:
+  # GitHub schakelt geplande workflows in publieke repositories uit na 60 dagen
+  # zonder repository-activiteit. Het opnieuw 'enablen' van de workflow via de
+  # API zet die teller terug, zonder dat er dummy-commits nodig zijn.
+  # Bewust een losse job zonder 'needs': ook als de ETL zelf faalt blijft het
+  # schema actief.
+  keepalive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      actions: write
+    steps:
+    - name: Reset 60 dagen inactiviteitsteller
+      env:
+        GH_TOKEN: ${{ github.token }}
+      run: |
+        gh api --method PUT \
+          "repos/${{ github.repository }}/actions/workflows/muurschilderingendatabase-etl.yml/enable"
+
   get-latest-data:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-python@v5
@@ -29,7 +57,7 @@ jobs:
         BASE_URI: ${{ env.BASE_URI }}
         PROJECT_NAME: ${{ env.PROJECT_NAME }}
         TARGET_FILEPATH: ${{ env.ARTIFACT_PATH }}
-        GRAPH_ID: ${{ env.GRAPH_ID }}   
+        GRAPH_ID: ${{ env.GRAPH_ID }}
     - name: Upload data artifact
       uses: actions/upload-artifact@v7
       with:
@@ -37,9 +65,11 @@ jobs:
         path: ${{ env.ARTIFACT_PATH }}
         overwrite: true
         retention-days: 1
+        if-no-files-found: error
 
   filter-transform-enrich:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     needs: get-latest-data
     steps:
     - uses: actions/checkout@v4
@@ -61,7 +91,7 @@ jobs:
         BASE_URI: ${{ env.BASE_URI }}
         PROJECT_NAME: ${{ env.PROJECT_NAME }}
         TARGET_FILEPATH: ${{ env.ARTIFACT_PATH }}
-        GRAPH_ID: ${{ env.GRAPH_ID }}   
+        GRAPH_ID: ${{ env.GRAPH_ID }}
     - name: Upload data artifact
       uses: actions/upload-artifact@v7
       with:
@@ -69,9 +99,11 @@ jobs:
         path: ${{ env.ARTIFACT_PATH }}
         overwrite: true
         retention-days: 1
+        if-no-files-found: error
 
   push-to-triply:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     needs: [get-latest-data, filter-transform-enrich]
     steps:
     - name: Download data artifact
@@ -80,12 +112,15 @@ jobs:
           name: data-artifact
     - name: Install dependencies
       run: |
-        wget 'https://static.triply.cc/cli/triplydb-linux'
+        wget --tries=3 'https://static.triply.cc/cli/triplydb-linux'
         chmod +x triplydb-linux
     - name: Push changes to TriplyDB API via CLI
+      env:
+        # Token via de omgeving in plaats van rechtstreeks in de opdrachtregel.
+        LDV_API_TOKEN: ${{ secrets.LDV_API_TOKEN }}
       run: |
-        ./triplydb-linux import-from-file --dataset "Muurschilderingen" --token "${{ secrets.LDV_API_TOKEN }}" --account "rce" --url "https://api.linkeddata.cultureelerfgoed.nl" --default-graph-name "https://linkeddata.cultureelerfgoed.nl/rce/Muurschilderingen/graphs/${{ env.GRAPH_ID }}" --mode "overwrite" ${{ env.ARTIFACT_PATH }} 
+        ./triplydb-linux import-from-file --dataset "Muurschilderingen" --token "$LDV_API_TOKEN" --account "rce" --url "https://api.linkeddata.cultureelerfgoed.nl" --default-graph-name "https://linkeddata.cultureelerfgoed.nl/rce/Muurschilderingen/graphs/${{ env.GRAPH_ID }}" --mode "overwrite" ${{ env.ARTIFACT_PATH }}
     - name: Print triply error response
       if: ${{ failure() }}
       run: |
-        cat .triplydb-js.err
+        cat .triplydb-js.err || true
