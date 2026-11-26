@@ -1,8 +1,11 @@
 """Script that transforms and enriches linked data."""
 
 import os
+import sys
 import logging
 import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 import uritools
 from rdflib import RDF, Graph, URIRef
 import rdflib.namespace as ns_module
@@ -15,6 +18,15 @@ BASE_URI = os.getenv('BASE_URI', 'https://muurschilderingendatabase.nl/')
 OUTPUT_FILE_FORMAT = os.getenv('OUTPUT_FILE_FORMAT', 'ttl')
 GRAPH_ID = os.getenv('GRAPH_ID', 'default')
 ENCODING = os.getenv('ENCODING', 'utf-8')
+REQUEST_TIMEOUT = int(os.getenv('REQUEST_TIMEOUT', '200'))
+# Refuse to publish when fewer triples than this remain
+MIN_TRIPLES = int(os.getenv('MIN_TRIPLES', '1'))
+# Share of Rijksmonument lookups that may fail before the run is aborted
+MAX_ENRICHMENT_FAILURE_RATIO = float(os.getenv('MAX_ENRICHMENT_FAILURE_RATIO', '0.1'))
+
+RM_API_URL = 'https://api.linkeddata.cultureelerfgoed.nl/queries/rce/rest-api-rijksmonumenten/run'
+CEO_RIJKSMONUMENTNUMMER =URIRef('https://linkeddata.cultureelerfgoed.nl/def/ceo#rijksmonumentnummer')
+CEO_RIJKSMONUMENT = URIRef('https://linkeddata.cultureelerfgoed.nl/def/ceo#Rijksmonument')
 
 # --- Logging ---
 logger = logging.getLogger(__name__)
@@ -85,28 +97,69 @@ def load_graph(filepath: str, format: str) -> Graph:
     logger.info(f"Loaded graph with {len(graph)} triples")
     return graph
 
+def build_session() -> requests.Session:
+    """Session that retries on connection errors and temporary server errors."""
+    retry = Retry(
+        total=5,
+        backoff_factor=2,
+        status_forcelist=(429, 500, 502, 503, 504),
+        allowed_methods=("GET",),
+    )
+    session = requests.Session()
+    session.mount("https://", HTTPAdapter(max_retries=retry))
+    session.mount("http://", HTTPAdapter(max_retries=retry))
+    return session
+
 def enrich_with_rijksmonument_data(graph: Graph):
     """Enrich graph with Rijksmonument data."""
-    with open("enrichments.ttl", "w", encoding=ENCODING) as f:
-        for subj, pred, obj in graph.triples((None, URIRef('https://linkeddata.cultureelerfgoed.nl/def/ceo#rijksmonumentnummer'), None)):
-            if not isinstance(str(obj), URIRef):
-                if "RM" in str(obj)[0:2]:
-                    rm_uri = f"https://api.linkeddata.cultureelerfgoed.nl/queries/rce/rest-api-rijksmonumenten/run?rijksmonumentnummer={str(obj)[2:]}"
-                else:
-                    rm_uri = f"https://api.linkeddata.cultureelerfgoed.nl/queries/rce/rest-api-rijksmonumenten/run?rijksmonumentnummer={str(obj)}"
-                try:
-                    data = requests.get(rm_uri, timeout=200)
-                    f.write(data.text)
-                except requests.RequestException as e:
-                    logger.error("Failed to fetch %s", f"{rm_uri}: {e}")
-    graph.parse("enrichments.ttl")
+    # Every rijksmonumentnummer is looked up once, however often it occurs.
+    # Remember which resources use a number, to report numbers that yield nothing.
+    items_by_number: dict[str, set] = {}
+    for subj, obj in graph.subject_objects(CEO_RIJKSMONUMENTNUMMER):
+        items_by_number.setdefault(str(obj), set()).add(str(subj))
+    numbers = sorted(items_by_number)
+    logger.info('Looking up %i unique rijksmonumentnummers.', len(numbers))
+
+    session = build_session()
+    failures = 0
+    not_found = 0
+    for number in numbers:
+        # Strip stray whitespace for the lookup only; the published value is untouched.
+        rm_number = number.strip()
+        if rm_number.startswith("RM"):
+            rm_number = rm_number[2:]
+        try:
+            response = session.get(RM_API_URL, params={'rijksmonumentnummer': rm_number},
+                                   timeout=REQUEST_TIMEOUT)
+            response.raise_for_status()
+            # Parse into a separate graph first, so one bad response cannot
+            # leave half a result behind or break the whole enrichment.
+            enrichment = Graph()
+            enrichment.parse(data=response.content, format='turtle')
+        except (requests.RequestException, BadSyntax) as e:
+            failures += 1
+            logger.error("Failed to enrich rijksmonumentnummer %s: %s", number, e)
+            continue
+        if (None, RDF.type, CEO_RIJKSMONUMENT) not in enrichment:
+            # %r makes stray whitespace in the number visible, e.g. '517621\n'
+            not_found += 1
+            logger.warning("No Rijksmonument found for rijksmonumentnummer %r (%s)",
+                           number, ", ".join(sorted(items_by_number[number])))
+        for triple in enrichment:
+            graph.add(triple)
+
+    if numbers and failures / len(numbers) > MAX_ENRICHMENT_FAILURE_RATIO:
+        raise RuntimeError(
+            f"{failures} of {len(numbers)} Rijksmonument lookups failed; not publishing.")
+
     enr_index = 0
-    for subj, pred, obj in graph.triples((None, URIRef('https://linkeddata.cultureelerfgoed.nl/def/ceo#rijksmonumentnummer'), None)):
-        if (subj, RDF.type, URIRef('https://linkeddata.cultureelerfgoed.nl/def/ceo#Rijksmonument')) in graph:
+    for subj, pred, obj in list(graph.triples((None, CEO_RIJKSMONUMENTNUMMER, None))):
+        if (subj, RDF.type, CEO_RIJKSMONUMENT) in graph:
             graph.add((subj, SDO.sameAs, obj))
             enr_index += 1
 
-    logger.info('Enriched %i Rijksmonumenten.', enr_index)
+    logger.info('Enriched %i Rijksmonumenten (%i numbers without result, %i lookups failed).',
+                enr_index, not_found, failures)
 
 
 def apply_mapping(graph: Graph, mapping: dict):
@@ -138,31 +191,37 @@ def save_graph(graph: Graph, filepath: str, format: str) -> None:
 
 # --- Main Workflow ---
 def main():
-    try:
-        # 1. Load mapping & filter
-        mapping = get_mapping_from_env()
-        filterlist = get_filter_from_env()
-        logger.info("Using mapping: %s", mapping)
+    # 1. Load mapping & filter
+    mapping = get_mapping_from_env()
+    filterlist = get_filter_from_env()
+    logger.info("Using mapping: %s", mapping)
 
-        # 2. Load graph
-        graph = load_graph(TARGET_FILEPATH, OUTPUT_FILE_FORMAT)
+    # 2. Load graph
+    graph = load_graph(TARGET_FILEPATH, OUTPUT_FILE_FORMAT)
 
-        # 3. Enrich data
-        enrich_with_rijksmonument_data(graph)
+    # 3. Enrich data
+    enrich_with_rijksmonument_data(graph)
 
-        # 4. Apply mappings
-        apply_mapping(graph, mapping)
+    # 4. Apply mappings
+    apply_mapping(graph, mapping)
 
-        # 5. Apply filter
-        apply_filter(graph, filterlist)
+    # 5. Apply filter
+    apply_filter(graph, filterlist)
 
-        # 6. Save graph
-        save_graph(graph, TARGET_FILEPATH, OUTPUT_FILE_FORMAT)
-
-    except BadSyntax as e:
-        logger.error("RDF syntax error: %s", str(e))
-    except Exception as e:
-        logger.error("Unexpected error: %s", str(e))
+    # 6. Save graph
+    if len(graph) < MIN_TRIPLES:
+        raise RuntimeError(
+            f"Only {len(graph)} triples left (minimum {MIN_TRIPLES}); not writing output.")
+    save_graph(graph, TARGET_FILEPATH, OUTPUT_FILE_FORMAT)
 
 if __name__ == "__main__":
-    main()
+    # Any failure must fail the job. Otherwise the untransformed (unfiltered)
+    # export would still be uploaded and published in the next step.
+    try:
+        main()
+    except BadSyntax as e:
+        logger.error("RDF syntax error: %s", str(e))
+        sys.exit(1)
+    except Exception:  # pylint: disable=broad-except
+        logger.exception("Transform failed")
+        sys.exit(1)
