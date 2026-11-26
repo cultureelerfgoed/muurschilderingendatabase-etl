@@ -3,7 +3,7 @@ name: 'Muurschilderingendatabase ETL'
 env:
   BASE_URI: 'https://muurschilderingendatabase.nl/'
   PROJECT_NAME: 'Muurschilderingendatabase ETL'
-  GRAPH_ID: 'muurschilderingen-latest-graph'
+  GRAPH_ID: 'muurschilderingen'
   ARTIFACT_PATH: 'artifact-data.ttl'
   PYTHON_VERSION: '3.12'
 
